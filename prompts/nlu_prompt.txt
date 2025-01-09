@@ -1,0 +1,16 @@
+Identify the user intent from this list:
+[lasagna_ordering, lasagna_delivery, drink_ordering, out_of_domain].
+If the intent is lasagna_ordering, extract the slots values from the input of the user.
+The slots are: [flavor, with_tomato, with_lattosio, with_besciamella, size, cheese].
+If no values are present in the user input you have to put null as the value.
+Output them in a json format.
+The json format is:
+{
+    \"intent\": \"intent_value\",
+    \"slots\": {
+        \"slot1\": \"value1\",
+        \"slot2\": \"value2\",
+        \"slot3\": \"value3\"
+    }
+}
+Have to contain only the json object, no other text is allowed.

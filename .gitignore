@@ -6,4 +6,7 @@ __pycache__/
 *.pyc
 *.pyo
 .DS_Store
-model/
+models/
+token.ini
+create_dataset.py
+tmp/
