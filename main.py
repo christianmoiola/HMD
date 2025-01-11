@@ -3,7 +3,10 @@ import configparser
 from src.components.NLU import NLU, PRE_NLU
 from src.components.DM import DM
 from src.components.NLG import NLG
+from src.components.StateTracker import *
 from src.utils.utils import *
+import json
+
 
 def set_token():
     token = configparser.ConfigParser()
@@ -40,18 +43,84 @@ if __name__ == "__main__":
     dm = DM(config, model, tokenizer)
     nlg = NLG(config, model, tokenizer)
 
-    #user_input = "I would like to order ragù lasagna, please."
+    list_state = []
 
-    # pre_nlu_response = pre_nlu.query_model(user_input)
-    # print(pre_nlu_response)
-    #user_input = "I would like to buy a Diesel car for family."
-    user_input = "I would like to buy a sport car. Can you have some available?"
+    intent_to_class = {
+        "buying_car": "BuyingStateTracker",
+        "selling_car": "SellingStateTracker",
+        "renting_car": "RentingStateTracker",
+        "get_car_info": "GetCarInfoStateTracker"
+    }
+
+    #user_input = "I would like to order ragù lasagna, please."
+    user_input = "I would like to buy a petrol car."
+
     while user_input != "exit":
         user_input = input("User: ")
-        nlu_response = nlu.query_model(user_input)
-        print(nlu_response)
+        # TODO: Handle the case where the user input is difficult to understand
+        # TODO: (e.g. the user input contains a small sentence and the NLU component doesn't understand the intent)
+        if user_input == "exit":
+            break
+        pre_nlu_response = pre_nlu.query_model(user_input)
+        
+        print(f"PRE_NLU Response: {pre_nlu_response}")
+        nlu_response = None
+        # TODO: Handle the case where the NLU response is None
+        while nlu_response == None: 
+            nlu_response = nlu.query_model(pre_nlu_response)
 
-    # dm_response = dm.query_model(nlu_response)
-    # print(dm_response)
-    # nlg_response = nlg.query_model(dm_response)
-    # print(nlg_response)
+        print(f"NLU Response: {nlu_response}")
+
+        # Check the intent and create or update the corresponding state tracker
+        intent = nlu_response["intent"]
+        if intent_to_class[intent] not in [st.__class__.__name__ for st in list_state]:
+            # Instantiate the state tracker if it doesn't already exist
+            match intent:
+                case "buying_car":
+                    state_tracker_class = BuyingStateTracker()
+                case "selling_car":
+                    state_tracker_class = SellingStateTracker()
+                case "renting_car":
+                    state_tracker_class = RentingStateTracker()
+                case "get_car_info":
+                    state_tracker_class = GettingInfoStateTracker()
+
+            state_tracker_class.update_dialogue_state(nlu_response)
+            json = state_tracker_class.get_dialogue_state()
+            list_state.append(state_tracker_class)
+        else:
+            # Update the existing state tracker
+            for st in list_state:
+                if st.__class__.__name__ == intent_to_class[intent]:
+                    st.update_dialogue_state(nlu_response)
+                    json = st.get_dialogue_state()
+                    break
+        
+        print(f"Dialogue State JSON: {json}")
+
+        dm_response = dm.query_model(json)
+
+        print(f"DM Response: {dm_response}")
+
+        nlg_response = nlg.query_model(input=dm_response, nlu_response=json)
+
+        print(f"NLG Response: {nlg_response}")
+
+
+
+        
+
+        '''
+        json_nlu_response = json.loads(nlu_response)
+
+        if json_nlu_response["intent"] not in dict_intent:
+            dict_intent[json_nlu_response["intent"]] = json_nlu_response["slots"]
+        else:
+            for key, value in json_nlu_response["slots"].items():
+                print(key, value)
+                if json_nlu_response["slots"][key] != None:
+                    print("entra")
+                    dict_intent[json_nlu_response["intent"]][key] = value
+
+        print(dict_intent)
+        '''

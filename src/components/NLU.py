@@ -1,4 +1,5 @@
 from src.utils.utils import *
+import json
 import os
 
 
@@ -15,7 +16,7 @@ class PRE_NLU():
         self.tokenizer = tokenizer
 
     def query_model(self, user_input: str):
-        print("Generating response from PRE_NLU component...")
+        #print("Generating response from PRE_NLU component...")
         '''
         input_text = self.template.format(self.system_prompt, user_input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
@@ -37,8 +38,15 @@ class NLU():
         self.tokenizer = tokenizer
         
     def query_model(self, user_input: str):
-        print("Generating response from NLU component...")
+        #print("Generating response from NLU component...")
         input_text = self.template.format(self.system_prompt, user_input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
+        
+        # Try to parse the response as JSON
+        try:
+            response = json.loads(response)
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON response: {e}")
+            response = None
         return response

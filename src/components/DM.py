@@ -14,7 +14,7 @@ class DM():
         self.tokenizer = tokenizer
         
     def query_model(self, user_input: str):
-        print("Generating response from DM component...")
+        #print("Generating response from DM component...")
         input_text = self.template.format(self.system_prompt, user_input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
