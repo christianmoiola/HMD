@@ -4,7 +4,7 @@ from src.components.NLU import NLU, PRE_NLU
 from src.components.DM import DM
 from src.components.NLG import NLG
 from src.components.StateTracker import *
-from src.utils.utils import *
+from src.utils.utils_model import get_model
 from src.utils.history import History
 from src.utils.logging import setup_logger
 import json

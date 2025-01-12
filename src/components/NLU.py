@@ -1,4 +1,5 @@
 from src.utils.utils import *
+from src.utils.utils_model import generate
 from src.utils.logging import setup_logger
 import json
 import os

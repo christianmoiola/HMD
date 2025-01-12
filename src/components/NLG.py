@@ -1,5 +1,6 @@
 from src.utils.utils import *
 from src.utils.logging import setup_logger
+from src.utils.utils_model import generate
 import os
 
 class NLG():
