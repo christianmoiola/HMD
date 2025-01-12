@@ -1,10 +1,11 @@
 from src.utils.utils import *
+from src.utils.logging import setup_logger
 import json
 import os
 
 
 class PRE_NLU():
-    def __init__(self, cfg: dict, model, tokenizer):
+    def __init__(self, cfg: dict, model, tokenizer, history=None):
         # Path project
         self.path = cfg["Settings"].get("path")
 
@@ -14,9 +15,11 @@ class PRE_NLU():
 
         self.model = model
         self.tokenizer = tokenizer
+        self.history = history
+        self.logger = setup_logger(self.__class__.__name__)
 
     def query_model(self, user_input: str):
-        #print("Generating response from PRE_NLU component...")
+        self.logger.info("Generating response from PRE_NLU component...")
         '''
         input_text = self.template.format(self.system_prompt, user_input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
@@ -26,7 +29,7 @@ class PRE_NLU():
         return response
 
 class NLU():
-    def __init__(self, cfg: dict, model, tokenizer):
+    def __init__(self, cfg: dict, model, tokenizer, history=None):
         # Path project
         self.path = cfg["Settings"].get("path")
 
@@ -36,10 +39,17 @@ class NLU():
 
         self.model = model
         self.tokenizer = tokenizer
+        self.history = history
+        self.logger = setup_logger(self.__class__.__name__)
         
     def query_model(self, user_input: str):
-        #print("Generating response from NLU component...")
-        input_text = self.template.format(self.system_prompt, user_input)
+        self.logger.info("Generating response from NLU component...")
+        if self.history != None:
+            sp = self.system_prompt + "\n" + self.history.get_history()
+        else:
+            sp = self.system_prompt
+        self.logger.debug(f"SP: {sp}")
+        input_text = self.template.format(sp, user_input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
         
@@ -47,6 +57,6 @@ class NLU():
         try:
             response = json.loads(response)
         except json.JSONDecodeError as e:
-            print(f"Error decoding JSON response: {e}")
+            self.logger.error(f"Error parsing response as JSON: {e}")
             response = None
         return response

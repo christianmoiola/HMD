@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from copy import deepcopy
-
+from src.utils.logging import setup_logger
 
 class DialogueStateTracker(ABC):
     def __init__(self):
@@ -16,10 +16,9 @@ class DialogueStateTracker(ABC):
         """
         Updates the dialogue state with the cleaned NLU response.
         """
-        print(DialogueStateTracker.clean_response(nlu_response))
-        print(self.dialogue_state)
+        self.logger.debug(f"Dialogue state before update: {self.dialogue_state}")
         self.dialogue_state = DialogueStateTracker.update(self.dialogue_state, DialogueStateTracker.clean_response(nlu_response))
-        print(self.dialogue_state)
+        self.logger.debug(f"Dialogue state after update: {self.dialogue_state}")
     
     @staticmethod
     def clean_response(response: dict) -> dict:
@@ -57,6 +56,7 @@ class BuyingStateTracker(DialogueStateTracker):
         Initializes the BuyingStateTracker with a default dialogue state.
         """
         super().__init__()
+
         self.dialogue_state = {
             "intent": "buying_car",
             "slots": {
@@ -69,11 +69,7 @@ class BuyingStateTracker(DialogueStateTracker):
                 "transmission": None
             }
         }
-
-    
-    
-
-
+        self.logger = setup_logger(self.__class__.__name__)
 
 
 class SellingStateTracker(DialogueStateTracker):

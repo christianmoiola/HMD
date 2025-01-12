@@ -10,6 +10,20 @@ def read_txt(path: str) -> str:
     myfile.close()
     return data
 
+def get_model(config):
+    model_name = config["General"].get("model_name") # llama2 or llama3
+    model_name = config["MODELS"].get(model_name) # meta-llama/Llama-2-7b-chat-hf or meta-llama/Meta-Llama-3-8B-Instruct
+    dtype = config["General"].get("dtype") 
+    folder_model = os.path.join(config["Settings"].get("path"), config["General"].get("folder_model"))
+
+    model, tokenizer = load_model(
+        model_name=model_name, 
+        folder_model=folder_model, 
+        dtype=dtype
+        )
+
+    return model, tokenizer
+
 def download_models(models, folder_model):
     for model_name in models.values():
         # triggers download of the models

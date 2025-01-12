@@ -1,8 +1,9 @@
 from src.utils.utils import *
+from src.utils.logging import setup_logger
 import os
 
 class NLG():
-    def __init__(self, cfg: dict, model, tokenizer):
+    def __init__(self, cfg: dict, model, tokenizer, history=None):
         # Path project
         self.path = cfg["Settings"].get("path")
 
@@ -12,6 +13,8 @@ class NLG():
 
         self.model = model
         self.tokenizer = tokenizer
+        self.history = history
+        self.logger = setup_logger(self.__class__.__name__)
 
     def combine_system_prompt(self, nlu_response: dict, dm_response: str):
         combined_response = {
@@ -23,6 +26,11 @@ class NLG():
     def query_model(self, input: str, nlu_response: dict):
         #print("Generating response from NLG component...")
         combined_response = self.combine_system_prompt(nlu_response, input)
+
+        if self.history != None:
+            combined_response = str(combined_response) + "\n" + self.history.get_history()
+        self.logger.debug(f"SP: {combined_response}")
+
         input_text = self.template.format(self.system_prompt, combined_response)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)

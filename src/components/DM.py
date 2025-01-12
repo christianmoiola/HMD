@@ -1,8 +1,9 @@
 from src.utils.utils import *
+from src.utils.logging import setup_logger
 import os
 
 class DM():
-    def __init__(self, cfg: dict, model, tokenizer):
+    def __init__(self, cfg: dict, model, tokenizer, history=None):
         # Path project
         self.path = cfg["Settings"].get("path")
 
@@ -12,10 +13,18 @@ class DM():
 
         self.model = model
         self.tokenizer = tokenizer
+        self.history = history
+        self.logger = setup_logger(self.__class__.__name__)
         
-    def query_model(self, user_input: str):
+    def query_model(self, input: str):
         #print("Generating response from DM component...")
-        input_text = self.template.format(self.system_prompt, user_input)
+
+        if self.history != None:
+            sp = self.system_prompt + "\n" + self.history.get_history()
+        else:
+            sp = self.system_prompt
+        self.logger.debug(f"SP: {sp}")
+        input_text = self.template.format(sp, input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
         return response
