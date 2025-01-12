@@ -17,6 +17,16 @@ COLORS = {
     "BOLD": "\033[1m",                  # Bold
 }
 
+# Mapping of logging level strings to logging constants
+LOG_LEVELS = {
+    "CRITICAL": logging.CRITICAL,
+    "ERROR": logging.ERROR,
+    "WARNING": logging.WARNING,
+    "INFO": logging.INFO,
+    "DEBUG": logging.DEBUG,
+    "NOTSET": logging.NOTSET,
+}
+
 class ColoredFormatter(logging.Formatter):
     """
     Custom formatter to add colors and include the class name in log messages.
@@ -32,12 +42,12 @@ class ColoredFormatter(logging.Formatter):
         return super().format(record)
 
 
-def setup_logger(name, logging_level=logging.DEBUG, color_debug="DEBUG_DEFAULT"):
+def setup_logger(name, logging_level="DEBUG", color_debug="DEBUG_DEFAULT"):
     """
     Create and configure a logger for a specific class.
     """
     logger = logging.getLogger(name)
-    logger.setLevel(logging_level)
+    logger.setLevel(LOG_LEVELS[logging_level])
     handler = logging.StreamHandler()
 
     color_map = {
@@ -49,7 +59,7 @@ def setup_logger(name, logging_level=logging.DEBUG, color_debug="DEBUG_DEFAULT")
     }
 
     formatter = ColoredFormatter(
-        fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        fmt="%(name)s - %(levelname)s - %(message)s",
         color_map=color_map,
     )
     handler.setFormatter(formatter)

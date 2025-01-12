@@ -48,7 +48,7 @@ class NLU():
             sp = self.system_prompt + "\n" + self.history.get_history()
         else:
             sp = self.system_prompt
-        self.logger.debug(f"SP: {sp}")
+        self.logger.debug(f"History: {self.history.get_history()}")
         input_text = self.template.format(sp, user_input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)

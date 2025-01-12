@@ -24,15 +24,18 @@ class NLG():
         return combined_response
 
     def query_model(self, input: str, nlu_response: dict):
-        #print("Generating response from NLG component...")
+        self.logger.info("Generating response from NLG component...")
         combined_response = self.combine_system_prompt(nlu_response, input)
 
         if self.history != None:
             combined_response = str(combined_response) + "\n" + self.history.get_history()
-        self.logger.debug(f"SP: {combined_response}")
+
+        self.logger.debug(f"History: {self.history.get_history()}")
 
         input_text = self.template.format(self.system_prompt, combined_response)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
+        #* STRIP RESPONSE
+        response = response.strip()
         return response
     

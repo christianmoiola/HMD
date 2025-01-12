@@ -4,4 +4,4 @@ you should only generate a lexicalized response for the user.
 Possible next best actions are:
 - request_info(slot): generate an appropriate question to ask the user for the missing slot value
 - confirmation(intent): generate an appropriate confirmation message for the user intent
-Have to contain only the response, no other text is allowed.
+Have to contain only the response, no other text or spaces are allowed.

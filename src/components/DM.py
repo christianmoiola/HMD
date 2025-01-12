@@ -17,14 +17,17 @@ class DM():
         self.logger = setup_logger(self.__class__.__name__)
         
     def query_model(self, input: str):
-        #print("Generating response from DM component...")
+        self.logger.info("Generating response from DM component...")
 
         if self.history != None:
             sp = self.system_prompt + "\n" + self.history.get_history()
         else:
             sp = self.system_prompt
-        self.logger.debug(f"SP: {sp}")
+
+        self.logger.debug(f"History: {self.history.get_history()}")
         input_text = self.template.format(sp, input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
+        #* STRIP RESPONSE
+        response = response.strip()
         return response

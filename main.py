@@ -5,7 +5,7 @@ from src.components.DM import DM
 from src.components.NLG import NLG
 from src.components.StateTracker import *
 from src.utils.utils import *
-from src.utils.History import History
+from src.utils.history import History
 from src.utils.logging import setup_logger
 import json
 
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     nlu = NLU(cfg=config,model=model, tokenizer=tokenizer, history=history)
     dm = DM(cfg=config, model=model, tokenizer=tokenizer, history=history)
     nlg = NLG(cfg=config, model=model, tokenizer=tokenizer, history=history)
-    logger = setup_logger("Main", color_debug="DEBUG_MAIN")
+    logger = setup_logger("Main", logging_level="DEBUG", color_debug="DEBUG_MAIN")
 
     list_state = []
 
@@ -52,6 +52,7 @@ if __name__ == "__main__":
         # TODO: Handle the case where the user input is difficult to understand
         # TODO: (e.g. the user input contains a small sentence and the NLU component doesn't understand the intent)
         if user_input == "exit":
+            logger.info("Exiting the conversation...")
             break
         
         pre_nlu_response = pre_nlu.query_model(user_input)
@@ -103,6 +104,8 @@ if __name__ == "__main__":
         logger.debug(f"DM Response: {dm_response}")
 
         nlg_response = nlg.query_model(input=dm_response, nlu_response=json)
+
+        logger.debug(f"NLG Response: {nlg_response}")
 
         logger.info(f"System: {nlg_response}")
 
