@@ -3,6 +3,7 @@ import configparser
 from src.components.NLU import NLU, PRE_NLU
 from src.components.DM import DM
 from src.components.NLG import NLG
+from src.components.Database import Database
 from src.components.StateTracker import *
 from src.utils.utils_model import get_model
 from src.utils.history import History
@@ -24,8 +25,13 @@ if __name__ == "__main__":
     config["Settings"] = {
         "path": os.getcwd()
     }
-    
 
+    database = Database(config)
+    query = """find(Make="BMW")"""
+    results = database.query_database(query)
+    print(results)
+    
+    '''
     model, tokenizer = get_model(config)
     history = History()
     pre_nlu = PRE_NLU(cfg=config, model=model, tokenizer=tokenizer, history=history)
@@ -111,3 +117,4 @@ if __name__ == "__main__":
 
         # Update the history with the system response
         history.add_to_history(sender="System", msg=nlg_response)
+        '''
