@@ -30,8 +30,7 @@ class NLG():
 
         if self.history != None:
             combined_response = str(combined_response) + "\n" + self.history.get_history()
-
-        self.logger.debug(f"History: {self.history.get_history()}")
+            self.logger.debug(f"History: {self.history.get_history()}")
 
         input_text = self.template.format(self.system_prompt, combined_response)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)

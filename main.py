@@ -16,68 +16,36 @@ def set_token():
     token.read('token.ini')
     os.environ["HF_TOKEN"]= token["TOKEN"].get("token")
 
-if __name__ == "__main__":
 
-    set_token()
+class Pipeline():
+    def __init__(self, config):
+        self.config = config
+        self.initial_message = self.config["General"].get("initial_message")
+        self.model, self.tokenizer = get_model(config)
+        self.define_components()
+        self.logger = setup_logger(self.__class__.__name__, logging_level="DEBUG", color_debug="DEBUG_MAIN")
 
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    config["Settings"] = {
-        "path": os.getcwd()
-    }
+        self.list_state = []
 
-    database = Database(config)
-    query = """find(Make="BMW")"""
-    results = database.query_database(query)
-    print(results)
+        self.intent_to_class = {
+            "buying_car": "BuyingStateTracker",
+            "selling_car": "SellingStateTracker",
+            "renting_car": "RentingStateTracker",
+            "get_car_info": "GetCarInfoStateTracker"
+        }
     
-    '''
-    model, tokenizer = get_model(config)
-    history = History()
-    pre_nlu = PRE_NLU(cfg=config, model=model, tokenizer=tokenizer, history=history)
-    nlu = NLU(cfg=config,model=model, tokenizer=tokenizer, history=history)
-    dm = DM(cfg=config, model=model, tokenizer=tokenizer, history=history)
-    nlg = NLG(cfg=config, model=model, tokenizer=tokenizer, history=history)
-    logger = setup_logger("Main", logging_level="DEBUG", color_debug="DEBUG_MAIN")
+    def define_components(self):
+        self.history = History()
+        self.database = Database(self.config)
+        self.pre_nlu = PRE_NLU(cfg=self.config, model=self.model, tokenizer=self.tokenizer, history=self.history)
+        self.nlu = NLU(cfg=self.config, model=self.model, tokenizer=self.tokenizer, history=self.history)
+        self.dm = DM(cfg=self.config, model=self.model, tokenizer=self.tokenizer)
+        self.nlg = NLG(cfg=self.config, model=self.model, tokenizer=self.tokenizer)
 
-    list_state = []
-
-    intent_to_class = {
-        "buying_car": "BuyingStateTracker",
-        "selling_car": "SellingStateTracker",
-        "renting_car": "RentingStateTracker",
-        "get_car_info": "GetCarInfoStateTracker"
-    }
-
-    #user_input = "I would like to order ragù lasagna, please."
-    user_input = "I would like to buy a petrol car."
-
-
-    while user_input != "exit":
-        user_input = input("User: ")
-        # TODO: Handle the case where the user input is difficult to understand
-        # TODO: (e.g. the user input contains a small sentence and the NLU component doesn't understand the intent)
-        if user_input == "exit":
-            logger.info("Exiting the conversation...")
-            break
-        
-        pre_nlu_response = pre_nlu.query_model(user_input)
-
-        logger.debug(f"PRE_NLU Response: {pre_nlu_response}")
-
-        nlu_response = None
-        # TODO: Handle the case where the NLU response is None
-        while nlu_response == None: 
-            nlu_response = nlu.query_model(pre_nlu_response)
-
-        logger.debug(f"NLU Response: {nlu_response}")
-
-        # Update the history with the user input
-        history.add_to_history(sender="User", msg=user_input)
-
+    def update_state_tracker(self, nlu_response):
         # Check the intent and create or update the corresponding state tracker
         intent = nlu_response["intent"]
-        if intent_to_class[intent] not in [st.__class__.__name__ for st in list_state]:
+        if self.intent_to_class[intent] not in [st.__class__.__name__ for st in self.list_state]:
             # Instantiate the state tracker if it doesn't already exist
             match intent:
                 case "buying_car":
@@ -89,32 +57,97 @@ if __name__ == "__main__":
                 case "get_car_info":
                     state_tracker_class = GettingInfoStateTracker()
                 case _:
-                    print(f"Intent {intent} not recognized")
-                    continue
+                    self.logger.error(f"Intent {intent} not recognized")
+                    exit(1)
 
             state_tracker_class.update_dialogue_state(nlu_response)
             json = state_tracker_class.get_dialogue_state()
-            list_state.append(state_tracker_class)
+            self.list_state.append(state_tracker_class)
         else:
             # Update the existing state tracker
-            for st in list_state:
-                if st.__class__.__name__ == intent_to_class[intent]:
+            for st in self.list_state:
+                if st.__class__.__name__ == self.intent_to_class[intent]:
                     st.update_dialogue_state(nlu_response)
                     json = st.get_dialogue_state()
                     break
+        return json
+            
 
-        logger.debug(f"Dialogue State: {json}")
+    def run(self):
+        self.logger.info(f"System: {self.initial_message}")
+        self.history.add_to_history(sender="System", msg=self.initial_message)
+        
+        user_input = ""
 
-        dm_response = dm.query_model(json)
+        while user_input != "exit":
+            user_input = input("User: ")
+            # TODO: Handle the case where the user input is difficult to understand
+            # TODO: (e.g. the user input contains a small sentence and the NLU component doesn't understand the intent)
+            if user_input == "exit":
+                self.logger.info("Exiting the conversation...")
+                break
+            pre_nlu_response = self.pre_nlu.query_model(user_input)
 
-        logger.debug(f"DM Response: {dm_response}")
+            self.logger.debug(f"PRE_NLU Response: {pre_nlu_response}")
 
-        nlg_response = nlg.query_model(input=dm_response, nlu_response=json)
+            nlu_response = None
+            # TODO: Handle the case where the NLU response is None
+            while nlu_response == None: 
+                nlu_response = self.nlu.query_model(pre_nlu_response)
 
-        logger.debug(f"NLG Response: {nlg_response}")
+            self.logger.debug(f"NLU Response: {nlu_response}")
 
-        logger.info(f"System: {nlg_response}")
+            # Update the history with the user input
+            self.history.add_to_history(sender="User", msg=user_input)
+            # Update the state tracker
+            json = self.update_state_tracker(nlu_response)
 
-        # Update the history with the system response
-        history.add_to_history(sender="System", msg=nlg_response)
-        '''
+            self.logger.debug(f"Dialogue State: {json}")
+
+            dm_response = self.dm.query_model(json)
+
+            self.logger.debug(f"DM Response: {dm_response}")
+
+            # while not dm_response.startswith("find"):
+            #     dm_response = self.dm.query_model(json)
+            #     self.logger.debug(f"DM Response: {dm_response}")
+            
+            if dm_response.startswith("find"):
+                results = None
+
+                while results == None:
+                    results = self.database.query_database(dm_response) 
+                    self.logger.debug(f"Database results: {results}")
+                
+                dm_response = self.dm.query_model(input=json, db_results=results)
+                self.logger.debug(f"DM Response: {dm_response}")
+
+            nlg_response = self.nlg.query_model(input=dm_response, nlu_response=json)
+
+            self.logger.debug(f"NLG Response: {nlg_response}")
+
+            self.logger.info(f"System: {nlg_response}")
+
+            # Update the history with the system response
+            self.history.add_to_history(sender="System", msg=nlg_response)
+        
+
+if __name__ == "__main__":
+
+    set_token()
+
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    config["Settings"] = {
+        "path": os.getcwd()
+    }
+
+    pipeline = Pipeline(config)
+    pipeline.run()
+    '''
+    database = Database(config)
+    
+    query = """find(brand=BMW, model=5 Series, year=2020)"""
+    results = database.query_database(query)
+    print(results)
+    '''

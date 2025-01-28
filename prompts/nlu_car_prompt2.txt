@@ -3,7 +3,7 @@ Identify the intent from the following options:
 
 If the intent is "buying_car", extract the slot values from the user input.
 The relevant slots for buying a car are:
-- car_type: The type of car. The only admissible values are ["City car", "Family_car", "Sport_car"]
+- car_type: The type of car. The only admissible values are ["City_car", "Family_car", "Sport_car"]
 - budget: The maximum budget the user is willing to spend [e.g., "20000", "10000"]
 - brand: The brand of the car. The only admissible values are ["Fiat", "Toyota", "Volkswagen", "Ford", "BMW", "Audi", "Mercedes", "Honda", "Nissan", "Peugeot"]
 - model: The specific car model. The only admissible values are ["Panda", "Corolla", "Golf", "Fiesta", "X5", "A3", "C-Class", "Civic", "Leaf", "308"]
@@ -13,6 +13,7 @@ The relevant slots for buying a car are:
 
 If a specific slot is not present in the user input, you must assign "null" as the value for that specific slot. 
 It is important to assign "null" to any slot that is either not mentioned in the user input or not within the admissible values.
+Don't INFER nothing, just parse the data and don't put additional slot that are not present in the user input. 
 
 If the intent is not "buying_car" but matches another intent, return the identified intent and an empty slots object. 
 

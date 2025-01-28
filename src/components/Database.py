@@ -34,7 +34,7 @@ class Database():
         # Extract the parameters
         parameters = match.group(2)
         # Extract field-value pairs
-        fields_values = {field: value for field, value in re.findall(r'(\w+)\s*=\s*"([^"]+)"', parameters)}
+        fields_values = {field.strip(): value.strip(' \'"') for field, value in re.findall(r'(\w+)\s*=\s*([^,]+)', parameters)}
 
         # Check if the action has parameters
         if not fields_values:
@@ -42,7 +42,7 @@ class Database():
             return None, None
         
         # Check if the fields are valid
-        for field, _ in fields_values.items():
+        for field in fields_values.keys():
             if field not in self.fields:
                 self.logger.error(f"Invalid field: {field}")
                 return None, None
@@ -50,6 +50,7 @@ class Database():
         return action_name, fields_values
 
     def query_database(self, action: str):
+        self.logger.info("Querying the database...")
         action_name, fields_values = self.clean_action(action)
 
         if not action_name and not fields_values:
@@ -67,12 +68,25 @@ class Database():
         for car in self.database:
             match = True
             for field, value in fields_values.items():
-                if car.get(field) != value:
+                car_db_field = str(car.get(field))
+                if field == "budget":
+                    car_db_field = float(car_db_field)
+                    value = float(value)
+                    if car_db_field > value:
+                        match = False
+                        break
+                elif field == "year":
+                    car_db_field = int(car_db_field)
+                    value = int(value)
+                    if car_db_field < value:
+                        match = False
+                        break
+                elif car_db_field != value:
                     match = False
                     break
             if match:
                 result.append(car)
-        return result
+        return str(result)
         
         
 

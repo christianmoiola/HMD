@@ -11,21 +11,24 @@ class DM():
         self.template = cfg["TEMPLATES"].get(cfg["General"].get("model_name"))
         self.max_seq_length = cfg["General"].getint("max_seq_length")
         self.system_prompt = read_txt(os.path.join(self.path, cfg["DM"].get("prompt")))
-
         self.model = model
         self.tokenizer = tokenizer
         self.history = history
         self.logger = setup_logger(self.__class__.__name__)
         
-    def query_model(self, input: str):
+    def query_model(self, input: str, db_results=None):
         self.logger.info("Generating response from DM component...")
-
+        input = str(input)
+        self.logger.debug(f"Input: {input}")
         if self.history != None:
             sp = self.system_prompt + "\n" + self.history.get_history()
+            self.logger.debug(f"History: {self.history.get_history()}")
         else:
             sp = self.system_prompt
-
-        self.logger.debug(f"History: {self.history.get_history()}")
+        
+        if db_results != None:
+            input = "\n" + "DATABASE RESULTS:\n" + db_results + "\n" + input
+        
         input_text = self.template.format(sp, input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
