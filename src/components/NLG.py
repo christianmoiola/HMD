@@ -4,7 +4,7 @@ from src.utils.utils_model import generate
 import os
 
 class NLG():
-    def __init__(self, cfg: dict, model, tokenizer, history=None):
+    def __init__(self, cfg: dict, model, tokenizer, history=None, logging_level="DEBUG"):
         # Path project
         self.path = cfg["Settings"].get("path")
 
@@ -15,12 +15,12 @@ class NLG():
         self.model = model
         self.tokenizer = tokenizer
         self.history = history
-        self.logger = setup_logger(self.__class__.__name__)
+        self.logger = setup_logger(self.__class__.__name__, logging_level=logging_level)
 
     def combine_system_prompt(self, nlu_response: dict, dm_response: str):
         combined_response = {
-            "nlu": nlu_response,
-            "dm": dm_response
+            "NLU Response": nlu_response,
+            "DM Response": dm_response
         }
         return combined_response
 

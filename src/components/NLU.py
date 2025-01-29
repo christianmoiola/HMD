@@ -6,7 +6,7 @@ import os
 
 
 class PRE_NLU():
-    def __init__(self, cfg: dict, model, tokenizer, history=None):
+    def __init__(self, cfg: dict, model, tokenizer, history=None, logging_level="DEBUG"):
         # Path project
         self.path = cfg["Settings"].get("path")
 
@@ -17,7 +17,7 @@ class PRE_NLU():
         self.model = model
         self.tokenizer = tokenizer
         self.history = history
-        self.logger = setup_logger(self.__class__.__name__)
+        self.logger = setup_logger(self.__class__.__name__, logging_level=logging_level)
 
     def query_model(self, user_input: str):
         self.logger.info("Generating response from PRE_NLU component...")
@@ -30,7 +30,7 @@ class PRE_NLU():
         return response
 
 class NLU():
-    def __init__(self, cfg: dict, model, tokenizer, history=None):
+    def __init__(self, cfg: dict, model, tokenizer, history=None, logging_level="DEBUG"):
         # Path project
         self.path = cfg["Settings"].get("path")
 
@@ -41,7 +41,7 @@ class NLU():
         self.model = model
         self.tokenizer = tokenizer
         self.history = history
-        self.logger = setup_logger(self.__class__.__name__)
+        self.logger = setup_logger(self.__class__.__name__, logging_level=logging_level)
         
     def query_model(self, user_input: str):
         self.logger.info("Generating response from NLU component...")

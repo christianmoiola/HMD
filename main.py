@@ -8,6 +8,7 @@ from src.components.StateTracker import *
 from src.utils.utils_model import get_model
 from src.utils.history import History
 from src.utils.logging import setup_logger
+from src.evaluation.Evaluation import Evaluation
 import json
 
 
@@ -108,10 +109,6 @@ class Pipeline():
 
             self.logger.debug(f"DM Response: {dm_response}")
 
-            # while not dm_response.startswith("find"):
-            #     dm_response = self.dm.query_model(json)
-            #     self.logger.debug(f"DM Response: {dm_response}")
-            
             if dm_response.startswith("find"):
                 results = None
 
@@ -141,9 +138,18 @@ if __name__ == "__main__":
     config["Settings"] = {
         "path": os.getcwd()
     }
+    test = Evaluation(config)
+    test.test(name_component="NLG", action="confirmation") #action = inform, request_info, relax_constraints, confirmation
 
-    pipeline = Pipeline(config)
-    pipeline.run()
+    # pipeline = Pipeline(config)
+    # pipeline.run()
+    # dm_response = """inform([{'CarID': 16, 'brand': 'BMW','model': '3 Series', 'year': 2017, 'budget': 16917.22, 'Seats': 2, 'Availability': 'Available for rent', 'Rental Price per Day': 35.66, 'Insurance': 'Yes', 'Condition': 'Used', 'Location': 'Rome', 'Negotiable': ['No', 'N/A'], 'car_type': 'Sport_car', 'fuel_type': 'Electric', 'transmission': 'Automatic'}, {'CarID': 25, 'brand': 'BMW','model': 'X1', 'year': 2024, 'budget': 18105.17, 'Seats': 7, 'Availability': 'Available for rent', 'Rental Price per Day': 31.8, 'Insurance': 'Yes', 'Condition': 'New', 'Location': 'Naples', 'Negotiable': ['Yes', 713], 'car_type': 'Sport_car', 'fuel_type': 'Electric', 'transmission': 'Manual'}])"""
+    # json = """{"intent": "buying_car", "slots": {"brand": "BMW", "model": None, "year": None, "budget": None, "car_type": "Sport_car", "fuel_type": None, "transmission": None}}"""
+    # model, tokenizer = get_model(config)
+    # nlg = NLG(cfg=config, model=model, tokenizer=tokenizer)
+    # while True:
+    #     nlg_response = nlg.query_model(input=dm_response, nlu_response=json)
+    #     print(nlg_response)
     '''
     database = Database(config)
     

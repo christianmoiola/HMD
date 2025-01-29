@@ -4,7 +4,7 @@ from src.utils.logging import setup_logger
 import os
 
 class DM():
-    def __init__(self, cfg: dict, model, tokenizer, history=None):
+    def __init__(self, cfg: dict, model, tokenizer, history=None, logging_level="DEBUG"):
         # Path project
         self.path = cfg["Settings"].get("path")
 
@@ -14,7 +14,7 @@ class DM():
         self.model = model
         self.tokenizer = tokenizer
         self.history = history
-        self.logger = setup_logger(self.__class__.__name__)
+        self.logger = setup_logger(self.__class__.__name__, logging_level=logging_level)
         
     def query_model(self, input: str, db_results=None):
         self.logger.info("Generating response from DM component...")
