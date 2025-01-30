@@ -139,8 +139,8 @@ if __name__ == "__main__":
         "path": os.getcwd()
     }
     test = Evaluation(config)
-    test.test(name_component="NLG", action="confirmation") #action = inform, request_info, relax_constraints, confirmation
-
+    #test.test(name_component="NLG", action="confirmation") #action = inform, request_info, relax_constraints, confirmation
+    test.test(name_component="DM", action="bho")
     # pipeline = Pipeline(config)
     # pipeline.run()
     # dm_response = """inform([{'CarID': 16, 'brand': 'BMW','model': '3 Series', 'year': 2017, 'budget': 16917.22, 'Seats': 2, 'Availability': 'Available for rent', 'Rental Price per Day': 35.66, 'Insurance': 'Yes', 'Condition': 'Used', 'Location': 'Rome', 'Negotiable': ['No', 'N/A'], 'car_type': 'Sport_car', 'fuel_type': 'Electric', 'transmission': 'Automatic'}, {'CarID': 25, 'brand': 'BMW','model': 'X1', 'year': 2024, 'budget': 18105.17, 'Seats': 7, 'Availability': 'Available for rent', 'Rental Price per Day': 31.8, 'Insurance': 'Yes', 'Condition': 'New', 'Location': 'Naples', 'Negotiable': ['Yes', 713], 'car_type': 'Sport_car', 'fuel_type': 'Electric', 'transmission': 'Manual'}])"""

@@ -17,9 +17,50 @@ class Evaluation():
         self.slots = ["car_type", "budget", "brand", "model", "year", "fuel_type", "transmission"]
         self.intents = ["buying_car", "renting_car", "selling_car", "getting_info"]
 
+        # Template for NLU
+        self.nlu_response_template = {
+            'intent': None,
+            'slots': {slot: None for slot in self.slots}
+        }
+        # Template for DM
+        self.dm_response_template = "{}({})"
+
     def test_dm(self):
         dm = DM(cfg=self.cfg, model=self.model, tokenizer=self.tokenizer, history=None, logging_level="ERROR")
-        pass
+
+        # Define test cases
+        car_types = ["Sport_car", "Family_car", "City_car", "None"]
+        brands = ["BMW", "Audi", "Mercedes", "None"]
+        models = ["3 Series", "X1", "A1", "None"]
+
+        for car_type, brand, model in product(car_types, brands, models):
+            intent = random.choice(self.intents)
+
+            nlu_response = self.nlu_response_template.copy()
+            nlu_response["intent"] = intent
+            nlu_response["slots"]["car_type"] = car_type
+            nlu_response["slots"]["brand"] = brand
+            nlu_response["slots"]["model"] = model
+            
+            array_slot = [("car_type", car_type), ("brand", brand), ("model", model)]
+            count_none = sum(1 for _, value in array_slot if value != "None")
+            result = ", ".join(f"{var_name}='{var_value}'" for var_name, var_value in array_slot if var_value is not "None")
+
+
+            if count_none >= 2:
+                true_dm_response = self.dm_response_template.format("find", result)
+            else:
+                true_dm_response = self.dm_response_template.format("request_info", next((value for name, value in array_slot if value is not None), None))
+
+            # Query DM model
+            self.logger.debug(f"\nDM Input:\n    NLU response:\n{nlu_response}\n")
+            dm_response = dm.query_model(nlu_response)
+            self.logger.info(f"\nDM Response:\n{dm_response}\n")
+            if true_dm_response == dm_response:
+                self.logger.info("Test passed!\n")
+            else:
+                self.logger.error("Test failed!\n")
+                self.logger.error(f"Expected: {true_dm_response}\n")  
 
     def test_nlg(self, action_to_test):
         nlg = NLG(cfg=self.cfg, model=self.model, tokenizer=self.tokenizer, history=None, logging_level="ERROR")
@@ -29,25 +70,18 @@ class Evaluation():
         brands = ["BMW", "Audi", "Mercedes"]
         models = ["3 Series", "X1", "A1"]
         
-        # Template for NLU and DM responses
-        nlu_response_template = {
-            'intent': None,
-            'slots': {slot: None for slot in self.slots}
-        }
-        
-        dm_response_template = "{}({})"
-        
         # Iterate through car attributes
         for car_type, brand, model in product(car_types, brands, models):
             intent = random.choice(self.intents)
             slot = random.choice(self.slots)
             
-            nlu_response = nlu_response_template.copy()
+            nlu_response = self.nlu_response_template.copy()
             nlu_response["intent"] = intent
             nlu_response["slots"]["car_type"] = car_type
             nlu_response["slots"]["brand"] = brand
             nlu_response["slots"]["model"] = model
             
+
             if action_to_test == "inform":
                 dm_response_results = [
                     {
@@ -65,11 +99,11 @@ class Evaluation():
                         "fuel_type": "Electric", "transmission": "Manual"
                     }
                 ]
-                dm_response = dm_response_template.format(action_to_test, dm_response_results)
+                dm_response = self.dm_response_template.format(action_to_test, dm_response_results)
             elif action_to_test == "request_info" or action_to_test == "relax_constraints":
-                dm_response = dm_response_template.format(action_to_test, slot)
+                dm_response = self.dm_response_template.format(action_to_test, slot)
             elif action_to_test == "confirmation":
-                dm_response = dm_response_template.format(action_to_test, intent)
+                dm_response = self.dm_response_template.format(action_to_test, intent)
             
             dm_response_str = str(dm_response)
             
