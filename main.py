@@ -8,6 +8,7 @@ from src.components.StateTracker import *
 from src.utils.utils_model import get_model
 from src.utils.history import History
 from src.utils.logging import setup_logger
+#from src.evaluation.Evaluation import Evaluation
 from src.evaluation.Evaluation import Evaluation
 import json
 
@@ -32,7 +33,9 @@ class Pipeline():
             "buying_car": "BuyingStateTracker",
             "selling_car": "SellingStateTracker",
             "renting_car": "RentingStateTracker",
-            "get_car_info": "GetCarInfoStateTracker"
+            "get_car_info": "GetCarInfoStateTracker",
+            "negotiating_price": "NegotiatingPriceStateTracker",
+            "order_car": "OrderCarStateTracker",
         }
     
     def define_components(self):
@@ -57,6 +60,10 @@ class Pipeline():
                     state_tracker_class = RentingStateTracker()
                 case "get_car_info":
                     state_tracker_class = GettingInfoStateTracker()
+                case "negotiating_price":
+                    state_tracker_class = NegotiatingPriceStateTracker()
+                case "order_car":
+                    state_tracker_class = OrderCarStateTracker()
                 case _:
                     self.logger.error(f"Intent {intent} not recognized")
                     exit(1)
@@ -87,14 +94,16 @@ class Pipeline():
             if user_input == "exit":
                 self.logger.info("Exiting the conversation...")
                 break
-            pre_nlu_response = self.pre_nlu.query_model(user_input)
+            pre_nlu_response = None
+            while pre_nlu_response == None:
+                pre_nlu_response = self.pre_nlu.query_model(user_input)
 
             self.logger.debug(f"PRE_NLU Response: {pre_nlu_response}")
 
             nlu_response = None
             # TODO: Handle the case where the NLU response is None
             while nlu_response == None: 
-                nlu_response = self.nlu.query_model(pre_nlu_response)
+                nlu_response = self.nlu.query_model(pre_nlu_response[0])
 
             self.logger.debug(f"NLU Response: {nlu_response}")
 
@@ -138,11 +147,42 @@ if __name__ == "__main__":
     config["Settings"] = {
         "path": os.getcwd()
     }
-    test = Evaluation(config)
+    '''
+    #test = Evaluation(config)
     #test.test(name_component="NLG", action="confirmation") #action = inform, request_info, relax_constraints, confirmation
-    test.test(name_component="DM", action="bho")
-    # pipeline = Pipeline(config)
-    # pipeline.run()
+    #test.test(name_component="DM", action="bho")
+    user_input = "I want to buy a BMW 3 Series"
+    user_input = "hey"
+    model, tokenizer = get_model(config)
+
+    history = History()
+    history.add_to_history(sender="User", msg="I want to buy a Sport car")
+    history.add_to_history(sender="System", msg="Sure, Here is a list of available cars for you to buy: \n12. BMW 3 Series, 2017, 16917.22, 2 seats, Available for rent, Yes insurance, Used condition, Rome location, No negotiable, Sport car type, Electric fuel type, Automatic transmission\n3. Audi S1, 2024, 18105.17, 7 seats, Available for rent, Yes insurance, New condition, Naples location, Yes, Sport car type, Electric fuel type, Manual transmission")
+    #history.add_to_history(sender="User", msg="Can I get the BMW for 13k?")
+    #history.add_to_history(sender="System", msg="The Minimum price for the BMW 3 Serires is 16k. Do you want to buy it for this price?")
+    pre_nlu = NLU(cfg=config, model=model, tokenizer=tokenizer, history=history, logging_level='ERROR')
+    
+    input_get_car_info = ["I want get information about the first car", "I want to get information about the second car", "I want to get info of the audi", "I want to get information about the series 3", "I want to get information about the car with id 12", "I want to get information about the car with id 3"]
+    input_negotiate_price = ["I want to negotiate the price of the first car for 13k", "I want to negotiate the price of the second car for 13k", "I want to negotiate the price of the audi", "I want to negotiate the price of the series 3", "I want to negotiate the price of the car with id 12", "I want to negotiate the price of the car with id 3"]
+    input_order_car = ["Yes", "No, I want to order the second car", "I want to order the audi", "I want to order the bmw series 3", "I want to order the car with id 12", "I want to order the car with id 3", "I want to order the Ferrari"]
+    for elem in input_negotiate_price:
+        print(f"User: {elem}")
+        pre_nlu_response = pre_nlu.query_model(elem)
+        print(pre_nlu_response)
+    '''
+    #pipeline = Pipeline(config)
+    #pipeline.run()
+    
+    model, tokenizer = get_model(config)
+    dm = DM(cfg=config, model=model, tokenizer=tokenizer)
+
+    
+    input_dm_find = [{"intent": "buying_car", "slots": {"brand": "BMW", "model": None, "year": None, "budget": None, "car_type": "Sport_car", "fuel_type": None, "transmission": None}}, {"intent": "buying_car", "slots": {"brand": "Audi", "model": None, "year": None, "budget": None, "car_type": "Sport_car", "fuel_type": None, "transmission": None}}, {"intent": "get_car_info", "slots": {"car_id": 5}}, {"intent": "negotiating_price", "slots": {"car_id": 5, "proposed_price": 13000}}, {"intent": "order_car", "slots": {"car_id": 5}}]
+    for elem in input_dm_find:
+        response = dm.query_model(elem)
+        print(response)
+    
+
     # dm_response = """inform([{'CarID': 16, 'brand': 'BMW','model': '3 Series', 'year': 2017, 'budget': 16917.22, 'Seats': 2, 'Availability': 'Available for rent', 'Rental Price per Day': 35.66, 'Insurance': 'Yes', 'Condition': 'Used', 'Location': 'Rome', 'Negotiable': ['No', 'N/A'], 'car_type': 'Sport_car', 'fuel_type': 'Electric', 'transmission': 'Automatic'}, {'CarID': 25, 'brand': 'BMW','model': 'X1', 'year': 2024, 'budget': 18105.17, 'Seats': 7, 'Availability': 'Available for rent', 'Rental Price per Day': 31.8, 'Insurance': 'Yes', 'Condition': 'New', 'Location': 'Naples', 'Negotiable': ['Yes', 713], 'car_type': 'Sport_car', 'fuel_type': 'Electric', 'transmission': 'Manual'}])"""
     # json = """{"intent": "buying_car", "slots": {"brand": "BMW", "model": None, "year": None, "budget": None, "car_type": "Sport_car", "fuel_type": None, "transmission": None}}"""
     # model, tokenizer = get_model(config)

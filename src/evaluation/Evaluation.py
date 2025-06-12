@@ -16,6 +16,7 @@ class Evaluation():
 
         self.slots = ["car_type", "budget", "brand", "model", "year", "fuel_type", "transmission"]
         self.intents = ["buying_car", "renting_car", "selling_car", "getting_info"]
+        self.best_next_action = ["inform", "request_info", "relax_constraints", "find"]
 
         # Template for NLU
         self.nlu_response_template = {

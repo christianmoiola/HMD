@@ -1,0 +1,21 @@
+Optimized Prompt:
+
+Extract slots for the `order_car` intent from the user chunk. Use the latest system messages (history) to resolve values.
+
+Rules:
+* Only return a **valid JSON** object.
+* If a slot is missing, use `null`.
+* Use system history to find the correct `car_id` and `price`.
+* If user offers a lower price, use it **only if the system agrees**. If rejected, use system price.
+* Do **not invent** values.
+
+Slots:
+* `car_id`: string
+* `price`: float 
+* `name`: string The name of the user.
+* `surname`: string The surname of the user.
+* `id`: string The ID of the user.
+
+Output format:{"intent": "order_car", "slots": {"car_id": str, "price": float, "name": str, "surname": str, "id": str}}
+
+**Remember:** No additional text, comments, or explanations. Only output a valid JSON object. If any slot is not mentioned or cannot be inferred, set it to `null`. Use the system history to resolve the correct values where necessary.

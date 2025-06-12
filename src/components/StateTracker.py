@@ -71,12 +71,57 @@ class BuyingStateTracker(DialogueStateTracker):
         }
         self.logger = setup_logger(self.__class__.__name__)
 
-
 class SellingStateTracker(DialogueStateTracker):
     pass
 class RentingStateTracker(DialogueStateTracker):
     pass
 class GettingInfoStateTracker(DialogueStateTracker):
-    pass
+    def __init__(self):
+        """
+        Initializes the GettingInfoStateTracker with a default dialogue state.
+        """
+        super().__init__()
 
+        self.dialogue_state = {
+            "intent": "get_car_info",
+            "slots": {
+                "car_type": None,
+            }
+        }
+        self.logger = setup_logger(self.__class__.__name__)
+
+class NegotiatingPriceStateTracker(DialogueStateTracker):
+    def __init__(self):
+        """
+        Initializes the NegotiatingPriceStateTracker with a default dialogue state.
+        """
+        super().__init__()
+
+        self.dialogue_state = {
+            "intent": "negotiating_price",
+            "slots": {
+                "car_type": None,
+                "proposed_price": None
+            }
+        }
+        self.logger = setup_logger(self.__class__.__name__)
+
+class OrderCarStateTracker(DialogueStateTracker):
+    def __init__(self):
+        """
+        Initializes the OrderCarStateTracker with a default dialogue state.
+        """
+        super().__init__()
+
+        self.dialogue_state = {
+            "intent": "order_car",
+            "slots": {
+                "car_id": None,
+                "price": None,
+                "name": None,
+                "surname": None,
+                "id": None,
+            } 
+        }
+        self.logger = setup_logger(self.__class__.__name__)
 
