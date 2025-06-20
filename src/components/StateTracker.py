@@ -85,22 +85,22 @@ class GettingInfoStateTracker(DialogueStateTracker):
         self.dialogue_state = {
             "intent": "get_car_info",
             "slots": {
-                "car_type": None,
+                "car_id": None,
             }
         }
         self.logger = setup_logger(self.__class__.__name__)
 
-class NegotiatingPriceStateTracker(DialogueStateTracker):
+class NegotiatePriceStateTracker(DialogueStateTracker):
     def __init__(self):
         """
-        Initializes the NegotiatingPriceStateTracker with a default dialogue state.
+        Initializes the NegotiatePriceStateTracker with a default dialogue state.
         """
         super().__init__()
 
         self.dialogue_state = {
-            "intent": "negotiating_price",
+            "intent": "negotiate_price",
             "slots": {
-                "car_type": None,
+                "car_id": None,
                 "proposed_price": None
             }
         }
@@ -125,3 +125,37 @@ class OrderCarStateTracker(DialogueStateTracker):
         }
         self.logger = setup_logger(self.__class__.__name__)
 
+class BookAppointmentStateTracker(DialogueStateTracker):
+    def __init__(self):
+        """
+        Initializes the BookAppointmentStateTracker with a default dialogue state.
+        """
+        super().__init__()
+
+        self.dialogue_state = {
+            "intent": "book_appointment",
+            "slots": {
+                "date": None,
+                "time": None,
+                "name": None,
+                "surname": None,
+                "id": None,
+            }
+        }
+        self.logger = setup_logger(self.__class__.__name__)
+
+class GiveFeedbackStateTracker(DialogueStateTracker):
+    def __init__(self):
+        """
+        Initializes the GiveFeedbackStateTracker with a default dialogue state.
+        """
+        super().__init__()
+
+        self.dialogue_state = {
+            "intent": "give_feedback",
+            "slots": {
+                "feedback": None,
+                "comment": None,
+            }
+        }
+        self.logger = setup_logger(self.__class__.__name__)

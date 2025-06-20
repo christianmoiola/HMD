@@ -1,0 +1,52 @@
+Intent: 
+buying_car when the user wants to select a car based on their preferences.
+    'slots': ('car_id','brand', 'model', 'year', 'budget', 'car_type', 'fuel_type', 'transmission')
+    if the user has not provided enough information, the system will ask for the missing slots.
+    if the user has provided enough information, the system will confirm the intent. Trigger then the db query to get the list of cars that match the user's preferences.
+        if the list is empty query the db again relaxing one of the constraints
+    the list of cars will be presented to the user with their features and prices.
+    Then the system will ask the user if the user want more information about a specific car or if the user wants to search for another car.
+# renting_car when the user wants to rent a car based on their preferences.
+#    'slots': ('car_id')
+get_car_info when the user wants to get more information about a specific car.
+    'slots': ('car_id')
+    if the user has not provided the car_id, the system will ask for it.
+    if the user has provided the car_id, the system will confirm the intent and retrieve the car information.
+    The system will then present the car information to the user and ask if the user wants to order the car or if the user wants to search for another car.
+order_car when the user wants to order a specific car
+    'slots': ('car_id', 'name', 'surname', 'identity_number', 'price')
+    if the user has not provided enough information, the system will ask for the missing slots.
+    if the user has provided enough information, the system will confirm the intent and proceed with the order.
+    The system will tell that the order has been placed successfully and ask if it can help with anything else.
+negotiate_price when the user wants to negotiate the price of a car.
+    'slots': ('car_id', 'proposed_price')
+    if the user has not provided enough information, the system will ask for the missing slots.
+    if the user has provided enough information, the system will confirm the intent and proceed with the negotiation.
+    It wil query the db to get the current price of the car and then it will compare it with the proposed price.
+    if the proposed price is lower than the current price, the system will inform the user about the best price it can offer for the car and ask if the user wants to proceed with this price or discuss further.
+    if the proposed price is equal to or higher than the current price, the system will confirm the deal and ask if the user wants to proceed with the purchase.
+#order_renting_car when the user wants to order a car for renting.
+#    'slots': ('car_id', 'name', 'surname', 'identity_number', 'rental_duration')
+out_of_domain when the user's request does not match any of the intents above.
+    'slots': ()
+    The system will ask the user to rephrase their request or provide more details because it does not understand the request.
+give_feedback when the user wants to provide feedback about the system or service.
+    'slots': ('rating', 'comments')
+    if the user has not provided enough information, the system will ask for the missing slots.
+    if the user has provided enough information, the system will confirm the intent and proceed with the feedback submission.
+    The system will thank the user for their feedback and ask if it can help with anything else.
+book_appointment when the user wants to book an appointment with a specialist.
+    'slots': ('name', 'surname', 'appointment_date', 'appointment_time')
+    if the user has not provided enough information, the system will ask for the missing slots.
+    if the user has provided enough information, the system will confirm the intent and proceed with the appointment booking.
+    The system will confirm the appointment and ask if it can help with anything else.
+close_conversation when the user wants to end the conversation.
+    'slots': ()
+    The system will say goodbye to the user and end the conversation.
+
+
+To do:
+- Finish with all the prompt and create a Evaluation CLass to test the component
+- put toghether all the components in a single pipeline
+- create and intent current_state that contain a list of cars with car_id, proposed_price and system_price
+- handle multi intent

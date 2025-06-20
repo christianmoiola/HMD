@@ -1,5 +1,3 @@
-Optimized Prompt:
-
 Extract slots for the `order_car` intent from the user chunk. Use the latest system messages (history) to resolve values.
 
 Rules:

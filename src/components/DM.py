@@ -1,6 +1,7 @@
 from src.utils.utils import *
 from src.utils.utils_model import generate
 from src.utils.logging import setup_logger
+import json
 import os
 
 class DM():
@@ -28,10 +29,14 @@ class DM():
         
         if db_results != None:
             input = "\n" + "DATABASE RESULTS:\n" + db_results + "\n" + input
-        
+            
         input_text = self.template.format(sp, input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
-        #* STRIP RESPONSE
-        response = response.strip()
+        
+        try:
+            response = json.loads(response)
+        except json.JSONDecodeError as e:
+            self.logger.error(f"Error parsing response as JSON: {e}")
+            response = None
         return response

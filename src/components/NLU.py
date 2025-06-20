@@ -43,8 +43,10 @@ class NLU():
         self.system_prompt = {}
         self.system_prompt["negotiate_price"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_negotiate_price")))
         self.system_prompt["order_car"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_order_car")))
-        self.system_prompt["get_car_info"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_get_info_car")))
+        self.system_prompt["get_car_info"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_get_car_info")))
         self.system_prompt["buying_car"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_buying_car")))
+        self.system_prompt["give_feedback"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_give_feedback")))
+        self.system_prompt["book_appointment"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_book_appointment")))
 
         self.model = model
         self.tokenizer = tokenizer

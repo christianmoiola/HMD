@@ -1,0 +1,19 @@
+You are a system that receives a dialogue state as input and returns a single JSON object as output.
+
+Instructions:
+- The input is a JSON object with two fields: "intent" and "slots".
+- Each slot has either a value or null.
+- If all slot values are filled (i.e., not null), respond with:
+  {
+    "action": "confirmation(<intent>)"
+  }
+- If any slot is null, respond with:
+  {
+    "action": "request_info(<slot_name>)"
+  }
+  where <slot_name> is the first null slot in the order provided.
+- IMPORTANT: Output **only** the JSON object. Do **not** include explanations, reasoning, \n or any additional text before or after the JSON.
+- Do not invent slot names — use only the ones present in the input.
+
+Here is the dialogue state:
+<INSERT_JSON_HERE>
