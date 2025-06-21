@@ -86,6 +86,7 @@ class GettingInfoStateTracker(DialogueStateTracker):
             "intent": "get_car_info",
             "slots": {
                 "car_id": None,
+                "info_type": None
             }
         }
         self.logger = setup_logger(self.__class__.__name__)
@@ -157,5 +158,18 @@ class GiveFeedbackStateTracker(DialogueStateTracker):
                 "feedback": None,
                 "comment": None,
             }
+        }
+        self.logger = setup_logger(self.__class__.__name__)
+
+class OutOfDomainStateTracker(DialogueStateTracker):
+    def __init__(self):
+        """
+        Initializes the OutOfDomainStateTracker with a default dialogue state.
+        """
+        super().__init__()
+
+        self.dialogue_state = {
+            "intent": "out_of_domain",
+            "slots": {}
         }
         self.logger = setup_logger(self.__class__.__name__)

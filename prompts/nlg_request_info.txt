@@ -27,19 +27,23 @@ IMPORTANT: You must output only the lexicalized response without any additional 
 
 Possible Slots (and their admissible values for user guidance):
 
-* `car_type`: What **type of car** are you looking for? (e.g., "City car", "Family car", or "Sport car")
-* `budget`: What's your **maximum budget** in euros? (e.g., "20 for 20,000 euros")
-* `make`: Which **brand** are you interested in? (e.g., "Fiat", "Toyota", "Volkswagen", "Ford", "BMW", "Audi", "Mercedes", "Honda", "Nissan", "Peugeot")
-* `model`: Do you have a specific **model** in mind? (e.g., "Panda", "Corolla", "Golf", "Fiesta", "X5", "A3", "C-Class", "Civic", "Leaf", "308")
-* `year`: What **year of manufacture** are you looking for? (It should be between 2015 and 2025.)
-* `fuel_type`: What **fuel type** do you prefer? (e.g., "Petrol", "Diesel", or "Electric")
-* `transmission`: Do you prefer **Manual** or **Automatic** transmission?
-* `car_id`: Which **car ID** are you referring to?
-* `proposed_price`: What **price** would you like to propose?
-* `price`: What's the **price** you're looking for?
-* `name`: What's your **first name**?
-* `surname`: What's your **last name**?
-* `id`: What's your **user ID**?
+* `car_type`: admissible values are ("City car", "Family car", or "Sport car")
+* `budget`: number in euros (e.g., "5000", "10000", "15000", "20000", "25000", "30000")
+* `brand`: (e.g., "Fiat", "Toyota", "Volkswagen", "Ford", "BMW", "Audi", "Mercedes", "Honda", "Nissan", "Peugeot")
+* `model`: (e.g., "Panda", "Corolla", "Golf", "Fiesta", "X5", "A3", "C-Class", "Civic", "Leaf", "308")
+* `year`: the minimum year of the car (e.g., "2010", "2015", "2020")
+* `fuel_type`: admissible values are ("Petrol", "Diesel", or "Electric")
+* `transmission`: admissible values are ("Manual" or "Automatic")
+* `car_id`: The id of the car 
+* `proposed_price`: the price proosed by the user (e.g., "5000", "10000", "15000", "20000", "25000", "30000")
+* `price`: price of the car (e.g., "5000", "10000", "15000", "20000", "25000", "30000")
+* `name`: First name of the user 
+* `surname`: Last name of the user
+* `id`: ID of the user
+* `date`: Date for the appointment (e.g., "2023-10-01", "2023-10-15")
+* `time`: Time for the appointment (e.g., "10:00", "14:30", "16:00")
+* `rating`: Rating given by the user. admissible values are ("1", "2", "3", "4", "5")
+* `comments`: Comments provided by the user
 
 ---
 
@@ -54,3 +58,37 @@ Possible Intents:
 * give_feedback when the user wants to provide feedback about the system or service.
 * book_appointment when the user wants to book an appointment with a specialist.
 * close_conversation when the user wants to end the conversation.
+
+Examples:
+example 1:
+input: action: request_info, parameter: car_type
+Intent: buying_car
+output: Great! What type of car are you looking for? A city car, family car, or sport car?
+
+example 2:
+input: action: request_info, parameter: budget
+Intent: buying_car
+output: Sure! What's your maximum budget that you have in mind? Please specify in euros.
+
+example 3:
+input: action: request_info, parameter: make
+Intent: buying_car
+output: Okay! Which brand are you interested in? We have a lot of car brand available like Fiat and Toyota that are more affordable, or you can choose a premium brand like BMW or Audi.
+
+example 4:
+input: action: request_info, parameter: id
+Intent: book_appointment
+output: Alright! Could you please provide your ID so we can proceed with booking the appointment?
+
+example 5:
+input: action: request_info, parameter: rating
+Intent: give_feedback
+output: Thank you for your willingness to provide feedback! Could you please give a rating from 1 to 5, where 1 is the lowest and 5 is the highest?
+
+example 6:
+input: action: request_info, parameter: comments
+Intent: give_feedback
+output: Thank you for your willingness to provide feedback! Could you please share your comments or suggestions about our service? Your input is very valuable to us!
+
+
+

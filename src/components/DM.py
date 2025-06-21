@@ -12,6 +12,7 @@ class DM():
         self.template = cfg["TEMPLATES"].get(cfg["General"].get("model_name"))
         self.max_seq_length = cfg["General"].getint("max_seq_length")
         self.system_prompt = read_txt(os.path.join(self.path, cfg["DM"].get("prompt")))
+
         self.model = model
         self.tokenizer = tokenizer
         self.history = history
@@ -28,7 +29,7 @@ class DM():
             sp = self.system_prompt
         
         if db_results != None:
-            input = "\n" + "DATABASE RESULTS:\n" + db_results + "\n" + input
+            input = "DATABASE RESULTS:\n" + db_results + "\n" + input
             
         input_text = self.template.format(sp, input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)

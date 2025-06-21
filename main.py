@@ -30,11 +30,13 @@ class Pipeline():
 
         self.intent_to_class = {
             "buying_car": "BuyingStateTracker",
-            "selling_car": "SellingStateTracker",
             "renting_car": "RentingStateTracker",
             "get_car_info": "GetCarInfoStateTracker",
-            "negotiating_price": "NegotiatingPriceStateTracker",
             "order_car": "OrderCarStateTracker",
+            "give_feedback": "GiveFeedbackStateTracker",
+            "book_appointment": "BookAppointmentStateTracker",
+            "out_of_domain": "OutOfDomainStateTracker",
+            "negotiate_price": "NegotiatePriceStateTracker",
         }
     
     def define_components(self):
@@ -53,8 +55,6 @@ class Pipeline():
             match intent:
                 case "buying_car":
                     state_tracker_class = BuyingStateTracker()
-                case "selling_car":
-                    state_tracker_class = SellingStateTracker()
                 case "renting_car":
                     state_tracker_class = RentingStateTracker()
                 case "get_car_info":
@@ -68,7 +68,7 @@ class Pipeline():
                 case "book_appointment":
                     state_tracker_class = BookAppointmentStateTracker()
                 case "out_of_domain":
-                    pass
+                    state_tracker_class = OutOfDomainStateTracker()
                 case _:
                     self.logger.error(f"Intent {intent} not recognized")
                     exit(1)
@@ -94,8 +94,7 @@ class Pipeline():
 
         while user_input != "exit":
             user_input = input("User: ")
-            # TODO: Handle the case where the user input is difficult to understand
-            # TODO: (e.g. the user input contains a small sentence and the NLU component doesn't understand the intent)
+            # TODO: Handle the case where the user input contain more than one intent
             if user_input == "exit":
                 self.logger.info("Exiting the conversation...")
                 break
@@ -106,7 +105,6 @@ class Pipeline():
             self.logger.debug(f"PRE_NLU Response: {pre_nlu_response}")
 
             nlu_response = None
-            # TODO: Handle the case where the NLU response is None
             while nlu_response == None: 
                 nlu_response = self.nlu.query_model(pre_nlu_response[0])
 
@@ -124,10 +122,17 @@ class Pipeline():
 
             self.logger.debug(f"DM Response: {dm_response}")
 
-            data = None
+            # Remove from the state tracker the state if the action is confirmation
+            if dm_response["action"] == "confirmation":
+                for st in self.list_state:
+                    if st.__class__.__name__ == self.intent_to_class[dm_response["parameter"]]:
+                        self.list_state.remove(st)
+                        break
 
-            if dm_response["action"] == "confirmation" and dm_response["parameter"] in ["get_car_info", "negotiate_price", "buying_car"] or dm_response["action"] == "request_info" and dm_response["parameter"]== "order_car":
+            data = None
+            if dm_response["action"] == "confirmation" and dm_response["parameter"] in ["get_car_info", "negotiate_price", "buying_car"]:
                 results = None
+                constraints_relaxed = []
                 while results == None:
                     results = self.database.query_database(json)
                     self.logger.debug(f"Database Results: {results}")
@@ -136,19 +141,22 @@ class Pipeline():
                         for slot in slots_importance:
                             if json["slots"][slot] != None:
                                 json["slots"][slot] = None
+                                constraints_relaxed.append(slot)
+                                self.logger.info("Constraint relaxed: " + slot)
                                 break
 
-                data = f"Database results: {str(results)}"
+                data = f"Database results: {str(results)}" if len(constraints_relaxed) == 0 else f"Database results: {str(results)}\nConstraints relaxed: {', '.join(constraints_relaxed)}"
                 if dm_response["parameter"] == "negotiate_price":
-                    data = f"\nUser price: {json['slots']['proposed_price']}\n System price: {results[0]['price']}"
-                
+                    data = f"\nUser price: {json['slots']['proposed_price']}\n System price: {results['budget']-results['negotiable'][1] if results['negotiable'][0]=='Yes' else results['budget']}\n"
+
                 nlg_response = self.nlg.query_model(input=dm_response, data=data)
 
-
-            else:
-                if dm_response["parameter"] == "booking_appointment":
-                    data = f"Current date: 01/06/2025, Time: 10:00 AM"
+            if dm_response["action"] == "request_info":
+                data = f"Intent: {json['intent']}\n"
                 nlg_response = self.nlg.query_model(input=dm_response, data=data)
+            if dm_response["parameter"] == "booking_appointment":
+                data += f"Current date: 01/06/2025, Time: 10:00 AM"
+            nlg_response = self.nlg.query_model(input=dm_response, data=data)
 
             self.logger.debug(f"NLG Response: {nlg_response}")
 
@@ -169,6 +177,10 @@ if __name__ == "__main__":
     }
     pipeline = Pipeline(config=config)
     pipeline.run()
+    #TODO Modify the get car info in order to get the car with a given list of characteristics
+    #TODO Modify the book apointment in order to (book the apointment; you will receive a confirmaton email with the details of the appointment if the appointment is available)
+    #TODO add contact operator
+    #TODO add the state of the selected car
 
 
     #PRE_NLU component test

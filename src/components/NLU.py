@@ -22,10 +22,17 @@ class PRE_NLU():
     def query_model(self, user_input: str):
         self.logger.info("Generating response from PRE_NLU component...")
         
-        input_text = self.template.format(self.system_prompt, user_input)
+        sp = self.system_prompt
+
+        if self.history != None:
+            sp = sp + "\n\nHistory:\n" + self.history.get_history()
+            self.logger.debug(f"History: {self.history.get_history()}")
+        else:
+            sp = sp
+
+        input_text = self.template.format(sp, user_input)
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
-        print(f"PRE_NLU response: {response}")
         try:
             response = json.loads(response)
         except json.JSONDecodeError as e:
@@ -47,6 +54,7 @@ class NLU():
         self.system_prompt["buying_car"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_buying_car")))
         self.system_prompt["give_feedback"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_give_feedback")))
         self.system_prompt["book_appointment"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_book_appointment")))
+        self.system_prompt["out_of_domain"] = read_txt(os.path.join(self.path, cfg["NLU"].get("prompt_out_of_domain")))
 
         self.model = model
         self.tokenizer = tokenizer
@@ -58,14 +66,13 @@ class NLU():
         system_prompt = self.system_prompt[user_input["intent"]]
 
         if self.history != None:
-            sp = system_prompt + "\n\n History:\n" + self.history.get_history()
+            sp = system_prompt + "\n\nHistory:\n" + self.history.get_history()
             self.logger.debug(f"History: {self.history.get_history()}")
         else:
             sp = system_prompt
         input_text = self.template.format(sp, user_input["text"])
         inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
         response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
-        print(f"NLU response: {response}")
         # Try to parse the response as JSON
         try:
             response = json.loads(response)

@@ -34,3 +34,21 @@ Here are the cars that match your request:
 22. Honda Civic (2021) - $22,000, Manual
 Would you like to proceed with the purchase of one of these cars or do you need more information about a specific car?
 
+input:
+action: confirmation, parameter: buying_car
+database output:  [
+                    {
+                        "CarID": 5, "brand": "Ford", "model": "Focus", "year": 2019, "budget": 18000, "Seats": 5, "car_type": "Compact_car", "transmission": "Automatic"
+                    },
+                    {
+                        "CarID": 8, "brand": "Chevrolet", "model": "Malibu", "year": 2020, "budget": 21000, "Seats": 5, "car_type": "Sedan", "transmission": "Automatic"
+
+                    }]
+Constraint relaxed: transmission
+output:
+The research does not produce any results that match your request.
+However, here are some cars that might interest you that are similar to your request:
+5. Ford Focus (2019) - $18,000, Automatic
+8. Chevrolet Malibu (2020) - $21,000, Automatic
+
+

@@ -19,5 +19,5 @@ input:
 action: confirmation, parameter: book_appointment
 slots: ('name': 'John', 'surname': 'Doe', 'appointment_date': '2023-10-01', 'appointment_time': '10:00')
 output:
-Your appointment has been successfully booked for John Doe on 2023-10-01 at 10:00. 
+Your appointment has been successfully booked for John Doe on 2023-10-01 at 10:00.
 Is there anything else I can assist you with?

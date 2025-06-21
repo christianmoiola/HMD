@@ -119,7 +119,7 @@ class Database():
             target_id = int(car_id)
             for car in self.database:
                 if car.get("car_id") == target_id:
-                    return str(car)
+                    return car
             return "None" # Return "None" if car not found, to be consistent with string output
         except (ValueError, TypeError):
             self.logger.error(f"Invalid car_id provided: {car_id}")

@@ -1,199 +1,169 @@
 [
     {
         "car_id": 1,
-        "brand": "Honda",
-        "model": "Accord",
-        "year": 2019,
-        "budget": 26795.21,
+        "brand": "Volkswagen",
+        "model": "Polo",
+        "year": 2024,
+        "budget": 25295.13,
         "Seats": 4,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 49.19,
-        "Insurance": "Yes",
-        "Condition": "Used",
-        "Location": "Venice",
+        "Condition": "New",
+        "Location": "Trento",
         "Negotiable": [
-            "Yes",
-            596
+            "No",
+            "N/A"
         ],
-        "car_type": "City_car",
-        "fuel_type": "Diesel",
-        "transmission": "Automatic"
+        "car_type": "Family_car",
+        "fuel_type": "Electric",
+        "transmission": "Manual"
     },
     {
         "car_id": 2,
-        "brand": "Toyota",
-        "model": "Yaris",
-        "year": 2022,
-        "budget": 23192.91,
-        "Seats": 5,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 30.61,
-        "Insurance": "No",
+        "brand": "Ford",
+        "model": "Kuga",
+        "year": 2018,
+        "budget": 25840.81,
+        "Seats": 4,
         "Condition": "Used",
-        "Location": "Florence",
+        "Location": "Trento",
         "Negotiable": [
-            "Yes",
-            600
+            "No",
+            "N/A"
         ],
-        "car_type": "Sport_car",
+        "car_type": "City_car",
         "fuel_type": "Diesel",
         "transmission": "Automatic"
     },
     {
         "car_id": 3,
-        "brand": "Fiat",
-        "model": "Punto",
+        "brand": "Honda",
+        "model": "Jazz",
         "year": 2025,
-        "budget": 15089.99,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "New",
-        "Location": "Bologna",
-        "Negotiable": [
-            "Yes",
-            862
-        ],
-        "car_type": "Sport_car",
-        "fuel_type": "Petrol",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 4,
-        "brand": "Nissan",
-        "model": "Qashqai",
-        "year": 2018,
-        "budget": 9692.85,
-        "Seats": 7,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 46.42,
-        "Insurance": "Yes",
-        "Condition": "New",
-        "Location": "Trento",
-        "Negotiable": [
-            "Yes",
-            382
-        ],
-        "car_type": "Sport_car",
-        "fuel_type": "Electric",
-        "transmission": "Manual"
-    },
-    {
-        "car_id": 5,
-        "brand": "Nissan",
-        "model": "Qashqai",
-        "year": 2024,
-        "budget": 10047.9,
-        "Seats": 4,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 34.61,
-        "Insurance": "Yes",
-        "Condition": "Used",
-        "Location": "Naples",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "City_car",
-        "fuel_type": "Diesel",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 6,
-        "brand": "Fiat",
-        "model": "500",
-        "year": 2022,
-        "budget": 20818.92,
-        "Seats": 7,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 31.67,
-        "Insurance": "Yes",
-        "Condition": "New",
-        "Location": "Trento",
-        "Negotiable": [
-            "Yes",
-            538
-        ],
-        "car_type": "City_car",
-        "fuel_type": "Petrol",
-        "transmission": "Manual"
-    },
-    {
-        "car_id": 7,
-        "brand": "Peugeot",
-        "model": "508",
-        "year": 2019,
-        "budget": 14727.1,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
+        "budget": 15450.14,
+        "Seats": 5,
         "Condition": "Used",
         "Location": "Florence",
         "Negotiable": [
             "Yes",
-            705
+            3721
         ],
         "car_type": "Sport_car",
-        "fuel_type": "Electric",
-        "transmission": "Manual"
+        "fuel_type": "Diesel",
+        "transmission": "Automatic"
     },
     {
-        "car_id": 8,
-        "brand": "Mercedes",
-        "model": "B-Class",
-        "year": 2017,
-        "budget": 19131.15,
-        "Seats": 2,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
+        "car_id": 4,
+        "brand": "Ford",
+        "model": "Fiesta",
+        "year": 2020,
+        "budget": 20187.85,
+        "Seats": 4,
         "Condition": "New",
-        "Location": "Rome",
+        "Location": "Milan",
         "Negotiable": [
             "Yes",
-            286
+            1296
         ],
-        "car_type": "City_car",
-        "fuel_type": "Electric",
-        "transmission": "Manual"
+        "car_type": "Sport_car",
+        "fuel_type": "Petrol",
+        "transmission": "Automatic"
     },
     {
-        "car_id": 9,
+        "car_id": 5,
         "brand": "Honda",
-        "model": "Accord",
+        "model": "Civic",
         "year": 2019,
-        "budget": 5261.28,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
+        "budget": 29823.37,
+        "Seats": 2,
         "Condition": "Used",
-        "Location": "Turin",
+        "Location": "Florence",
         "Negotiable": [
             "No",
             "N/A"
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Petrol",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 6,
+        "brand": "Peugeot",
+        "model": "208",
+        "year": 2023,
+        "budget": 29044.09,
+        "Seats": 4,
+        "Condition": "New",
+        "Location": "Naples",
+        "Negotiable": [
+            "Yes",
+            945
+        ],
+        "car_type": "Family_car",
+        "fuel_type": "Electric",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 7,
+        "brand": "Audi",
+        "model": "A6",
+        "year": 2017,
+        "budget": 19888.69,
+        "Seats": 7,
+        "Condition": "New",
+        "Location": "Naples",
+        "Negotiable": [
+            "Yes",
+            3349
         ],
         "car_type": "City_car",
         "fuel_type": "Petrol",
         "transmission": "Manual"
     },
     {
-        "car_id": 10,
-        "brand": "Peugeot",
-        "model": "3008",
-        "year": 2018,
-        "budget": 19974.35,
-        "Seats": 2,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 38.38,
-        "Insurance": "Yes",
-        "Condition": "New",
-        "Location": "Venice",
+        "car_id": 8,
+        "brand": "Ford",
+        "model": "Focus",
+        "year": 2019,
+        "budget": 22881.7,
+        "Seats": 5,
+        "Condition": "Used",
+        "Location": "Trento",
         "Negotiable": [
             "Yes",
-            150
+            3689
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Diesel",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 9,
+        "brand": "Nissan",
+        "model": "Micra",
+        "year": 2017,
+        "budget": 8196.86,
+        "Seats": 7,
+        "Condition": "Used",
+        "Location": "Rome",
+        "Negotiable": [
+            "Yes",
+            956
+        ],
+        "car_type": "Family_car",
+        "fuel_type": "Electric",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 10,
+        "brand": "Audi",
+        "model": "Q3",
+        "year": 2023,
+        "budget": 18367.54,
+        "Seats": 7,
+        "Condition": "Used",
+        "Location": "Rome",
+        "Negotiable": [
+            "Yes",
+            1955
         ],
         "car_type": "Sport_car",
         "fuel_type": "Electric",
@@ -201,115 +171,97 @@
     },
     {
         "car_id": 11,
-        "brand": "Volkswagen",
-        "model": "Tiguan",
-        "year": 2017,
-        "budget": 17997.17,
-        "Seats": 2,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 34.69,
-        "Insurance": "Yes",
-        "Condition": "New",
-        "Location": "Bologna",
+        "brand": "Peugeot",
+        "model": "3008",
+        "year": 2018,
+        "budget": 12879.98,
+        "Seats": 5,
+        "Condition": "Used",
+        "Location": "Milan",
         "Negotiable": [
-            "Yes",
-            279
+            "No",
+            "N/A"
         ],
-        "car_type": "City_car",
-        "fuel_type": "Diesel",
-        "transmission": "Automatic"
+        "car_type": "Sport_car",
+        "fuel_type": "Electric",
+        "transmission": "Manual"
     },
     {
         "car_id": 12,
-        "brand": "Audi",
-        "model": "Q5",
-        "year": 2016,
-        "budget": 16371.47,
-        "Seats": 4,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 40.14,
-        "Insurance": "Yes",
+        "brand": "Nissan",
+        "model": "Qashqai",
+        "year": 2020,
+        "budget": 5430.94,
+        "Seats": 5,
         "Condition": "New",
-        "Location": "Naples",
+        "Location": "Rome",
         "Negotiable": [
             "No",
             "N/A"
         ],
         "car_type": "Sport_car",
         "fuel_type": "Diesel",
-        "transmission": "Automatic"
+        "transmission": "Manual"
     },
     {
         "car_id": 13,
-        "brand": "BMW",
-        "model": "X3",
-        "year": 2022,
-        "budget": 9474.74,
-        "Seats": 4,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 36.84,
-        "Insurance": "Yes",
-        "Condition": "Used",
-        "Location": "Naples",
+        "brand": "Mercedes",
+        "model": "C-Class",
+        "year": 2016,
+        "budget": 27442.32,
+        "Seats": 7,
+        "Condition": "New",
+        "Location": "Trento",
         "Negotiable": [
-            "Yes",
-            839
+            "No",
+            "N/A"
         ],
-        "car_type": "Family_car",
-        "fuel_type": "Diesel",
+        "car_type": "City_car",
+        "fuel_type": "Electric",
         "transmission": "Manual"
     },
     {
         "car_id": 14,
         "brand": "Toyota",
-        "model": "Corolla",
-        "year": 2015,
-        "budget": 7034.92,
-        "Seats": 4,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 26.36,
-        "Insurance": "No",
+        "model": "Hilux",
+        "year": 2021,
+        "budget": 6635.59,
+        "Seats": 2,
         "Condition": "New",
-        "Location": "Palermo",
+        "Location": "Venice",
         "Negotiable": [
             "No",
             "N/A"
         ],
         "car_type": "City_car",
-        "fuel_type": "Diesel",
-        "transmission": "Manual"
+        "fuel_type": "Electric",
+        "transmission": "Automatic"
     },
     {
         "car_id": 15,
-        "brand": "Nissan",
-        "model": "X-Trail",
-        "year": 2019,
-        "budget": 7822.27,
+        "brand": "Fiat",
+        "model": "500",
+        "year": 2017,
+        "budget": 12349.13,
         "Seats": 5,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
         "Condition": "Used",
-        "Location": "Rome",
+        "Location": "Milan",
         "Negotiable": [
-            "No",
-            "N/A"
+            "Yes",
+            1716
         ],
-        "car_type": "City_car",
-        "fuel_type": "Petrol",
-        "transmission": "Manual"
+        "car_type": "Family_car",
+        "fuel_type": "Diesel",
+        "transmission": "Automatic"
     },
     {
         "car_id": 16,
-        "brand": "Peugeot",
-        "model": "308",
-        "year": 2016,
-        "budget": 23463.24,
-        "Seats": 7,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 26.7,
-        "Insurance": "No",
-        "Condition": "Used",
+        "brand": "Honda",
+        "model": "Civic",
+        "year": 2025,
+        "budget": 12523.38,
+        "Seats": 4,
+        "Condition": "New",
         "Location": "Florence",
         "Negotiable": [
             "No",
@@ -317,265 +269,226 @@
         ],
         "car_type": "Sport_car",
         "fuel_type": "Diesel",
-        "transmission": "Manual"
+        "transmission": "Automatic"
     },
     {
         "car_id": 17,
-        "brand": "BMW",
-        "model": "X5",
-        "year": 2021,
-        "budget": 29683.7,
+        "brand": "Toyota",
+        "model": "Hilux",
+        "year": 2015,
+        "budget": 8118.25,
         "Seats": 2,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 49.21,
-        "Insurance": "Yes",
         "Condition": "New",
-        "Location": "Naples",
+        "Location": "Rome",
         "Negotiable": [
-            "Yes",
-            933
+            "No",
+            "N/A"
         ],
         "car_type": "City_car",
-        "fuel_type": "Diesel",
+        "fuel_type": "Petrol",
         "transmission": "Manual"
     },
     {
         "car_id": 18,
-        "brand": "BMW",
-        "model": "3 Series",
-        "year": 2015,
-        "budget": 13814.96,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "Used",
-        "Location": "Naples",
-        "Negotiable": [
-            "Yes",
-            323
-        ],
-        "car_type": "Sport_car",
-        "fuel_type": "Diesel",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 19,
-        "brand": "Ford",
-        "model": "Focus",
-        "year": 2022,
-        "budget": 21017.98,
-        "Seats": 5,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 46.11,
-        "Insurance": "Yes",
-        "Condition": "New",
-        "Location": "Trento",
-        "Negotiable": [
-            "Yes",
-            148
-        ],
-        "car_type": "City_car",
-        "fuel_type": "Petrol",
-        "transmission": "Manual"
-    },
-    {
-        "car_id": 20,
-        "brand": "Toyota",
-        "model": "Corolla",
-        "year": 2021,
-        "budget": 28474.11,
-        "Seats": 5,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 27.75,
-        "Insurance": "No",
-        "Condition": "Used",
-        "Location": "Venice",
-        "Negotiable": [
-            "Yes",
-            686
-        ],
-        "car_type": "Sport_car",
-        "fuel_type": "Petrol",
-        "transmission": "Manual"
-    },
-    {
-        "car_id": 21,
-        "brand": "Mercedes",
-        "model": "C-Class",
-        "year": 2018,
-        "budget": 19305.91,
-        "Seats": 4,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "Used",
-        "Location": "Florence",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "Family_car",
-        "fuel_type": "Diesel",
-        "transmission": "Manual"
-    },
-    {
-        "car_id": 22,
-        "brand": "Volkswagen",
-        "model": "Polo",
-        "year": 2024,
-        "budget": 19990.12,
-        "Seats": 4,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "Used",
-        "Location": "Venice",
-        "Negotiable": [
-            "Yes",
-            351
-        ],
-        "car_type": "City_car",
-        "fuel_type": "Diesel",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 23,
-        "brand": "BMW",
-        "model": "X5",
-        "year": 2015,
-        "budget": 9942.82,
-        "Seats": 2,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "Used",
-        "Location": "Palermo",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "Family_car",
-        "fuel_type": "Diesel",
-        "transmission": "Manual"
-    },
-    {
-        "car_id": 24,
-        "brand": "Mercedes",
-        "model": "E-Class",
-        "year": 2015,
-        "budget": 19535.13,
-        "Seats": 4,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "New",
-        "Location": "Rome",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "Family_car",
-        "fuel_type": "Petrol",
-        "transmission": "Manual"
-    },
-    {
-        "car_id": 25,
-        "brand": "Toyota",
-        "model": "Hilux",
-        "year": 2020,
-        "budget": 26835.78,
-        "Seats": 4,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 42.41,
-        "Insurance": "No",
-        "Condition": "New",
-        "Location": "Naples",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "Sport_car",
-        "fuel_type": "Diesel",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 26,
         "brand": "Peugeot",
         "model": "308",
-        "year": 2025,
-        "budget": 25513.15,
-        "Seats": 2,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
+        "year": 2015,
+        "budget": 16239.1,
+        "Seats": 4,
         "Condition": "Used",
-        "Location": "Trento",
+        "Location": "Turin",
         "Negotiable": [
             "Yes",
-            392
+            338
         ],
         "car_type": "Family_car",
         "fuel_type": "Electric",
         "transmission": "Automatic"
     },
     {
-        "car_id": 27,
-        "brand": "Nissan",
-        "model": "Qashqai",
-        "year": 2024,
-        "budget": 9832.7,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "Used",
-        "Location": "Turin",
-        "Negotiable": [
-            "Yes",
-            305
-        ],
-        "car_type": "City_car",
-        "fuel_type": "Petrol",
-        "transmission": "Manual"
-    },
-    {
-        "car_id": 28,
+        "car_id": 19,
         "brand": "Mercedes",
-        "model": "E-Class",
-        "year": 2024,
-        "budget": 29780.65,
-        "Seats": 5,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 34.05,
-        "Insurance": "No",
-        "Condition": "New",
-        "Location": "Naples",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "Family_car",
-        "fuel_type": "Petrol",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 29,
-        "brand": "Honda",
-        "model": "CR-V",
-        "year": 2023,
-        "budget": 10000.19,
-        "Seats": 4,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 26.93,
-        "Insurance": "No",
+        "model": "C-Class",
+        "year": 2017,
+        "budget": 10400.32,
+        "Seats": 7,
         "Condition": "New",
         "Location": "Bologna",
         "Negotiable": [
             "No",
             "N/A"
         ],
+        "car_type": "Family_car",
+        "fuel_type": "Electric",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 20,
+        "brand": "Toyota",
+        "model": "Yaris",
+        "year": 2018,
+        "budget": 24845.71,
+        "Seats": 5,
+        "Condition": "New",
+        "Location": "Venice",
+        "Negotiable": [
+            "No",
+            "N/A"
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Diesel",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 21,
+        "brand": "Peugeot",
+        "model": "3008",
+        "year": 2020,
+        "budget": 11912.63,
+        "Seats": 4,
+        "Condition": "Used",
+        "Location": "Trento",
+        "Negotiable": [
+            "No",
+            "N/A"
+        ],
         "car_type": "City_car",
+        "fuel_type": "Petrol",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 22,
+        "brand": "Mercedes",
+        "model": "B-Class",
+        "year": 2015,
+        "budget": 18365.63,
+        "Seats": 5,
+        "Condition": "New",
+        "Location": "Trento",
+        "Negotiable": [
+            "No",
+            "N/A"
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Diesel",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 23,
+        "brand": "Fiat",
+        "model": "Tipo",
+        "year": 2022,
+        "budget": 14925.07,
+        "Seats": 2,
+        "Condition": "Used",
+        "Location": "Palermo",
+        "Negotiable": [
+            "Yes",
+            1816
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Electric",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 24,
+        "brand": "Nissan",
+        "model": "X-Trail",
+        "year": 2021,
+        "budget": 11084.88,
+        "Seats": 5,
+        "Condition": "Used",
+        "Location": "Trento",
+        "Negotiable": [
+            "No",
+            "N/A"
+        ],
+        "car_type": "Family_car",
+        "fuel_type": "Diesel",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 25,
+        "brand": "Nissan",
+        "model": "X-Trail",
+        "year": 2018,
+        "budget": 16467.55,
+        "Seats": 7,
+        "Condition": "New",
+        "Location": "Milan",
+        "Negotiable": [
+            "Yes",
+            2529
+        ],
+        "car_type": "City_car",
+        "fuel_type": "Electric",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 26,
+        "brand": "Audi",
+        "model": "Q5",
+        "year": 2020,
+        "budget": 22091.75,
+        "Seats": 2,
+        "Condition": "Used",
+        "Location": "Bologna",
+        "Negotiable": [
+            "Yes",
+            337
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Petrol",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 27,
+        "brand": "Toyota",
+        "model": "Corolla",
+        "year": 2017,
+        "budget": 17308.62,
+        "Seats": 7,
+        "Condition": "Used",
+        "Location": "Milan",
+        "Negotiable": [
+            "Yes",
+            918
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Electric",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 28,
+        "brand": "Mercedes",
+        "model": "E-Class",
+        "year": 2021,
+        "budget": 19744.5,
+        "Seats": 2,
+        "Condition": "Used",
+        "Location": "Palermo",
+        "Negotiable": [
+            "Yes",
+            3979
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Diesel",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 29,
+        "brand": "Fiat",
+        "model": "Tipo",
+        "year": 2025,
+        "budget": 15439.47,
+        "Seats": 5,
+        "Condition": "Used",
+        "Location": "Naples",
+        "Negotiable": [
+            "Yes",
+            2440
+        ],
+        "car_type": "Sport_car",
         "fuel_type": "Electric",
         "transmission": "Manual"
     },
@@ -583,17 +496,14 @@
         "car_id": 30,
         "brand": "Audi",
         "model": "A3",
-        "year": 2019,
-        "budget": 13662.0,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "Used",
-        "Location": "Rome",
+        "year": 2024,
+        "budget": 8898.79,
+        "Seats": 5,
+        "Condition": "New",
+        "Location": "Turin",
         "Negotiable": [
             "Yes",
-            984
+            254
         ],
         "car_type": "City_car",
         "fuel_type": "Electric",
@@ -601,59 +511,50 @@
     },
     {
         "car_id": 31,
-        "brand": "BMW",
-        "model": "3 Series",
-        "year": 2024,
-        "budget": 28917.42,
+        "brand": "Mercedes",
+        "model": "A-Class",
+        "year": 2018,
+        "budget": 10331.52,
         "Seats": 4,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
         "Condition": "New",
         "Location": "Venice",
         "Negotiable": [
             "No",
             "N/A"
         ],
-        "car_type": "City_car",
+        "car_type": "Family_car",
         "fuel_type": "Diesel",
         "transmission": "Manual"
     },
     {
         "car_id": 32,
-        "brand": "Mercedes",
-        "model": "C-Class",
-        "year": 2018,
-        "budget": 12104.19,
-        "Seats": 2,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "New",
-        "Location": "Venice",
+        "brand": "Toyota",
+        "model": "Hilux",
+        "year": 2020,
+        "budget": 16609.74,
+        "Seats": 4,
+        "Condition": "Used",
+        "Location": "Milan",
         "Negotiable": [
             "Yes",
-            651
+            3782
         ],
         "car_type": "Family_car",
-        "fuel_type": "Diesel",
-        "transmission": "Automatic"
+        "fuel_type": "Petrol",
+        "transmission": "Manual"
     },
     {
         "car_id": 33,
-        "brand": "Volkswagen",
-        "model": "Passat",
-        "year": 2018,
-        "budget": 8415.85,
+        "brand": "BMW",
+        "model": "X5",
+        "year": 2020,
+        "budget": 19645.88,
         "Seats": 5,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 41.25,
-        "Insurance": "Yes",
-        "Condition": "Used",
-        "Location": "Rome",
+        "Condition": "New",
+        "Location": "Turin",
         "Negotiable": [
             "Yes",
-            116
+            3934
         ],
         "car_type": "Sport_car",
         "fuel_type": "Petrol",
@@ -661,134 +562,28 @@
     },
     {
         "car_id": 34,
-        "brand": "Toyota",
-        "model": "Hilux",
-        "year": 2020,
-        "budget": 10060.54,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
+        "brand": "Audi",
+        "model": "A6",
+        "year": 2016,
+        "budget": 29469.44,
+        "Seats": 4,
         "Condition": "New",
-        "Location": "Bologna",
+        "Location": "Turin",
         "Negotiable": [
             "Yes",
-            339
-        ],
-        "car_type": "City_car",
-        "fuel_type": "Petrol",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 35,
-        "brand": "Volkswagen",
-        "model": "Tiguan",
-        "year": 2021,
-        "budget": 12459.54,
-        "Seats": 5,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "New",
-        "Location": "Florence",
-        "Negotiable": [
-            "No",
-            "N/A"
+            507
         ],
         "car_type": "Sport_car",
-        "fuel_type": "Diesel",
+        "fuel_type": "Electric",
         "transmission": "Manual"
     },
     {
-        "car_id": 36,
-        "brand": "Volkswagen",
-        "model": "Tiguan",
+        "car_id": 35,
+        "brand": "Audi",
+        "model": "Q3",
         "year": 2023,
-        "budget": 6022.7,
+        "budget": 15001.0,
         "Seats": 5,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 22.42,
-        "Insurance": "Yes",
-        "Condition": "Used",
-        "Location": "Turin",
-        "Negotiable": [
-            "Yes",
-            919
-        ],
-        "car_type": "Family_car",
-        "fuel_type": "Petrol",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 37,
-        "brand": "Fiat",
-        "model": "Tipo",
-        "year": 2021,
-        "budget": 5319.92,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "New",
-        "Location": "Palermo",
-        "Negotiable": [
-            "Yes",
-            685
-        ],
-        "car_type": "City_car",
-        "fuel_type": "Diesel",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 38,
-        "brand": "Fiat",
-        "model": "500",
-        "year": 2018,
-        "budget": 10475.86,
-        "Seats": 5,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "New",
-        "Location": "Venice",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "City_car",
-        "fuel_type": "Electric",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 39,
-        "brand": "Peugeot",
-        "model": "208",
-        "year": 2022,
-        "budget": 23239.61,
-        "Seats": 2,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "Used",
-        "Location": "Turin",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "Sport_car",
-        "fuel_type": "Petrol",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 40,
-        "brand": "Volkswagen",
-        "model": "Tiguan",
-        "year": 2016,
-        "budget": 25234.46,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
         "Condition": "Used",
         "Location": "Rome",
         "Negotiable": [
@@ -796,61 +591,222 @@
             "N/A"
         ],
         "car_type": "Family_car",
-        "fuel_type": "Diesel",
+        "fuel_type": "Electric",
         "transmission": "Manual"
     },
     {
-        "car_id": 41,
-        "brand": "Fiat",
-        "model": "500",
+        "car_id": 36,
+        "brand": "Volkswagen",
+        "model": "Tiguan",
         "year": 2018,
-        "budget": 10934.66,
-        "Seats": 2,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 38.1,
-        "Insurance": "Yes",
-        "Condition": "Used",
-        "Location": "Milan",
+        "budget": 23041.38,
+        "Seats": 5,
+        "Condition": "New",
+        "Location": "Naples",
         "Negotiable": [
-            "Yes",
-            802
+            "No",
+            "N/A"
+        ],
+        "car_type": "City_car",
+        "fuel_type": "Diesel",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 37,
+        "brand": "Ford",
+        "model": "Fiesta",
+        "year": 2016,
+        "budget": 22364.0,
+        "Seats": 4,
+        "Condition": "Used",
+        "Location": "Venice",
+        "Negotiable": [
+            "No",
+            "N/A"
+        ],
+        "car_type": "Family_car",
+        "fuel_type": "Petrol",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 38,
+        "brand": "Toyota",
+        "model": "Camry",
+        "year": 2023,
+        "budget": 26155.01,
+        "Seats": 5,
+        "Condition": "Used",
+        "Location": "Florence",
+        "Negotiable": [
+            "No",
+            "N/A"
         ],
         "car_type": "Family_car",
         "fuel_type": "Electric",
         "transmission": "Automatic"
     },
     {
-        "car_id": 42,
-        "brand": "BMW",
-        "model": "3 Series",
-        "year": 2019,
-        "budget": 19780.72,
-        "Seats": 5,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 47.86,
-        "Insurance": "No",
-        "Condition": "New",
+        "car_id": 39,
+        "brand": "Toyota",
+        "model": "Hilux",
+        "year": 2023,
+        "budget": 26545.62,
+        "Seats": 7,
+        "Condition": "Used",
         "Location": "Milan",
         "Negotiable": [
             "Yes",
-            532
+            1692
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Electric",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 40,
+        "brand": "Mercedes",
+        "model": "E-Class",
+        "year": 2023,
+        "budget": 15442.75,
+        "Seats": 7,
+        "Condition": "Used",
+        "Location": "Trento",
+        "Negotiable": [
+            "Yes",
+            2942
+        ],
+        "car_type": "Sport_car",
+        "fuel_type": "Petrol",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 41,
+        "brand": "BMW",
+        "model": "3 Series",
+        "year": 2025,
+        "budget": 21104.56,
+        "Seats": 4,
+        "Condition": "New",
+        "Location": "Palermo",
+        "Negotiable": [
+            "Yes",
+            368
         ],
         "car_type": "City_car",
+        "fuel_type": "Diesel",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 42,
+        "brand": "BMW",
+        "model": "X3",
+        "year": 2023,
+        "budget": 28422.56,
+        "Seats": 4,
+        "Condition": "New",
+        "Location": "Naples",
+        "Negotiable": [
+            "No",
+            "N/A"
+        ],
+        "car_type": "Family_car",
         "fuel_type": "Electric",
         "transmission": "Automatic"
     },
     {
         "car_id": 43,
+        "brand": "Peugeot",
+        "model": "308",
+        "year": 2018,
+        "budget": 8166.53,
+        "Seats": 4,
+        "Condition": "Used",
+        "Location": "Venice",
+        "Negotiable": [
+            "No",
+            "N/A"
+        ],
+        "car_type": "City_car",
+        "fuel_type": "Petrol",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 44,
+        "brand": "Fiat",
+        "model": "Punto",
+        "year": 2025,
+        "budget": 14735.12,
+        "Seats": 2,
+        "Condition": "New",
+        "Location": "Florence",
+        "Negotiable": [
+            "Yes",
+            3379
+        ],
+        "car_type": "Family_car",
+        "fuel_type": "Diesel",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 45,
+        "brand": "Fiat",
+        "model": "Panda",
+        "year": 2015,
+        "budget": 28512.29,
+        "Seats": 5,
+        "Condition": "New",
+        "Location": "Palermo",
+        "Negotiable": [
+            "Yes",
+            543
+        ],
+        "car_type": "Family_car",
+        "fuel_type": "Petrol",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 46,
         "brand": "Audi",
         "model": "A3",
-        "year": 2022,
-        "budget": 13119.26,
-        "Seats": 7,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
+        "year": 2018,
+        "budget": 9192.2,
+        "Seats": 2,
+        "Condition": "Used",
+        "Location": "Naples",
+        "Negotiable": [
+            "Yes",
+            3133
+        ],
+        "car_type": "Family_car",
+        "fuel_type": "Petrol",
+        "transmission": "Automatic"
+    },
+    {
+        "car_id": 47,
+        "brand": "Peugeot",
+        "model": "308",
+        "year": 2015,
+        "budget": 11008.1,
+        "Seats": 5,
         "Condition": "New",
-        "Location": "Trento",
+        "Location": "Naples",
+        "Negotiable": [
+            "Yes",
+            3528
+        ],
+        "car_type": "Family_car",
+        "fuel_type": "Electric",
+        "transmission": "Manual"
+    },
+    {
+        "car_id": 48,
+        "brand": "Mercedes",
+        "model": "E-Class",
+        "year": 2025,
+        "budget": 10565.66,
+        "Seats": 2,
+        "Condition": "New",
+        "Location": "Venice",
         "Negotiable": [
             "No",
             "N/A"
@@ -860,143 +816,37 @@
         "transmission": "Manual"
     },
     {
-        "car_id": 44,
-        "brand": "Honda",
-        "model": "Accord",
-        "year": 2015,
-        "budget": 15284.07,
-        "Seats": 2,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 20.34,
-        "Insurance": "Yes",
-        "Condition": "New",
-        "Location": "Venice",
-        "Negotiable": [
-            "Yes",
-            582
-        ],
-        "car_type": "City_car",
-        "fuel_type": "Electric",
-        "transmission": "Manual"
-    },
-    {
-        "car_id": 45,
-        "brand": "Ford",
-        "model": "Fiesta",
-        "year": 2023,
-        "budget": 16959.97,
-        "Seats": 2,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 28.6,
-        "Insurance": "No",
-        "Condition": "Used",
-        "Location": "Florence",
-        "Negotiable": [
-            "Yes",
-            609
-        ],
-        "car_type": "Family_car",
-        "fuel_type": "Electric",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 46,
-        "brand": "Fiat",
-        "model": "Punto",
-        "year": 2017,
-        "budget": 29665.39,
-        "Seats": 4,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 20.97,
-        "Insurance": "Yes",
-        "Condition": "Used",
-        "Location": "Venice",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "Sport_car",
-        "fuel_type": "Electric",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 47,
-        "brand": "Toyota",
-        "model": "Yaris",
-        "year": 2025,
-        "budget": 18220.08,
-        "Seats": 2,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 38.98,
-        "Insurance": "Yes",
-        "Condition": "Used",
-        "Location": "Bologna",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "Family_car",
-        "fuel_type": "Electric",
-        "transmission": "Automatic"
-    },
-    {
-        "car_id": 48,
-        "brand": "Audi",
-        "model": "Q5",
-        "year": 2019,
-        "budget": 21145.96,
-        "Seats": 5,
-        "Availability": "Available for sale",
-        "Rental Price per Day": null,
-        "Insurance": null,
-        "Condition": "Used",
-        "Location": "Trento",
-        "Negotiable": [
-            "No",
-            "N/A"
-        ],
-        "car_type": "Sport_car",
-        "fuel_type": "Petrol",
-        "transmission": "Manual"
-    },
-    {
         "car_id": 49,
-        "brand": "Audi",
-        "model": "Q5",
+        "brand": "Honda",
+        "model": "Jazz",
         "year": 2023,
-        "budget": 12209.84,
-        "Seats": 4,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 30.21,
-        "Insurance": "Yes",
-        "Condition": "New",
-        "Location": "Turin",
+        "budget": 21781.72,
+        "Seats": 5,
+        "Condition": "Used",
+        "Location": "Naples",
         "Negotiable": [
             "No",
             "N/A"
         ],
-        "car_type": "Sport_car",
-        "fuel_type": "Electric",
-        "transmission": "Automatic"
+        "car_type": "Family_car",
+        "fuel_type": "Diesel",
+        "transmission": "Manual"
     },
     {
         "car_id": 50,
-        "brand": "BMW",
-        "model": "3 Series",
-        "year": 2016,
-        "budget": 23549.59,
-        "Seats": 5,
-        "Availability": "Available for rent",
-        "Rental Price per Day": 37.77,
-        "Insurance": "No",
+        "brand": "Honda",
+        "model": "Accord",
+        "year": 2020,
+        "budget": 29935.23,
+        "Seats": 4,
         "Condition": "New",
-        "Location": "Turin",
+        "Location": "Palermo",
         "Negotiable": [
-            "Yes",
-            422
+            "No",
+            "N/A"
         ],
-        "car_type": "Family_car",
-        "fuel_type": "Petrol",
-        "transmission": "Manual"
+        "car_type": "City_car",
+        "fuel_type": "Electric",
+        "transmission": "Automatic"
     }
 ]
