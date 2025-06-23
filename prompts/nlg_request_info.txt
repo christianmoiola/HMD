@@ -43,7 +43,8 @@ Possible Slots (and their admissible values for user guidance):
 * `date`: Date for the appointment (e.g., "2023-10-01", "2023-10-15")
 * `time`: Time for the appointment (e.g., "10:00", "14:30", "16:00")
 * `rating`: Rating given by the user. admissible values are ("1", "2", "3", "4", "5")
-* `comments`: Comments provided by the user
+* `comments`: Comments provided by the 
+* `info_type`: admissible values are ("location", "condition", "seats", "fuel_type", "transmission")
 
 ---
 
@@ -90,5 +91,7 @@ input: action: request_info, parameter: comments
 Intent: give_feedback
 output: Thank you for your willingness to provide feedback! Could you please share your comments or suggestions about our service? Your input is very valuable to us!
 
-
-
+example 7:
+input: action: request_info, parameter: info_type
+Intent: get_car_info
+output: Sure! What specific information are you looking for about the car? You can ask about its location, condition, seating capacity, fuel type, or transmission.

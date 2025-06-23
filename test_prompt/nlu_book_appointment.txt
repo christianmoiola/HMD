@@ -30,6 +30,8 @@ Your output must strictly adhere to this exact JSON structure.  Failure to do so
 
 Is important to note that if the user does not provide a date, time, name, surname, or ID, you must set the corresponding slot value to `"null"`.
 
+Important: Current date: 01/06/2025, Time: 10:00 AM
+
 Example:
 example 1:
 today date: 1/06/2025
