@@ -132,10 +132,16 @@ class Pipeline():
             data = None
             if dm_response["action"] == "confirmation" and dm_response["parameter"] == "get_car_info":
                 results = self.database.get_car_info(json)
-                data = f"{results}, {json}"
+                if results == "None":
+                    dm_response["action"] = "no_results_found"
+                else:
+                    data = f"{results}, {json}"
             if dm_response["action"] == "confirmation" and dm_response["parameter"] == "negotiate_price":
                 results = self.database.find_car_by_id(json["slots"]["car_id"])
-                data = f"\nUser price: {json['slots']['proposed_price']}\n System price: {results['budget']-results['negotiable'][1] if results['negotiable'][0]=='Yes' else results['budget']}\n"
+                if results == "None":
+                    dm_response["action"] = "no_results_found"
+                else:
+                    data = f"\nUser price: {json['slots']['proposed_price']}\n System price: {results['budget']-results['negotiable'][1] if results['negotiable'][0]=='Yes' else results['budget']}\n"
             if dm_response["action"] == "confirmation" and dm_response["parameter"] == "buying_car":
                 results = None
                 constraints_relaxed = []
@@ -155,9 +161,8 @@ class Pipeline():
             if dm_response["action"] == "request_info":
                 data = f"Intent: {json['intent']}\n"
 
-            # if dm_response["parameter"] == "booking_appointment":
-            #     data += f"Current date: 01/06/2025, Time: 10:00 AM"
-            #     nlg_response = self.nlg.query_model(input=dm_response, data=data)
+            if dm_response["parameter"] == "booking_appointment":
+                data += f"Current date: 01/06/2025, Time: 10:00 AM"
 
             nlg_response = self.nlg.query_model(input=dm_response, data=data)
             self.logger.debug(f"NLG Response: {nlg_response}")
@@ -179,12 +184,15 @@ if __name__ == "__main__":
     }
     pipeline = Pipeline(config=config)
     pipeline.run()
-    #TODO Modify the book apointment in order to (book the apointment; you will receive a confirmaton email with the details of the appointment if the appointment is available)
-    #TODO add contact operator
+    #TODO (Additional) Modify the book apointment in order to (book the apointment; you will receive a confirmaton email with the details of the appointment if the appointment is available)
+    #TODO (Additional) add contact operator
     #TODO add the state of the selected car
     #TODO add the fallback that no results are found in the database if 1 relaxed constraints already happened
     #TODO terminate sistem intent?
     #TODO if the user asks for a sports car don't know the brand ecc so maybe ask other things
+    #TODO improve the nlg prompt and create the nlg no results prompt
+    #TODO renting car
+    #TODO put json in the nlg?
     #PRE_NLU component test
     # pre_nlu = PRE_NLU(cfg=config, model=model, tokenizer=tokenizer)
 
