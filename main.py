@@ -164,6 +164,9 @@ class Pipeline():
             if dm_response["parameter"] == "booking_appointment":
                 data += f"Current date: 01/06/2025, Time: 10:00 AM"
 
+            if dm_response["action"] == "no_results_found":
+                data = json 
+
             nlg_response = self.nlg.query_model(input=dm_response, data=data)
             self.logger.debug(f"NLG Response: {nlg_response}")
 
@@ -182,8 +185,14 @@ if __name__ == "__main__":
     config["Settings"] = {
         "path": os.getcwd()
     }
-    pipeline = Pipeline(config=config)
-    pipeline.run()
+    #pipeline = Pipeline(config=config)
+    #pipeline.run()
+
+    # Evaluation component test
+
+    evaluation = Evaluation(cfg=config)
+    #evaluation.test_nlu()
+    evaluation.test_pre_nlu()
     #TODO (Additional) Modify the book apointment in order to (book the apointment; you will receive a confirmaton email with the details of the appointment if the appointment is available)
     #TODO (Additional) add contact operator
     #TODO add the state of the selected car

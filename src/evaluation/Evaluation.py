@@ -1,11 +1,11 @@
+import random
 from src.utils.logging import setup_logger
 from src.components.NLU import NLU, PRE_NLU
 from src.components.DM import DM
 from src.components.NLG import NLG
 from itertools import product
 from src.utils.utils_model import get_model
-import os
-import random 
+from tqdm import tqdm
 
 
 class Evaluation():
@@ -26,6 +26,11 @@ class Evaluation():
         # Template for DM
         self.dm_response_template = "{}({})"
 
+    def load_json(self, path: str):
+        import json
+        with open(path, 'r') as file:
+            return json.load(file)
+        
     def test_dm(self):
         dm = DM(cfg=self.cfg, model=self.model, tokenizer=self.tokenizer, history=None, logging_level="ERROR")
 
@@ -129,3 +134,49 @@ class Evaluation():
                 self.test_nlg(action)
             case _:
                 self.logger.error(f"Component {name_component} not recognized")
+
+    def test_nlu(self):
+        nlu = NLU(cfg=self.cfg, model=self.model, tokenizer=self.tokenizer, history=None, logging_level="ERROR")
+
+        test_cases = self.load_json(self.cfg["EVALUATION"].get("nlu_test_cases"))
+
+        total = 0
+        correct = 0
+        # cycle in the list of json test cases
+        loading_bar = tqdm(test_cases, desc="Testing NLU", unit="test case")
+        for el in loading_bar:
+            input = el["input"]
+            expected_output = el["expected_output"]
+            nlu_response = nlu.query_model(input)
+            if nlu_response != "None" and nlu_response == expected_output:
+                correct += 1 
+            else:
+                self.logger.error(f"Test case failed:\nInput: {input}\nExpected: {expected_output}\nGot: {nlu_response}")
+            total += 1
+            loading_bar.set_postfix({"Accuracy": f"{(correct / total) * 100:.2f}%"})
+
+    def test_pre_nlu(self):
+        pre_nlu = PRE_NLU(cfg=self.cfg, model=self.model, tokenizer=self.tokenizer, history=None, logging_level="ERROR")
+
+        test_cases = self.load_json(self.cfg["EVALUATION"].get("pre_nlu_test_cases"))
+
+        total = 0
+        correct = 0
+        # cycle in the list of json test cases
+        loading_bar = tqdm(test_cases, desc="Testing PRE_NLU", unit="test case")
+        for el in loading_bar:
+            input = el["input"]
+            expected_output = el["expected_output"]
+            pre_nlu_response = pre_nlu.query_model(input)
+            
+            if pre_nlu_response != "None" and len(pre_nlu_response) == len(expected_output):
+                expected_intent = [elem["intent"] for elem in expected_output]
+                pre_nlu_intent = [elem["intent"] for elem in pre_nlu_response]
+                if sorted(pre_nlu_intent) == sorted(expected_intent):
+                    correct += 1
+            else:
+                self.logger.error(f"Test case failed:\nInput: {input}\nExpected: {expected_output}\nGot: {pre_nlu_response}")
+            total += 1
+            loading_bar.set_postfix({"Accuracy": f"{(correct / total) * 100:.2f}%"})
+
+        

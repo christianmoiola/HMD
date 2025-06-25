@@ -1,0 +1,1265 @@
+[
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "I'm looking for a Sport car, maybe a BMW."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": "Sport_car",
+        "budget": null,
+        "brand": "BMW",
+        "model": null,
+        "year": null,
+        "fuel_type": null,
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "I want a Fiat Panda, year 2020, Electric."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": null,
+        "brand": "Fiat",
+        "model": "Panda",
+        "year": "2020",
+        "fuel_type": "Electric",
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "Show me some Automatic Family cars under 25000."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": "Family_car",
+        "budget": "25000",
+        "brand": null,
+        "model": null,
+        "year": null,
+        "fuel_type": null,
+        "transmission": "Automatic"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "I'd like a Toyota Corolla, Petrol, model year 2022."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": null,
+        "brand": "Toyota",
+        "model": "Corolla",
+        "year": "2022",
+        "fuel_type": "Petrol",
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "Looking for a Volkswagen Golf, Diesel, Manual transmission."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": null,
+        "brand": "Volkswagen",
+        "model": "Golf",
+        "year": null,
+        "fuel_type": "Diesel",
+        "transmission": "Manual"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "I need a Ford Fiesta, budget 15000."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": "15000",
+        "brand": "Ford",
+        "model": "Fiesta",
+        "year": null,
+        "fuel_type": null,
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "Any Audi A3 from 2021 onwards?"
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": null,
+        "brand": "Audi",
+        "model": "A3",
+        "year": "2021",
+        "fuel_type": null,
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "Searching for a Mercedes C-Class, Automatic."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": null,
+        "brand": "Mercedes",
+        "model": "C-Class",
+        "year": null,
+        "fuel_type": null,
+        "transmission": "Automatic"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "I'd like a Honda Civic, year 2023, Electric."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": null,
+        "brand": "Honda",
+        "model": "Civic",
+        "year": "2023",
+        "fuel_type": "Electric",
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "Show me a Nissan Leaf, 2024 model, under 30000."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": "30000",
+        "brand": "Nissan",
+        "model": "Leaf",
+        "year": "2024",
+        "fuel_type": null,
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "I need a Peugeot 308, Diesel, Manual."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": null,
+        "brand": "Peugeot",
+        "model": "308",
+        "year": null,
+        "fuel_type": "Diesel",
+        "transmission": "Manual"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "Looking for a City car, budget around 10000."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": "City_car",
+        "budget": "10000",
+        "brand": null,
+        "model": null,
+        "year": null,
+        "fuel_type": null,
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "Do you have any Sport cars with Petrol engine?"
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": "Sport_car",
+        "budget": null,
+        "brand": null,
+        "model": null,
+        "year": null,
+        "fuel_type": "Petrol",
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "I'm interested in a BMW X1, from 2020."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": null,
+        "budget": null,
+        "brand": "BMW",
+        "model": "X1",
+        "year": "2020",
+        "fuel_type": null,
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "buying_car",
+      "text": "I need a Family car, an Audi, maybe an A3, from 2023."
+    },
+    "expected_output": {
+      "intent": "buying_car",
+      "slots": {
+        "car_type": "Family_car",
+        "budget": null,
+        "brand": "Audi",
+        "model": "A3",
+        "year": "2023",
+        "fuel_type": null,
+        "transmission": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "get_car_info",
+      "text": "Tell me about car ID 98765."
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "98765",
+        "info_type": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "get_car_info",
+      "text": "What's the condition of car 54321?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "54321",
+        "info_type": "condition"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "get_car_info",
+      "text": "How many seats does car 10293 have?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "10293",
+        "info_type": "seats"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "get_car_info",
+      "text": "Is car 45678 Petrol or Diesel?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "45678",
+        "info_type": "fuel_type"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "get_car_info",
+      "text": "What type of transmission is in car 78901?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "78901",
+        "info_type": "transmission"
+      }
+    }
+  },
+  {
+    "history": "System: Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022",
+    "input": {
+      "intent": "get_car_info",
+      "text": "Where is the Fiat Panda located?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "11223",
+        "info_type": "location"
+      }
+    }
+  },
+  {
+    "history": "System: Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022",
+    "input": {
+      "intent": "get_car_info",
+      "text": "Tell me about the condition of the Toyota Corolla."
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "44556",
+        "info_type": "condition"
+      }
+    }
+  },
+  {
+    "history": "System: Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022",
+    "input": {
+      "intent": "get_car_info",
+      "text": "How many seats in the Panda?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "11223",
+        "info_type": "seats"
+      }
+    }
+  },
+  {
+    "history": "System: Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022",
+    "input": {
+      "intent": "get_car_info",
+      "text": "What about the fuel type of car 44556?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "44556",
+        "info_type": "fuel_type"
+      }
+    }
+  },
+  {
+    "history": "System: Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022",
+    "input": {
+      "intent": "get_car_info",
+      "text": "Is the Corolla automatic?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "44556",
+        "info_type": "transmission"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "get_car_info",
+      "text": "What information do you have about car ID 23456?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "23456",
+        "info_type": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "get_car_info",
+      "text": "Can I get details on the location of car 34567?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "34567",
+        "info_type": "location"
+      }
+    }
+  },
+  {
+    "history": "System: We have a BMW X5 with ID 99887 and an Audi A3 with ID 66778.",
+    "input": {
+      "intent": "get_car_info",
+      "text": "Condition of the X5 please."
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "99887",
+        "info_type": "condition"
+      }
+    }
+  },
+  {
+    "history": "System: We have a BMW X5 with ID 99887 and an Audi A3 with ID 66778.",
+    "input": {
+      "intent": "get_car_info",
+      "text": "What's the fuel type of the Audi?"
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "66778",
+        "info_type": "fuel_type"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "get_car_info",
+      "text": "Tell me about car 87654's transmission."
+    },
+    "expected_output": {
+      "intent": "get_car_info",
+      "slots": {
+        "car_id": "87654",
+        "info_type": "transmission"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "I give it a 4. It was pretty good."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "4",
+        "comments": "It was pretty good."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "The service was terrible, a 1 from me."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "1",
+        "comments": "The service was terrible."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "I think you guys are doing a great job, a solid 5."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "5",
+        "comments": "I think you guys are doing a great job."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "Could be better, I'd say a 2."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "2",
+        "comments": "Could be better."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "My experience was just okay, maybe a 3."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "3",
+        "comments": "My experience was just okay."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "The response time was excellent. Highly recommend."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "null",
+        "comments": "The response time was excellent. Highly recommend."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "I have some issues with the navigation system."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "null",
+        "comments": "I have some issues with the navigation system."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "Everything was perfect, nothing to complain about."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "null",
+        "comments": "Everything was perfect, nothing to complain about."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "I received excellent support from your team."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "null",
+        "comments": "I received excellent support from your team."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "The app crashed multiple times, fix it."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "null",
+        "comments": "The app crashed multiple times, fix it."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "My rating is 6, the service was okay."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "null",
+        "comments": "The service was okay."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "I'd give it a zero if I could."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "null",
+        "comments": "I'd give it a zero if I could."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "Above average, a 4.5 from me."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "null",
+        "comments": "Above average, a 4.5 from me."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "Could use some improvements on speed. Overall 3."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "3",
+        "comments": "Could use some improvements on speed."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "give_feedback",
+      "text": "Everything was flawless, top marks."
+    },
+    "expected_output": {
+      "intent": "give_feedback",
+      "slots": {
+        "rating": "null",
+        "comments": "Everything was flawless, top marks."
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "negotiate_price",
+      "text": "Can I get car ID 98765 for 18000?"
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "98765",
+        "proposed_price": "18000"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "negotiate_price",
+      "text": "I want to offer 25000 for car 54321."
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "54321",
+        "proposed_price": "25000"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "negotiate_price",
+      "text": "Car 10293, can I get it for 10000?"
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "10293",
+        "proposed_price": "10000"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "negotiate_price",
+      "text": "The price for car 45678 is too high. What's the best offer you can give for it?"
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "45678",
+        "proposed_price": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "negotiate_price",
+      "text": "I'd like to negotiate the price on car 78901. I'm thinking 35000."
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "78901",
+        "proposed_price": "35000"
+      }
+    }
+  },
+  {
+    "history": "System: We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556.",
+    "input": {
+      "intent": "negotiate_price",
+      "text": "Can you lower the price on the Panda to 12000?"
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "11223",
+        "proposed_price": "12000"
+      }
+    }
+  },
+  {
+    "history": "System: We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556.",
+    "input": {
+      "intent": "negotiate_price",
+      "text": "The Corolla is a bit expensive. Can we do 19000?"
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "44556",
+        "proposed_price": "19000"
+      }
+    }
+  },
+  {
+    "history": "System: We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556.",
+    "input": {
+      "intent": "negotiate_price",
+      "text": "I'm looking to get the Fiat for less."
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "11223",
+        "proposed_price": null
+      }
+    }
+  },
+  {
+    "history": "System: We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556.",
+    "input": {
+      "intent": "negotiate_price",
+      "text": "What's the lowest you'll take for car 44556?"
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "44556",
+        "proposed_price": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "negotiate_price",
+      "text": "I'd like to make an offer for car 23456."
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "23456",
+        "proposed_price": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "negotiate_price",
+      "text": "My offer for car 34567 is 8000."
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "34567",
+        "proposed_price": "8000"
+      }
+    }
+  },
+  {
+    "history": "System: Available: BMW X5 (ID: 99887), Audi A3 (ID: 66778).",
+    "input": {
+      "intent": "negotiate_price",
+      "text": "Can I get the X5 for 40000?"
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "99887",
+        "proposed_price": "40000"
+      }
+    }
+  },
+  {
+    "history": "System: Available: BMW X5 (ID: 99887), Audi A3 (ID: 66778).",
+    "input": {
+      "intent": "negotiate_price",
+      "text": "The Audi's price is a bit steep. Can it be reduced?"
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "66778",
+        "proposed_price": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "negotiate_price",
+      "text": "I want to propose 17500 for car 87654."
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "87654",
+        "proposed_price": "17500"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "negotiate_price",
+      "text": "Is there any flexibility on the price of car 11220?"
+    },
+    "expected_output": {
+      "intent": "negotiate_price",
+      "slots": {
+        "car_id": "11220",
+        "proposed_price": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "I'll take car ID 98765 for 18500."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "98765",
+        "price": "18500",
+        "name": null,
+        "surname": null,
+        "id": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "Order car 54321 for 26000. My name is Alice Smith, ID 1234."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "54321",
+        "price": "26000",
+        "name": "Alice",
+        "surname": "Smith",
+        "id": "1234"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "I want to buy car 10293."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "10293",
+        "price": null,
+        "name": null,
+        "surname": null,
+        "id": null
+      }
+    }
+  },
+  {
+    "history": "System: Great choice! The Ford Fiesta (ID: 45678) is priced at 15000 euros. Would you like to proceed?",
+    "input": {
+      "intent": "order_car",
+      "text": "Yes, that price works. My ID is 5678."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "45678",
+        "price": "15000",
+        "name": null,
+        "surname": null,
+        "id": "5678"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "I'll go ahead and order car 78901. I'm John Doe."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "78901",
+        "price": null,
+        "name": "John",
+        "surname": "Doe",
+        "id": null
+      }
+    }
+  },
+  {
+    "history": "System: The Fiat Panda (ID: 11223) is available for 12000 euros. Are you ready to order?",
+    "input": {
+      "intent": "order_car",
+      "text": "Confirm the order for 11223 please."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "11223",
+        "price": "12000",
+        "name": null,
+        "surname": null,
+        "id": null
+      }
+    }
+  },
+  {
+    "history": "System: We have the Toyota Corolla (ID: 44556) at 19000 euros. Shall we proceed?",
+    "input": {
+      "intent": "order_car",
+      "text": "I'll buy the Corolla for that price."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "44556",
+        "price": "19000",
+        "name": null,
+        "surname": null,
+        "id": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "Order car 23456 for me, Sarah Brown, ID 9012."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "23456",
+        "price": null,
+        "name": "Sarah",
+        "surname": "Brown",
+        "id": "9012"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "I want to purchase car 34567, paying 8500."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "34567",
+        "price": "8500",
+        "name": null,
+        "surname": null,
+        "id": null
+      }
+    }
+  },
+  {
+    "history": "System: The BMW X5 (ID: 99887) is 40000 euros. Are you ready to finalize?",
+    "input": {
+      "intent": "order_car",
+      "text": "Yes, I'm ready to order the X5."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "99887",
+        "price": "40000",
+        "name": null,
+        "surname": null,
+        "id": null
+      }
+    }
+  },
+  {
+    "history": "System: The Audi A3 (ID: 66778) is priced at 28000 euros. Would you like to proceed?",
+    "input": {
+      "intent": "order_car",
+      "text": "I'll buy the Audi."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "66778",
+        "price": "28000",
+        "name": null,
+        "surname": null,
+        "id": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "Finalize order for car 87654. My ID is 3456."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "87654",
+        "price": null,
+        "name": null,
+        "surname": null,
+        "id": "3456"
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "I want to get car 11220 for 32000. I'm Michael Green."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "11220",
+        "price": "32000",
+        "name": "Michael",
+        "surname": "Green",
+        "id": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "Place an order for car 55667. My name is Olivia Davis."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "55667",
+        "price": null,
+        "name": "Olivia",
+        "surname": "Davis",
+        "id": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "order_car",
+      "text": "Confirm purchase of car 77889 for 21000 euros."
+    },
+    "expected_output": {
+      "intent": "order_car",
+      "slots": {
+        "car_id": "77889",
+        "price": "21000",
+        "name": null,
+        "surname": null,
+        "id": null
+      }
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Tell me a joke."
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "What's the capital of France?"
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "How do I bake a cake?"
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Play some music."
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Set a reminder for 3 PM."
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Who won the last football match?"
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Can you give me legal advice?"
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Translate 'hello' to Spanish."
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "What's the meaning of life?"
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Tell me about quantum physics."
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "How do I fix my computer?"
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Can you recommend a good restaurant nearby?"
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "What are the latest news headlines?"
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Book a flight for me to Tokyo."
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  },
+  {
+    "input": {
+      "intent": "out_of_domain",
+      "text": "Give me some stock market tips."
+    },
+    "expected_output": {
+      "intent": "out_of_domain",
+      "slots": {}
+    }
+  }
+]

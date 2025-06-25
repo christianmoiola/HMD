@@ -18,7 +18,9 @@ class NLG():
         self.system_prompt["give_feedback"] = read_txt(os.path.join(self.path, cfg["NLG"].get("prompt_give_feedback")))
         self.system_prompt["book_appointment"] = read_txt(os.path.join(self.path, cfg["NLG"].get("prompt_book_appointment")))
         self.system_prompt["request_info"] = read_txt(os.path.join(self.path, cfg["NLG"].get("prompt_request_info")))
-
+        self.system_prompt["out_of_domain"] = read_txt(os.path.join(self.path, cfg["NLG"].get("prompt_out_of_domain")))
+        self.system_prompt["no_results_found"] = read_txt(os.path.join(self.path, cfg["NLG"].get("prompt_no_results_found")))
+        
         self.model = model
         self.tokenizer = tokenizer
         self.history = history
