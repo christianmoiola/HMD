@@ -20,6 +20,7 @@ class NLG():
         self.system_prompt["request_info"] = read_txt(os.path.join(self.path, cfg["NLG"].get("prompt_request_info")))
         self.system_prompt["out_of_domain"] = read_txt(os.path.join(self.path, cfg["NLG"].get("prompt_out_of_domain")))
         self.system_prompt["no_results_found"] = read_txt(os.path.join(self.path, cfg["NLG"].get("prompt_no_results_found")))
+        self.system_prompt["combine_responses"] = read_txt(os.path.join(self.path, cfg["NLG"].get("prompt_combine_responses")))
         
         self.model = model
         self.tokenizer = tokenizer
@@ -33,13 +34,24 @@ class NLG():
         }
         return combined_response
 
-    def query_model(self, input: str, data: str = None):
+    def query_model(self, input: str, data: str = None, nlu_response: str = None):
         self.logger.info("Generating response from NLG component...")
-
+        # * Check if input is a list in order to combine responses
+        if isinstance(input, list):
+            input_text = self.template.format(self.system_prompt["combine_responses"], input)
+            inputs = self.tokenizer(input_text, return_tensors="pt").to(self.model.device)
+            response = generate(self.model, inputs, self.tokenizer, self.max_seq_length)
+            #* STRIP RESPONSE
+            response = response.strip()
+            return response
+        
         if data != None:
             combined_response = self.combine_system_prompt(input, data)
         else:
             combined_response = {"DM Response": input}
+
+        if nlu_response != None:
+            combined_response["NLU Response"] = nlu_response
 
         if self.history != None:
             combined_response = str(combined_response) + "\n" + self.history.get_history()

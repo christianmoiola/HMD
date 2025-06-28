@@ -51,6 +51,7 @@ class Pipeline():
         # Check the intent and create or update the corresponding state tracker
         intent = nlu_response["intent"]
         if self.intent_to_class[intent] not in [st.__class__.__name__ for st in self.list_state]:
+            self.logger.info(f"Creating new state tracker for intent: {intent}")
             # Instantiate the state tracker if it doesn't already exist
             match intent:
                 case "buying_car":
@@ -94,7 +95,6 @@ class Pipeline():
 
         while user_input != "exit":
             user_input = input("User: ")
-            # TODO: Handle the case where the user input contain more than one intent
             if user_input == "exit":
                 self.logger.info("Exiting the conversation...")
                 break
@@ -104,72 +104,81 @@ class Pipeline():
 
             self.logger.debug(f"PRE_NLU Response: {pre_nlu_response}")
 
-            nlu_response = None
-            while nlu_response == None: 
-                nlu_response = self.nlu.query_model(pre_nlu_response[0])
+            nlg_responses = []
+            # Iterate over the pre_nlu_response list, which contains the user input and the intent
+            for elem in pre_nlu_response:
+                nlu_response = None
+                while nlu_response == None: 
+                    nlu_response = self.nlu.query_model(elem)
 
-            self.logger.debug(f"NLU Response: {nlu_response}")
+                self.logger.debug(f"NLU Response: {nlu_response}")
+                # Update the state tracker
+                json = self.update_state_tracker(nlu_response)
+
+                self.logger.debug(f"Dialogue State: {json}")
+
+                dm_response = None
+                while dm_response == None:
+                    dm_response = self.dm.query_model(json)
+
+                self.logger.debug(f"DM Response: {dm_response}")
+
+                # Remove from the state tracker the state if the action is confirmation
+                if dm_response["action"] == "confirmation":
+                    for st in self.list_state:
+                        if st.__class__.__name__ == self.intent_to_class[dm_response["parameter"]]:
+                            self.list_state.remove(st)
+                            self.logger.info(f"State tracker {st.__class__.__name__} removed from the list")
+                            break
+
+                data = None
+                if dm_response["action"] == "confirmation" and dm_response["parameter"] == "get_car_info":
+                    results = self.database.get_car_info(json)
+                    if results == "None":
+                        dm_response["action"] = "no_results_found"
+                    else:
+                        data = f"{results}, {json}"
+                if dm_response["action"] == "confirmation" and dm_response["parameter"] == "negotiate_price":
+                    results = self.database.find_car_by_id(json["slots"]["car_id"])
+                    if results == "None":
+                        dm_response["action"] = "no_results_found"
+                    else:
+                        data = f"\nUser price: {json['slots']['proposed_price']}\n System price: {results['budget']-results['negotiable'][1] if results['negotiable'][0]=='Yes' else results['budget']}\n"
+                if dm_response["action"] == "confirmation" and dm_response["parameter"] == "buying_car":
+                    results = None
+                    constraints_relaxed = []
+                    while results == None:
+                        results = self.database.query_database(json)
+                        self.logger.debug(f"Database Results: {results}")
+                        if results == None:
+                            slots_importance = ["transmission", "fuel_type", "year", "model", "brand", "budget", "car_type"]
+                            for slot in slots_importance:
+                                if json["slots"][slot] != None:
+                                    json["slots"][slot] = None
+                                    constraints_relaxed.append(slot)
+                                    self.logger.info("Constraint relaxed: " + slot)
+                                    break
+                    data = f"Database results: {str(results)}" if len(constraints_relaxed) == 0 else f"Database results: {str(results)}\nConstraints relaxed: {', '.join(constraints_relaxed)}"
+
+                if dm_response["action"] == "request_info":
+                    data = f"Intent: {json['intent']}\n"
+
+                if dm_response["parameter"] == "booking_appointment":
+                    data += f"Current date: 01/06/2025, Time: 10:00 AM"
+
+                if dm_response["action"] == "no_results_found":
+                    data = json 
+
+                nlg_response = self.nlg.query_model(input=dm_response, data=data, nlu_response=json)
+                nlg_responses.append(nlg_response)
+                self.logger.debug(f"NLG Response: {nlg_response}")
+
             # Update the history with the user input
             self.history.add_to_history(sender="User", msg=user_input)
-            # Update the state tracker
-            json = self.update_state_tracker(nlu_response)
-
-            self.logger.debug(f"Dialogue State: {json}")
-
-            dm_response = None
-            while dm_response == None:
-                dm_response = self.dm.query_model(json)
-
-            self.logger.debug(f"DM Response: {dm_response}")
-
-            # Remove from the state tracker the state if the action is confirmation
-            if dm_response["action"] == "confirmation":
-                for st in self.list_state:
-                    if st.__class__.__name__ == self.intent_to_class[dm_response["parameter"]]:
-                        self.list_state.remove(st)
-                        break
-
-            data = None
-            if dm_response["action"] == "confirmation" and dm_response["parameter"] == "get_car_info":
-                results = self.database.get_car_info(json)
-                if results == "None":
-                    dm_response["action"] = "no_results_found"
-                else:
-                    data = f"{results}, {json}"
-            if dm_response["action"] == "confirmation" and dm_response["parameter"] == "negotiate_price":
-                results = self.database.find_car_by_id(json["slots"]["car_id"])
-                if results == "None":
-                    dm_response["action"] = "no_results_found"
-                else:
-                    data = f"\nUser price: {json['slots']['proposed_price']}\n System price: {results['budget']-results['negotiable'][1] if results['negotiable'][0]=='Yes' else results['budget']}\n"
-            if dm_response["action"] == "confirmation" and dm_response["parameter"] == "buying_car":
-                results = None
-                constraints_relaxed = []
-                while results == None:
-                    results = self.database.query_database(json)
-                    self.logger.debug(f"Database Results: {results}")
-                    if results == None:
-                        slots_importance = ["transmission", "fuel_type", "year", "model", "brand", "budget", "car_type"]
-                        for slot in slots_importance:
-                            if json["slots"][slot] != None:
-                                json["slots"][slot] = None
-                                constraints_relaxed.append(slot)
-                                self.logger.info("Constraint relaxed: " + slot)
-                                break
-                data = f"Database results: {str(results)}" if len(constraints_relaxed) == 0 else f"Database results: {str(results)}\nConstraints relaxed: {', '.join(constraints_relaxed)}"
-
-            if dm_response["action"] == "request_info":
-                data = f"Intent: {json['intent']}\n"
-
-            if dm_response["parameter"] == "booking_appointment":
-                data += f"Current date: 01/06/2025, Time: 10:00 AM"
-
-            if dm_response["action"] == "no_results_found":
-                data = json 
-
-            nlg_response = self.nlg.query_model(input=dm_response, data=data)
-            self.logger.debug(f"NLG Response: {nlg_response}")
-
+            if len(nlg_responses) > 1:
+                nlg_response = self.nlg.query_model(input=nlg_responses)
+            else:
+                nlg_response = nlg_responses[0]
             self.logger.info(f"System: {nlg_response}")
 
             # Update the history with the system response
@@ -185,14 +194,9 @@ if __name__ == "__main__":
     config["Settings"] = {
         "path": os.getcwd()
     }
-    #pipeline = Pipeline(config=config)
-    #pipeline.run()
+    pipeline = Pipeline(config=config)
+    pipeline.run()
 
-    # Evaluation component test
-
-    evaluation = Evaluation(cfg=config)
-    #evaluation.test_nlu()
-    evaluation.test_pre_nlu()
     #TODO (Additional) Modify the book apointment in order to (book the apointment; you will receive a confirmaton email with the details of the appointment if the appointment is available)
     #TODO (Additional) add contact operator
     #TODO add the state of the selected car
@@ -202,6 +206,12 @@ if __name__ == "__main__":
     #TODO improve the nlg prompt and create the nlg no results prompt
     #TODO renting car
     #TODO put json in the nlg?
+
+
+    #TODO aggiungere terminate system 
+    #TODO aggiungere multi intent detection
+    #TODO aggiungere JSON in the nlg
+
     #PRE_NLU component test
     # pre_nlu = PRE_NLU(cfg=config, model=model, tokenizer=tokenizer)
 

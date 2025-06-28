@@ -1,3 +1,4 @@
+from sklearn.metrics import precision_recall_fscore_support
 import random
 from src.utils.logging import setup_logger
 from src.components.NLU import NLU, PRE_NLU
@@ -14,18 +15,6 @@ class Evaluation():
         self.model, self.tokenizer = get_model(self.cfg)
         self.logger = setup_logger(self.__class__.__name__)
 
-        self.slots = ["car_type", "budget", "brand", "model", "year", "fuel_type", "transmission"]
-        self.intents = ["buying_car", "renting_car", "selling_car", "getting_info"]
-        self.best_next_action = ["inform", "request_info", "relax_constraints", "find"]
-
-        # Template for NLU
-        self.nlu_response_template = {
-            'intent': None,
-            'slots': {slot: None for slot in self.slots}
-        }
-        # Template for DM
-        self.dm_response_template = "{}({})"
-
     def load_json(self, path: str):
         import json
         with open(path, 'r') as file:
@@ -33,150 +22,140 @@ class Evaluation():
         
     def test_dm(self):
         dm = DM(cfg=self.cfg, model=self.model, tokenizer=self.tokenizer, history=None, logging_level="ERROR")
+        
+        test_cases = self.load_json(self.cfg["EVALUATION"].get("nlu_test_cases"))
 
-        # Define test cases
-        car_types = ["Sport_car", "Family_car", "City_car", "None"]
-        brands = ["BMW", "Audi", "Mercedes", "None"]
-        models = ["3 Series", "X1", "A1", "None"]
+        correct_actions = 0
+        total_actions = 0
+        loading_bar = tqdm(test_cases, desc="Testing DM", unit="test case")
 
-        for car_type, brand, model in product(car_types, brands, models):
-            intent = random.choice(self.intents)
+        for el in loading_bar:
+            input = el["expected_output"]
+            dm_response = dm.query_model(input)
 
-            nlu_response = self.nlu_response_template.copy()
-            nlu_response["intent"] = intent
-            nlu_response["slots"]["car_type"] = car_type
-            nlu_response["slots"]["brand"] = brand
-            nlu_response["slots"]["model"] = model
-            
-            array_slot = [("car_type", car_type), ("brand", brand), ("model", model)]
-            count_none = sum(1 for _, value in array_slot if value != "None")
-            result = ", ".join(f"{var_name}='{var_value}'" for var_name, var_value in array_slot if var_value is not "None")
-
-
-            if count_none >= 2:
-                true_dm_response = self.dm_response_template.format("find", result)
+            if dm_response is None:
+                total_actions += 1
             else:
-                true_dm_response = self.dm_response_template.format("request_info", next((value for name, value in array_slot if value is not None), None))
+                expected_action = ""
+                if input["intent"] == "buying_car":
+                    # count how many slots are not None
+                    filled_slots = sum(1 for slot in input["slots"].values() if slot is not None)
+                    if filled_slots >= 2:
+                        expected_action = "confirmation"
+                    else:
+                        expected_action = "request_info"
+                else:
+                    filled_slots = sum(1 for slot in input["slots"].values() if slot is not None)
+                    total_slots = len(input["slots"])
+                    if filled_slots == total_slots:
+                        expected_action = "confirmation"
+                    else:
+                        expected_action = "request_info"
+                if dm_response["action"] == expected_action:
+                    correct_actions += 1
+                else:
+                    self.logger.error(f"Test case failed:\nInput: {input}\nExpected: {expected_action}\nGot: {dm_response['action']}")
+                total_actions += 1
 
-            # Query DM model
-            self.logger.debug(f"\nDM Input:\n    NLU response:\n{nlu_response}\n")
-            dm_response = dm.query_model(nlu_response)
-            self.logger.info(f"\nDM Response:\n{dm_response}\n")
-            if true_dm_response == dm_response:
-                self.logger.info("Test passed!\n")
-            else:
-                self.logger.error("Test failed!\n")
-                self.logger.error(f"Expected: {true_dm_response}\n")  
+            loading_bar.set_postfix({"Acc": f"{(correct_actions / total_actions) * 100:.2f}%"})
 
-    def test_nlg(self, action_to_test):
-        nlg = NLG(cfg=self.cfg, model=self.model, tokenizer=self.tokenizer, history=None, logging_level="ERROR")
-        
-        # Define test cases
-        car_types = ["Sport_car", "Family_car", "City_car"]
-        brands = ["BMW", "Audi", "Mercedes"]
-        models = ["3 Series", "X1", "A1"]
-        
-        # Iterate through car attributes
-        for car_type, brand, model in product(car_types, brands, models):
-            intent = random.choice(self.intents)
-            slot = random.choice(self.slots)
-            
-            nlu_response = self.nlu_response_template.copy()
-            nlu_response["intent"] = intent
-            nlu_response["slots"]["car_type"] = car_type
-            nlu_response["slots"]["brand"] = brand
-            nlu_response["slots"]["model"] = model
-            
-
-            if action_to_test == "inform":
-                dm_response_results = [
-                    {
-                        "CarID": 16, "brand": brand, "model": model, "year": 2017,
-                        "budget": 16917.22, "Seats": 2, "Availability": "Available for rent",
-                        "Rental Price per Day": 35.66, "Insurance": "Yes", "Condition": "Used",
-                        "Location": "Rome", "Negotiable": ["No", "N/A"], "car_type": car_type,
-                        "fuel_type": "Electric", "transmission": "Automatic"
-                    },
-                    {
-                        "CarID": 25, "brand": brand, "model": model, "year": 2024,
-                        "budget": 18105.17, "Seats": 7, "Availability": "Available for rent",
-                        "Rental Price per Day": 31.8, "Insurance": "Yes", "Condition": "New",
-                        "Location": "Naples", "Negotiable": ["Yes", 713], "car_type": car_type,
-                        "fuel_type": "Electric", "transmission": "Manual"
-                    }
-                ]
-                dm_response = self.dm_response_template.format(action_to_test, dm_response_results)
-            elif action_to_test == "request_info" or action_to_test == "relax_constraints":
-                dm_response = self.dm_response_template.format(action_to_test, slot)
-            elif action_to_test == "confirmation":
-                dm_response = self.dm_response_template.format(action_to_test, intent)
-            
-            dm_response_str = str(dm_response)
-            
-            # Query NLG model
-            self.logger.debug(f"\nNLG Input:\n    NLU response:\n{nlu_response}\n    DM response:\n{dm_response}\n")
-            nlg_response = nlg.query_model(dm_response_str, nlu_response)
-            self.logger.info(f"\nNLG Response:\n{nlg_response}\n")
-
-
-    def test(self, name_component: str, action):
-
-        self.logger.info(f"Testing {name_component} component...")
-        
-        match name_component:
-            case "PRE_NLU":
-                pass
-            case "NLU":
-                self.test_nlu()
-            case "DM":
-                self.test_dm()
-            case "NLG":
-                self.test_nlg(action)
-            case _:
-                self.logger.error(f"Component {name_component} not recognized")
 
     def test_nlu(self):
         nlu = NLU(cfg=self.cfg, model=self.model, tokenizer=self.tokenizer, history=None, logging_level="ERROR")
 
         test_cases = self.load_json(self.cfg["EVALUATION"].get("nlu_test_cases"))
 
-        total = 0
-        correct = 0
+        total_intent = 0
+        correct_intent = 0
+        total_slots = 0
+        correct_slots = 0
         # cycle in the list of json test cases
         loading_bar = tqdm(test_cases, desc="Testing NLU", unit="test case")
         for el in loading_bar:
             input = el["input"]
             expected_output = el["expected_output"]
             nlu_response = nlu.query_model(input)
-            if nlu_response != "None" and nlu_response == expected_output:
-                correct += 1 
+            if nlu_response != None:
+                # Check intent
+                if nlu_response["intent"] == expected_output["intent"]:
+                    correct_intent += 1
+                total_intent += 1
+
+                # Check slots
+                for slot in expected_output["slots"]:
+                    if slot in nlu_response["slots"] and nlu_response["slots"][slot] == expected_output["slots"][slot]:
+                        correct_slots += 1
+                    total_slots += 1
             else:
                 self.logger.error(f"Test case failed:\nInput: {input}\nExpected: {expected_output}\nGot: {nlu_response}")
-            total += 1
-            loading_bar.set_postfix({"Accuracy": f"{(correct / total) * 100:.2f}%"})
+                total_intent += 1
+            loading_bar.set_postfix({"Acc Intent": f"{(correct_intent / total_intent) * 100:.2f}%", "Acc Slots": f"{(correct_slots / total_slots) * 100:.2f}%"})
 
     def test_pre_nlu(self):
         pre_nlu = PRE_NLU(cfg=self.cfg, model=self.model, tokenizer=self.tokenizer, history=None, logging_level="ERROR")
-
         test_cases = self.load_json(self.cfg["EVALUATION"].get("pre_nlu_test_cases"))
 
-        total = 0
-        correct = 0
-        # cycle in the list of json test cases
+        y_true = []
+        y_pred = []
+        all_intents = set()
+        total_intents = 0
+        correct_intents = 0
+
         loading_bar = tqdm(test_cases, desc="Testing PRE_NLU", unit="test case")
         for el in loading_bar:
             input = el["input"]
             expected_output = el["expected_output"]
             pre_nlu_response = pre_nlu.query_model(input)
-            
-            if pre_nlu_response != "None" and len(pre_nlu_response) == len(expected_output):
-                expected_intent = [elem["intent"] for elem in expected_output]
-                pre_nlu_intent = [elem["intent"] for elem in pre_nlu_response]
-                if sorted(pre_nlu_intent) == sorted(expected_intent):
-                    correct += 1
-            else:
-                self.logger.error(f"Test case failed:\nInput: {input}\nExpected: {expected_output}\nGot: {pre_nlu_response}")
-            total += 1
-            loading_bar.set_postfix({"Accuracy": f"{(correct / total) * 100:.2f}%"})
 
-        
+            expected_intents = [elem["intent"] for elem in expected_output]
+
+            if pre_nlu_response is None:
+                predicted_intents = []
+                self.logger.warning(f"Model returned None:\nInput: {input}\nExpected: {expected_intents}")
+            else:
+                predicted_intents = [elem["intent"] for elem in pre_nlu_response]
+
+            # Count for accuracy
+            total_intents += len(expected_intents)
+            for intent in expected_intents:
+                if intent in predicted_intents:
+                    correct_intents += 1
+                    predicted_intents.remove(intent)
+
+            all_intents.update(expected_intents)
+            all_intents.update(predicted_intents)
+
+            y_true.append(expected_intents)
+            y_pred.append(predicted_intents)
+
+            loading_bar.set_postfix({"Acc Intents": f"{(correct_intents / total_intents) * 100:.2f}%"})
+
+        # Intent indexing
+        sorted_intents = sorted(all_intents)
+        intent_to_index = {intent: idx for idx, intent in enumerate(sorted_intents)}
+
+        def to_binary_vector(intent_list):
+            vec = [0] * len(sorted_intents)
+            for intent in intent_list:
+                if intent in intent_to_index:
+                    vec[intent_to_index[intent]] = 1
+            return vec
+
+        y_true_bin = [to_binary_vector(intents) for intents in y_true]
+        y_pred_bin = [to_binary_vector(intents) for intents in y_pred]
+
+        precision, recall, f1, support = precision_recall_fscore_support(
+            y_true_bin, y_pred_bin, average=None, zero_division=0
+        )
+
+        # Accuracy over total intents
+        overall_accuracy = (correct_intents / total_intents) * 100 if total_intents > 0 else 0.0
+
+        print(f"\n📊 Intent-Level Evaluation (per intent):")
+        print(f"{'Intent':<30} {'Prec.':>7} {'Recall':>7} {'F1':>7}")
+        print("-" * 60)
+        for idx, intent in enumerate(sorted_intents):
+            if support[idx] > 0:  # only show intents that exist in ground truth
+                print(f"{intent:<30} {precision[idx]*100:7.2f} {recall[idx]*100:7.2f} {f1[idx]*100:7.2f}")
+
+        print("\n✅ Overall Intent Accuracy: {:.2f}% ({}/{})".format(overall_accuracy, correct_intents, total_intents))
