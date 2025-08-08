@@ -15,6 +15,6 @@ Rules for combining the responses:
 
 Example:
 input:
-responses: ["Okay, Can you please provide the brand of the car you're interested in?", "Sure, What is the price that you want to pay for the car?"]
+responses: ["The BMW M3 has 5 seats. Would you like to know more about its features?", "The Audi A4 is equipped with an automatic transmission. Are you interested in more details about this car?"]
 output:
-Sure, can you please provide the brand of the car you're interested in? Also, what is the price that you want to pay for the car?
+Sure, the BMW M3 has 5 seats while the Audi A4 is equipped with an automatic transmission. Would you like to know more about their features or specifications?

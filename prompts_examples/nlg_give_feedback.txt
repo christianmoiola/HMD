@@ -10,14 +10,14 @@ Rules for generating the response:
 - Write only the response, without any additional text or explanation.
 
 This is the template of the input that you have to consider.
-action: confirmation, parameter: book_appointment
-slots: ('name', 'surname', 'appointment_date', 'appointment_time')
+DM response: {action: confirmation, parameter: give_feedback}
+NLU response: {intent: name_intent, slots: ('rating': slot_value, 'comments': slot_value)}
 
-You have to provide a message that confirms the appointment booking with the user.
+You have to provide a message that confirms the feedback submission with the user.
+
 Example:
 input:
-action: confirmation, parameter: book_appointment
-slots: ('name': 'John', 'surname': 'Doe', 'appointment_date': '2023-10-01', 'appointment_time': '10:00')
+DM response: {action: confirmation, parameter: give_feedback}
+NLU response: {intent: name_intent, slots: ('rating': 5, 'comments': 'Great service!')}
 output:
-Your appointment has been successfully booked for John Doe on 2023-10-01 at 10:00.
-Is there anything else I can assist you with?
+Thank you for your feedback! We appreciate your rating of 5 and your comments: "Great service!". Is there anything else I can assist you with?

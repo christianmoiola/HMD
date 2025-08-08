@@ -10,14 +10,14 @@ Rules for generating the response:
 - Write only the response, without any additional text or explanation.
 
 This is the template of the input that you have to consider.
-action: no_results_found, parameter: intent
-data = {}
+DM response: {action: no_results_found, parameter: intent}
+NLU response: {intent: intent_name, slots: slot_values}
 
 You have to provide a message that informs the user that no results were found for their request and suggest they try a different search or modify their criteria.
 
 Example:
 input:
-action: no_results_found, parameter: get_car_info
-data = {intent: "get_car_info", slots: {"car_id": 999, "info_type": "price"}}
+DM response: {action: no_results_found, parameter: get_car_info}
+NLU response: {intent: "get_car_info", slots: {"car_id": 999, "info_type": "price"}}
 output:
-I'm sorry, but I couldn't find any information about the car you're looking for. You might want to try a different search or modify your criteria.
+I'm sorry, but I couldn't find any information about the car with ID 999. Can you please provide the correct car ID please?

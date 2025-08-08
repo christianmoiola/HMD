@@ -9,8 +9,6 @@ from src.utils.utils_model import get_model
 from src.utils.history import History
 from src.utils.logging import setup_logger
 from src.evaluation.Evaluation import Evaluation
-import json
-
 
 def set_token():
     token = configparser.ConfigParser()
@@ -24,7 +22,7 @@ class Pipeline():
         self.initial_message = self.config["General"].get("initial_message")
         self.model, self.tokenizer = get_model(config)
         self.define_components()
-        self.logger = setup_logger(self.__class__.__name__, logging_level="DEBUG", color_debug="DEBUG_MAIN")
+        self.logger = setup_logger(self.__class__.__name__, logging_level="INFO", color_debug="DEBUG_MAIN")
 
         self.list_state = []
 
@@ -42,10 +40,10 @@ class Pipeline():
     def define_components(self):
         self.history = History()
         self.database = Database(self.config)
-        self.pre_nlu = PRE_NLU(cfg=self.config, model=self.model, tokenizer=self.tokenizer, history=self.history)
-        self.nlu = NLU(cfg=self.config, model=self.model, tokenizer=self.tokenizer, history=self.history)
-        self.dm = DM(cfg=self.config, model=self.model, tokenizer=self.tokenizer)
-        self.nlg = NLG(cfg=self.config, model=self.model, tokenizer=self.tokenizer)
+        self.pre_nlu = PRE_NLU(cfg=self.config, model=self.model, tokenizer=self.tokenizer, history=self.history, logging_level="ERROR")
+        self.nlu = NLU(cfg=self.config, model=self.model, tokenizer=self.tokenizer, history=self.history, logging_level="ERROR")
+        self.dm = DM(cfg=self.config, model=self.model, tokenizer=self.tokenizer, logging_level="ERROR")
+        self.nlg = NLG(cfg=self.config, model=self.model, tokenizer=self.tokenizer, logging_level="ERROR")
 
     def update_state_tracker(self, nlu_response):
         # Check the intent and create or update the corresponding state tracker
@@ -85,7 +83,6 @@ class Pipeline():
                     json = st.get_dialogue_state()
                     break
         return json
-            
 
     def run(self):
         self.logger.info(f"System: {self.initial_message}")
@@ -125,33 +122,41 @@ class Pipeline():
 
                 # Remove from the state tracker the state if the action is confirmation
                 if dm_response["action"] == "confirmation":
+                    target_class = self.intent_to_class[dm_response["parameter"]]
+                    found = False
                     for st in self.list_state:
-                        if st.__class__.__name__ == self.intent_to_class[dm_response["parameter"]]:
+                        if st.__class__.__name__ == target_class:
                             self.list_state.remove(st)
                             self.logger.info(f"State tracker {st.__class__.__name__} removed from the list")
+                            found = True
                             break
+                    if not found:
+                        self.logger.debug(f"No state tracker matching {target_class} found in the list")
+
 
                 data = None
                 if dm_response["action"] == "confirmation" and dm_response["parameter"] == "get_car_info":
                     results = self.database.get_car_info(json)
+                    self.logger.debug(f"Get car info result: {results}")
                     if results == "None":
                         dm_response["action"] = "no_results_found"
                     else:
-                        data = f"{results}, {json}"
+                        data = f"{results}"
                 if dm_response["action"] == "confirmation" and dm_response["parameter"] == "negotiate_price":
                     results = self.database.find_car_by_id(json["slots"]["car_id"])
+                    self.logger.debug(f"Negotiate price result: {results}")
                     if results == "None":
                         dm_response["action"] = "no_results_found"
                     else:
-                        data = f"\nUser price: {json['slots']['proposed_price']}\n System price: {results['budget']-results['negotiable'][1] if results['negotiable'][0]=='Yes' else results['budget']}\n"
+                        data = f"\nCar: {results['brand']} {results['model']}\nUser price: {json['slots']['proposed_price']}\nSystem price: {results['budget']-results['negotiable'][1] if results['negotiable'][0]=='Yes' else results['budget']}\n"
                 if dm_response["action"] == "confirmation" and dm_response["parameter"] == "buying_car":
-                    results = None
+                    results = "[]"
                     constraints_relaxed = []
-                    while results == None:
+                    while results == "[]":
                         results = self.database.query_database(json)
                         self.logger.debug(f"Database Results: {results}")
-                        if results == None:
-                            slots_importance = ["transmission", "fuel_type", "year", "model", "brand", "budget", "car_type"]
+                        if results == "[]":
+                            slots_importance = ["transmission", "year", "fuel_type", "car_type", "model", "brand", "budget"]
                             for slot in slots_importance:
                                 if json["slots"][slot] != None:
                                     json["slots"][slot] = None
@@ -160,15 +165,15 @@ class Pipeline():
                                     break
                     data = f"Database results: {str(results)}" if len(constraints_relaxed) == 0 else f"Database results: {str(results)}\nConstraints relaxed: {', '.join(constraints_relaxed)}"
 
-                if dm_response["action"] == "request_info":
-                    data = f"Intent: {json['intent']}\n"
-
                 if dm_response["parameter"] == "booking_appointment":
-                    data += f"Current date: 01/06/2025, Time: 10:00 AM"
-
-                if dm_response["action"] == "no_results_found":
-                    data = json 
-
+                    data += f"Current date: 01/06/2025, Time: 10:00 AM" 
+                if dm_response["action"] == "confirmation" and dm_response["parameter"] == "order_car":
+                    results = self.database.find_car_by_id(json["slots"]["car_id"])
+                    self.logger.debug(f"Order car result: {results}")
+                    if results == "None":
+                        dm_response["action"] = "no_results_found"
+                    else:
+                        data = f"Car ordered: {results}"
                 nlg_response = self.nlg.query_model(input=dm_response, data=data, nlu_response=json)
                 nlg_responses.append(nlg_response)
                 self.logger.debug(f"NLG Response: {nlg_response}")
@@ -179,7 +184,7 @@ class Pipeline():
                 nlg_response = self.nlg.query_model(input=nlg_responses)
             else:
                 nlg_response = nlg_responses[0]
-            self.logger.info(f"System: {nlg_response}")
+            self.logger.info(f"Carllama: {nlg_response}")
 
             # Update the history with the system response
             self.history.add_to_history(sender="System", msg=nlg_response)
@@ -203,15 +208,21 @@ if __name__ == "__main__":
     #TODO add the fallback that no results are found in the database if 1 relaxed constraints already happened
     #TODO terminate sistem intent?
     #TODO if the user asks for a sports car don't know the brand ecc so maybe ask other things
-    #TODO improve the nlg prompt and create the nlg no results prompt
+    #* improve the nlg prompt and create the nlg no results prompt
     #TODO renting car
-    #TODO put json in the nlg?
+    #* put json in the nlg?
 
 
     #TODO aggiungere terminate system 
-    #TODO aggiungere multi intent detection
-    #TODO aggiungere JSON in the nlg
-
+    #* aggiungere multi intent detection
+    #* aggiungere JSON in the nlg
+    #* when the sytem provide some car that not match the user request, the system present the car relaxed but ask if he want to do another search
+    #* handling better the nlu input in the NLG component in order to provide a confirmation to the user of what the system understood
+    #TODO add the fact to book an appointment if no information of a given car is found in the database    
+    #TODO add a dictionary that contain the list of the car shown to the user and also the current car selected by the user
+    #TODO fix and add some examples to the pre nlu prompt
+    #TODO add the Name of the car if the reuqest info contain the car ID
+    #TODO nlg-negotiate-price: the system have to accept if the user price is higher that the system price
     #PRE_NLU component test
     # pre_nlu = PRE_NLU(cfg=config, model=model, tokenizer=tokenizer)
 

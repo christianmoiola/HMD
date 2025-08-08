@@ -40,3 +40,5 @@ history: System: Those are the cars available with your preferences:
 - Car ID: 12345, Brand: BMW, Model: X5, Year: 2019
 - Car ID: 67890, Brand: Audi, Model: A3, Year: 2020
 output: {"intent": "negotiate_price", "slots": {"car_id": "12345", "proposed_price": "20000"}}
+
+Here is the input you have to process:

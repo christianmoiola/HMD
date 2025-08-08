@@ -10,26 +10,14 @@ Rules for generating the response:
 - Write only the response, without any additional text or explanation.
 
 This is the template of the input that you have to consider.
-action: confirmation, parameter: negotiate_price
-system_price: The price of counter offer of the system
-user_price: The price that the user wants to pay
+DM response: {action: no_results_found, parameter: intent}
+NLU response: {intent: intent_name, slots: slot_values}
 
-You have to provide a message to the user that state the price that the system can sell the car for.
+You have to provide a message that informs the user that no results were found for their request and suggest they try a different search or modify their criteria.
 
 Example:
-example1:
 input:
-action: confirmation, parameter: negotiate_price
-system_price: 22000
-user_price: 20000
-
+DM response: {action: no_results_found, parameter: get_car_info}
+NLU response: {intent: "get_car_info", slots: {"car_id": 999, "info_type": "price"}}
 output:
-I'm sorry but the best price I can offer for the car is $22,000. Would you like to proceed with this price or discuss further?
-
-example2:
-input:
-action: confirmation, parameter: negotiate_price
-system_price: 18000
-user_price: 18000
-output:
-Okay, we have a deal at $18,000. Would you like to proceed with the purchase?
+I'm sorry, but I couldn't find any information about the car with ID 999. Can you please provide the correct car ID please?

@@ -128,18 +128,20 @@ class Database():
     def get_car_info(self, nlu_response: dict):
         self.logger.info("Getting car information from the database...")
         slots = nlu_response['slots']
-        car_id = slots['car_id'] if 'car_id' in slots.keys() else None
+        car_id = int(slots['car_id']) if 'car_id' in slots.keys() else None
         if not car_id:
             self.logger.error("No 'car_id' found in the response.")
             return "None"
         for car in self.database:
             if car["car_id"] == car_id:
                 if slots["info_type"] in car.keys():
-                    car_info = f"{slots['info_type']}: {car[slots['info_type']]}"
+                    car_info = f"{car['brand']} {car['model']} {slots['info_type']}: {car[slots['info_type']]}"
                     return car_info
                 else:
                     self.logger.error(f"Info type '{slots['info_type']}' not found for car_id {car_id}.")
                     return "None"
+        self.logger.error(f"Car with ID {car_id} not found in the database.")
+        return "None"
         
     
     def query_database(self, intent_data: dict):

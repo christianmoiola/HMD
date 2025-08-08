@@ -54,12 +54,13 @@ def generate(
     tokenizer: PreTrainedTokenizer,
     max_seq_length: int,
 ) -> str:
-    output = model.generate(
-        inputs.input_ids,
-        attention_mask=inputs.attention_mask,
-        max_length=max_seq_length,
-        pad_token_id=tokenizer.eos_token_id,
-    )
+    with torch.no_grad():
+        output = model.generate(
+            inputs.input_ids,
+            attention_mask=inputs.attention_mask,
+            max_length=max_seq_length,
+            pad_token_id=tokenizer.eos_token_id,
+        )
     return tokenizer.decode(
         output[0][len(inputs.input_ids[0]) :], skip_special_tokens=True
     )
