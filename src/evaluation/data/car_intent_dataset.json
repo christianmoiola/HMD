@@ -1,0 +1,1622 @@
+[
+  {
+    "input": "What cars do you have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "What cars do you have?"
+      }
+    ]
+  },
+  {
+    "input": "I'm interested in a hybrid SUV under 25k.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I'm interested in a hybrid SUV under 25k."
+      }
+    ]
+  },
+  {
+    "input": "Show me some electric cars.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Show me some electric cars."
+      }
+    ]
+  },
+  {
+    "input": "Looking for a compact sedan below 15k.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Looking for a compact sedan below 15k."
+      }
+    ]
+  },
+  {
+    "input": "Do you have any convertibles?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Do you have any convertibles?"
+      }
+    ]
+  },
+  {
+    "input": "I want a diesel car with low mileage.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I want a diesel car with low mileage."
+      }
+    ]
+  },
+  {
+    "input": "Show me cars from Toyota.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Show me cars from Toyota."
+      }
+    ]
+  },
+  {
+    "input": "I'm searching for a family car.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I'm searching for a family car."
+      }
+    ]
+  },
+  {
+    "input": "Looking for a luxury car around 40k.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Looking for a luxury car around 40k."
+      }
+    ]
+  },
+  {
+    "input": "Can you list your cheapest vehicles?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Can you list your cheapest vehicles?"
+      }
+    ]
+  },
+  {
+    "input": "Can you give me details about the BMW X5?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Can you give me details about the BMW X5?"
+      }
+    ]
+  },
+  {
+    "input": "How many seats does car ID 102 have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "How many seats does car ID 102 have?"
+      }
+    ]
+  },
+  {
+    "input": "What's the fuel type of the Audi A3?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What's the fuel type of the Audi A3?"
+      }
+    ]
+  },
+  {
+    "input": "Tell me the color options for car ID 205.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the color options for car ID 205."
+      }
+    ]
+  },
+  {
+    "input": "What is the mileage on the Tesla Model 3?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What is the mileage on the Tesla Model 3?"
+      }
+    ]
+  },
+  {
+    "input": "What transmission does the Ford Fiesta have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What transmission does the Ford Fiesta have?"
+      }
+    ]
+  },
+  {
+    "input": "What's the horsepower of the Mustang GT?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What's the horsepower of the Mustang GT?"
+      }
+    ]
+  },
+  {
+    "input": "Does car ID 402 have heated seats?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Does car ID 402 have heated seats?"
+      }
+    ]
+  },
+  {
+    "input": "Is the Nissan Leaf fully electric?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Is the Nissan Leaf fully electric?"
+      }
+    ]
+  },
+  {
+    "input": "What year was the Honda Civic manufactured?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What year was the Honda Civic manufactured?"
+      }
+    ]
+  },
+  {
+    "input": "Can I get the Tesla Model 3 for 30k?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Can I get the Tesla Model 3 for 30k?"
+      }
+    ]
+  },
+  {
+    "input": "Would you accept 12k for car ID 205?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Would you accept 12k for car ID 205?"
+      }
+    ]
+  },
+  {
+    "input": "Let's do 18,500 for the Ford Focus.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Let's do 18,500 for the Ford Focus."
+      }
+    ]
+  },
+  {
+    "input": "Would you take 20k for the BMW X5?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Would you take 20k for the BMW X5?"
+      }
+    ]
+  },
+  {
+    "input": "I'll pay 25k for the Audi A4.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "I'll pay 25k for the Audi A4."
+      }
+    ]
+  },
+  {
+    "input": "Can we settle on 10k for the Fiat 500?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Can we settle on 10k for the Fiat 500?"
+      }
+    ]
+  },
+  {
+    "input": "What about 15,500 for the Mazda 3?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "What about 15,500 for the Mazda 3?"
+      }
+    ]
+  },
+  {
+    "input": "Is 22k acceptable for the Lexus RX?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Is 22k acceptable for the Lexus RX?"
+      }
+    ]
+  },
+  {
+    "input": "Could you lower the price of car ID 509 to 28k?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Could you lower the price of car ID 509 to 28k?"
+      }
+    ]
+  },
+  {
+    "input": "I can offer 17k for the Honda Accord.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "I can offer 17k for the Honda Accord."
+      }
+    ]
+  },
+  {
+    "input": "I'll take the Toyota Corolla.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll take the Toyota Corolla."
+      }
+    ]
+  },
+  {
+    "input": "I confirm the purchase of car ID 300.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I confirm the purchase of car ID 300."
+      }
+    ]
+  },
+  {
+    "input": "Let's go ahead with that BMW X5.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Let's go ahead with that BMW X5."
+      }
+    ]
+  },
+  {
+    "input": "Please reserve the Audi Q7 for me.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Please reserve the Audi Q7 for me."
+      }
+    ]
+  },
+  {
+    "input": "I'll buy the Tesla Model Y.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll buy the Tesla Model Y."
+      }
+    ]
+  },
+  {
+    "input": "That Nissan Altima is mine.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "That Nissan Altima is mine."
+      }
+    ]
+  },
+  {
+    "input": "I'm ready to purchase the Kia Sportage.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'm ready to purchase the Kia Sportage."
+      }
+    ]
+  },
+  {
+    "input": "I'll proceed with the Hyundai Tucson.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll proceed with the Hyundai Tucson."
+      }
+    ]
+  },
+  {
+    "input": "Sign me up for the Mercedes C-Class.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Sign me up for the Mercedes C-Class."
+      }
+    ]
+  },
+  {
+    "input": "The Volkswagen Passat, I'll take it.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "The Volkswagen Passat, I'll take it."
+      }
+    ]
+  },
+  {
+    "input": "I think your service is excellent.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I think your service is excellent."
+      }
+    ]
+  },
+  {
+    "input": "I'd like to give feedback about the chat support.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I'd like to give feedback about the chat support."
+      }
+    ]
+  },
+  {
+    "input": "The interface is hard to use.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The interface is hard to use."
+      }
+    ]
+  },
+  {
+    "input": "I appreciate how fast you respond.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I appreciate how fast you respond."
+      }
+    ]
+  },
+  {
+    "input": "The images of the cars are too small.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The images of the cars are too small."
+      }
+    ]
+  },
+  {
+    "input": "The search filters are very helpful.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The search filters are very helpful."
+      }
+    ]
+  },
+  {
+    "input": "Your website loads too slowly.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "Your website loads too slowly."
+      }
+    ]
+  },
+  {
+    "input": "I had a great experience using your platform.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I had a great experience using your platform."
+      }
+    ]
+  },
+  {
+    "input": "The payment process is confusing.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The payment process is confusing."
+      }
+    ]
+  },
+  {
+    "input": "I love the variety of cars available.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I love the variety of cars available."
+      }
+    ]
+  },
+  {
+    "input": "Can I book a test drive for the Tesla Model Y next week?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Can I book a test drive for the Tesla Model Y next week?"
+      }
+    ]
+  },
+  {
+    "input": "Schedule a service for my car next Monday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Schedule a service for my car next Monday."
+      }
+    ]
+  },
+  {
+    "input": "I'd like to book a test drive for car ID 401.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I'd like to book a test drive for car ID 401."
+      }
+    ]
+  },
+  {
+    "input": "Book me a test drive for the Ford Mustang tomorrow.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Book me a test drive for the Ford Mustang tomorrow."
+      }
+    ]
+  },
+  {
+    "input": "I need to schedule a service check for Friday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I need to schedule a service check for Friday."
+      }
+    ]
+  },
+  {
+    "input": "Reserve a slot for my oil change on Saturday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Reserve a slot for my oil change on Saturday."
+      }
+    ]
+  },
+  {
+    "input": "Book an appointment to test the BMW 3 Series.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Book an appointment to test the BMW 3 Series."
+      }
+    ]
+  },
+  {
+    "input": "I want to book a tire replacement next Tuesday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I want to book a tire replacement next Tuesday."
+      }
+    ]
+  },
+  {
+    "input": "Schedule a brake inspection for my car.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Schedule a brake inspection for my car."
+      }
+    ]
+  },
+  {
+    "input": "Can you book a service for my Honda Civic next month?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Can you book a service for my Honda Civic next month?"
+      }
+    ]
+  },
+  {
+    "input": "What's the weather like today?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "What's the weather like today?"
+      }
+    ]
+  },
+  {
+    "input": "Can you recommend me a good restaurant?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "Can you recommend me a good restaurant?"
+      }
+    ]
+  },
+  {
+    "input": "Do you know when the next holiday is?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "Do you know when the next holiday is?"
+      }
+    ]
+  },
+  {
+    "input": "What's the capital of France?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "What's the capital of France?"
+      }
+    ]
+  },
+  {
+    "input": "How old is Elon Musk?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "How old is Elon Musk?"
+      }
+    ]
+  },
+  {
+    "input": "Tell me a joke.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "Tell me a joke."
+      }
+    ]
+  },
+  {
+    "input": "What time is it in New York?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "What time is it in New York?"
+      }
+    ]
+  },
+  {
+    "input": "How many days are in a leap year?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "How many days are in a leap year?"
+      }
+    ]
+  },
+  {
+    "input": "Who won the last World Cup?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "Who won the last World Cup?"
+      }
+    ]
+  },
+  {
+    "input": "What's the tallest mountain in the world?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Generic prior message for context"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "What's the tallest mountain in the world?"
+      }
+    ]
+  },
+  {
+    "input": "Tell me the fuel type of the Audi A3 and the mileage on the Tesla Model 3.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm comparing two cars."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the fuel type of the Audi A3."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the mileage on the Tesla Model 3."
+      }
+    ]
+  },
+  {
+    "input": "I'd like to book a test drive for the BMW X5 and can you lower the price to 40k?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like the BMW X5."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I'd like to book a test drive for the BMW X5."
+      },
+      {
+        "intent": "negotiate_price",
+        "text": "Can you lower the price to 40k for the BMW X5?"
+      }
+    ]
+  },
+  {
+    "input": "I want to buy a hybrid SUV and also schedule a test drive for it next Monday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Looking for an eco-friendly option."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I want to buy a hybrid SUV."
+      },
+      {
+        "intent": "book_appointment",
+        "text": "Schedule a test drive for the hybrid SUV next Monday."
+      }
+    ]
+  },
+  {
+    "input": "What year was the Honda Civic manufactured? Also, I'm ready to purchase the Kia Sportage.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What year was the Honda Civic manufactured?"
+      },
+      {
+        "intent": "order_car",
+        "text": "I'm ready to purchase the Kia Sportage."
+      }
+    ]
+  },
+  {
+    "input": "Schedule a service for my car next Monday. Also, Show me cars from Toyota.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Schedule a service for my car next Monday."
+      },
+      {
+        "intent": "buying_car",
+        "text": "Show me cars from Toyota."
+      }
+    ]
+  },
+  {
+    "input": "Tell me the color options for car ID 205. Also, I'll buy the Tesla Model Y.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the color options for car ID 205."
+      },
+      {
+        "intent": "order_car",
+        "text": "I'll buy the Tesla Model Y."
+      }
+    ]
+  },
+  {
+    "input": "The images of the cars are too small. Also, Would you take 20k for the BMW X5?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The images of the cars are too small."
+      },
+      {
+        "intent": "negotiate_price",
+        "text": "Would you take 20k for the BMW X5?"
+      }
+    ]
+  },
+  {
+    "input": "Is the Nissan Leaf fully electric? Also, Would you take 20k for the BMW X5?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Is the Nissan Leaf fully electric?"
+      },
+      {
+        "intent": "negotiate_price",
+        "text": "Would you take 20k for the BMW X5?"
+      }
+    ]
+  },
+  {
+    "input": "I appreciate how fast you respond. Also, Can I get the Tesla Model 3 for 30k?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I appreciate how fast you respond."
+      },
+      {
+        "intent": "negotiate_price",
+        "text": "Can I get the Tesla Model 3 for 30k?"
+      }
+    ]
+  },
+  {
+    "input": "What transmission does the Ford Fiesta have? Also, Schedule a brake inspection for my car.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What transmission does the Ford Fiesta have?"
+      },
+      {
+        "intent": "book_appointment",
+        "text": "Schedule a brake inspection for my car."
+      }
+    ]
+  },
+  {
+    "input": "Can we settle on 10k for the Fiat 500? Also, Sign me up for the Mercedes C-Class.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Can we settle on 10k for the Fiat 500?"
+      },
+      {
+        "intent": "order_car",
+        "text": "Sign me up for the Mercedes C-Class."
+      }
+    ]
+  },
+  {
+    "input": "Looking for a compact sedan below 15k. Also, I want to book a tire replacement next Tuesday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Looking for a compact sedan below 15k."
+      },
+      {
+        "intent": "book_appointment",
+        "text": "I want to book a tire replacement next Tuesday."
+      }
+    ]
+  },
+  {
+    "input": "I want to book a tire replacement next Tuesday. Also, I'd like to give feedback about the chat support.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I want to book a tire replacement next Tuesday."
+      },
+      {
+        "intent": "give_feedback",
+        "text": "I'd like to give feedback about the chat support."
+      }
+    ]
+  },
+  {
+    "input": "I appreciate how fast you respond. Also, I'll buy the Tesla Model Y.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I appreciate how fast you respond."
+      },
+      {
+        "intent": "order_car",
+        "text": "I'll buy the Tesla Model Y."
+      }
+    ]
+  },
+  {
+    "input": "Tell me the color options for car ID 205. Also, I'd like to book a test drive for car ID 401.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the color options for car ID 205."
+      },
+      {
+        "intent": "book_appointment",
+        "text": "I'd like to book a test drive for car ID 401."
+      }
+    ]
+  },
+  {
+    "input": "Your website loads too slowly. Also, Please reserve the Audi Q7 for me.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "Your website loads too slowly."
+      },
+      {
+        "intent": "order_car",
+        "text": "Please reserve the Audi Q7 for me."
+      }
+    ]
+  },
+  {
+    "input": "Could you lower the price of car ID 509 to 28k? Also, The search filters are very helpful.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Could you lower the price of car ID 509 to 28k?"
+      },
+      {
+        "intent": "give_feedback",
+        "text": "The search filters are very helpful."
+      }
+    ]
+  },
+  {
+    "input": "The search filters are very helpful. Also, Tell me the color options for car ID 205.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The search filters are very helpful."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the color options for car ID 205."
+      }
+    ]
+  },
+  {
+    "input": "Can you book a service for my Honda Civic next month? Also, Show me cars from Toyota.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Can you book a service for my Honda Civic next month?"
+      },
+      {
+        "intent": "buying_car",
+        "text": "Show me cars from Toyota."
+      }
+    ]
+  },
+  {
+    "input": "Your website loads too slowly. Also, I'm searching for a family car.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "Your website loads too slowly."
+      },
+      {
+        "intent": "buying_car",
+        "text": "I'm searching for a family car."
+      }
+    ]
+  },
+  {
+    "input": "I'll proceed with the Hyundai Tucson. Also, I'll pay 25k for the Audi A4.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll proceed with the Hyundai Tucson."
+      },
+      {
+        "intent": "negotiate_price",
+        "text": "I'll pay 25k for the Audi A4."
+      }
+    ]
+  },
+  {
+    "input": "Show me cars from Toyota. Also, Is 22k acceptable for the Lexus RX?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Show me cars from Toyota."
+      },
+      {
+        "intent": "negotiate_price",
+        "text": "Is 22k acceptable for the Lexus RX?"
+      }
+    ]
+  },
+  {
+    "input": "Sign me up for the Mercedes C-Class. Also, What about 15,500 for the Mazda 3?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Sign me up for the Mercedes C-Class."
+      },
+      {
+        "intent": "negotiate_price",
+        "text": "What about 15,500 for the Mazda 3?"
+      }
+    ]
+  },
+  {
+    "input": "Tell me the color options for car ID 205. Also, Would you take 20k for the BMW X5?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the color options for car ID 205."
+      },
+      {
+        "intent": "negotiate_price",
+        "text": "Would you take 20k for the BMW X5?"
+      }
+    ]
+  },
+  {
+    "input": "I'm ready to purchase the Kia Sportage. Also, I'm interested in a hybrid SUV under 25k.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'm ready to purchase the Kia Sportage."
+      },
+      {
+        "intent": "buying_car",
+        "text": "I'm interested in a hybrid SUV under 25k."
+      }
+    ]
+  },
+  {
+    "input": "I think your service is excellent. Also, Tell me the color options for car ID 205.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I think your service is excellent."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the color options for car ID 205."
+      }
+    ]
+  },
+  {
+    "input": "The Volkswagen Passat, I'll take it. Also, Schedule a service for my car next Monday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "The Volkswagen Passat, I'll take it."
+      },
+      {
+        "intent": "book_appointment",
+        "text": "Schedule a service for my car next Monday."
+      }
+    ]
+  },
+  {
+    "input": "What is the mileage on the Tesla Model 3? Also, The images of the cars are too small.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What is the mileage on the Tesla Model 3?"
+      },
+      {
+        "intent": "give_feedback",
+        "text": "The images of the cars are too small."
+      }
+    ]
+  },
+  {
+    "input": "That Nissan Altima is mine. Also, The payment process is confusing.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "That Nissan Altima is mine."
+      },
+      {
+        "intent": "give_feedback",
+        "text": "The payment process is confusing."
+      }
+    ]
+  },
+  {
+    "input": "The Volkswagen Passat, I'll take it. Also, Reserve a slot for my oil change on Saturday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mixed request"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "The Volkswagen Passat, I'll take it."
+      },
+      {
+        "intent": "book_appointment",
+        "text": "Reserve a slot for my oil change on Saturday."
+      }
+    ]
+  }
+]

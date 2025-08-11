@@ -22,13 +22,12 @@ class Pipeline():
         self.initial_message = self.config["General"].get("initial_message")
         self.model, self.tokenizer = get_model(config)
         self.define_components()
-        self.logger = setup_logger(self.__class__.__name__, logging_level="INFO", color_debug="DEBUG_MAIN")
+        self.logger = setup_logger(self.__class__.__name__, logging_level="DEBUG", color_debug="DEBUG_MAIN")
 
         self.list_state = []
 
         self.intent_to_class = {
             "buying_car": "BuyingStateTracker",
-            "renting_car": "RentingStateTracker",
             "get_car_info": "GettingInfoStateTracker",
             "order_car": "OrderCarStateTracker",
             "give_feedback": "GiveFeedbackStateTracker",
@@ -54,8 +53,6 @@ class Pipeline():
             match intent:
                 case "buying_car":
                     state_tracker_class = BuyingStateTracker()
-                case "renting_car":
-                    state_tracker_class = RentingStateTracker()
                 case "get_car_info":
                     state_tracker_class = GettingInfoStateTracker()
                 case "negotiate_price":
@@ -152,7 +149,9 @@ class Pipeline():
                 if dm_response["action"] == "confirmation" and dm_response["parameter"] == "buying_car":
                     results = "[]"
                     constraints_relaxed = []
-                    while results == "[]":
+
+                    while results == "[]" and len(constraints_relaxed) <= 2:
+                        print(f"Current dialogue state: {json}")
                         results = self.database.query_database(json)
                         self.logger.debug(f"Database Results: {results}")
                         if results == "[]":
@@ -164,6 +163,8 @@ class Pipeline():
                                     self.logger.info("Constraint relaxed: " + slot)
                                     break
                     data = f"Database results: {str(results)}" if len(constraints_relaxed) == 0 else f"Database results: {str(results)}\nConstraints relaxed: {', '.join(constraints_relaxed)}"
+                    if results == "[]":
+                        dm_response["action"] = "no_results_found"
 
                 if dm_response["parameter"] == "booking_appointment":
                     data += f"Current date: 01/06/2025, Time: 10:00 AM" 
@@ -199,9 +200,10 @@ if __name__ == "__main__":
     config["Settings"] = {
         "path": os.getcwd()
     }
-    pipeline = Pipeline(config=config)
-    pipeline.run()
-
+    #pipeline = Pipeline(config=config)
+    #pipeline.run()
+    evaluation = Evaluation(cfg=config)
+    evaluation.test_dm(is_history=True)
     #TODO (Additional) Modify the book apointment in order to (book the apointment; you will receive a confirmaton email with the details of the appointment if the appointment is available)
     #TODO (Additional) add contact operator
     #TODO add the state of the selected car
@@ -218,7 +220,7 @@ if __name__ == "__main__":
     #* aggiungere JSON in the nlg
     #* when the sytem provide some car that not match the user request, the system present the car relaxed but ask if he want to do another search
     #* handling better the nlu input in the NLG component in order to provide a confirmation to the user of what the system understood
-    #TODO add the fact to book an appointment if no information of a given car is found in the database    
+    #* add the fact to book an appointment if no information of a given car is found in the database    
     #TODO add a dictionary that contain the list of the car shown to the user and also the current car selected by the user
     #TODO fix and add some examples to the pre nlu prompt
     #TODO add the Name of the car if the reuqest info contain the car ID

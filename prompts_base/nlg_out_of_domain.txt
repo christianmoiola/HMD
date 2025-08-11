@@ -14,9 +14,3 @@ DM response: {action: confirmation, parameter: out_of_domain}
 NLU response: {intent: out_of_domain, slots: {}}
 
 You have to provide a message that informs the user that the request is out of domain and suggest them to try again with a different request or book an appointment with a specialist.
-
-Example:
-input:
-action: confirmation, parameter: out_of_domain
-output:
-I'm sorry, but I cannot understand your request. Please try again with a different request or consider booking an appointment for further assistance. Thank you!

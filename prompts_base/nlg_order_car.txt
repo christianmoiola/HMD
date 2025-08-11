@@ -17,13 +17,3 @@ database output: {
 }
 
 You have to provide a message that confirms the order of the car that matches the user's request.
-
-Example:
-input:
-DM response: {action: confirmation, parameter: order_car}
-NLU response: {intent: order_car, slots: {'car_id': 16, 'price': 18000, 'name': 'John', 'surname': 'Doe', 'id': '123456789'}}
-database output: {
-    "CarID": 16, "brand": "Toyota", "model": "Corolla", "year": 2020, "budget": 20000, "Seats": 5, "car_type": "Family_car", "transmission": "Automatic"
-}
-output:
-Congratulations John Doe! You do not regret your decision to buy the Toyota Corolla 2020. Especially with that discount price of 18000. Thank you for your order! Can I assist you with anything else today?

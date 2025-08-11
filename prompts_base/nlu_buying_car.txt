@@ -29,12 +29,3 @@ Your output must strictly adhere to this exact JSON structure.  Failure to do so
 
 ```json
 {"intent": "buying_car", "slots": {"car_type": "value", "budget": "value", "brand": "value", "model": "value", "year": "value", "fuel_type": "value", "transmission": "value"}}
-
-Example:
-example 1:
-input: {"intent": "buying_car", "text": "I would like to buy a Family car with a budget of 20000."}
-output: {"intent": "buying_car", "slots": {"car_type": "Family_car", "budget": "20000", "brand": null, "model": null, "year": null, "fuel_type": null, "transmission": null}}
-
-example 2:
-input: {"intent": "buying_car", "text": "I would like to buy a BMW X5 from 2019 with a budget of 30000."}
-output: {"intent": "buying_car", "slots": {"car_type": null, "budget": "30000", "brand": "BMW", "model": "X5", "year": "2019", "fuel_type": null, "transmission": null}}

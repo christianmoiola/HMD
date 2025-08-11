@@ -4,6 +4,16 @@
       "intent": "buying_car",
       "text": "I'm looking for a Sport car, maybe a BMW."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Hi, I want to buy a car."
+      },
+      {
+        "sender": "System",
+        "msg": "What kind of car are you interested in?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -22,6 +32,16 @@
       "intent": "buying_car",
       "text": "I want a Fiat Panda, year 2020, Electric."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for a specific model."
+      },
+      {
+        "sender": "System",
+        "msg": "What brand, model, and year are you interested in? Any specific fuel type or transmission?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -40,6 +60,16 @@
       "intent": "buying_car",
       "text": "Show me some Automatic Family cars under 25000."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need a car for my family, and I have a budget."
+      },
+      {
+        "sender": "System",
+        "msg": "Okay, and do you have any preferences for the transmission type?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -58,6 +88,16 @@
       "intent": "buying_car",
       "text": "I'd like a Toyota Corolla, Petrol, model year 2022."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for a reliable car."
+      },
+      {
+        "sender": "System",
+        "msg": "Do you have any preferred brands or models in mind, and what about the year or fuel type?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -76,6 +116,16 @@
       "intent": "buying_car",
       "text": "Looking for a Volkswagen Golf, Diesel, Manual transmission."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need a new car."
+      },
+      {
+        "sender": "System",
+        "msg": "Are you looking for a specific make and model? Any preferences on fuel or transmission?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -94,6 +144,16 @@
       "intent": "buying_car",
       "text": "I need a Ford Fiesta, budget 15000."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm on a tight budget for a new car."
+      },
+      {
+        "sender": "System",
+        "msg": "What's your preferred car model and your maximum budget?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -112,6 +172,16 @@
       "intent": "buying_car",
       "text": "Any Audi A3 from 2021 onwards?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm interested in an Audi."
+      },
+      {
+        "sender": "System",
+        "msg": "Which model and year are you looking for?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -130,6 +200,16 @@
       "intent": "buying_car",
       "text": "Searching for a Mercedes C-Class, Automatic."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for a luxury sedan."
+      },
+      {
+        "sender": "System",
+        "msg": "Do you have any specific brand or transmission preferences?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -148,6 +228,16 @@
       "intent": "buying_car",
       "text": "I'd like a Honda Civic, year 2023, Electric."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm interested in an eco-friendly car."
+      },
+      {
+        "sender": "System",
+        "msg": "Are you looking for a specific model or year, and is there a particular fuel type you prefer?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -166,6 +256,16 @@
       "intent": "buying_car",
       "text": "Show me a Nissan Leaf, 2024 model, under 30000."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want an electric car."
+      },
+      {
+        "sender": "System",
+        "msg": "Do you have a specific model, year, or budget in mind for your electric car?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -184,6 +284,16 @@
       "intent": "buying_car",
       "text": "I need a Peugeot 308, Diesel, Manual."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for a compact car."
+      },
+      {
+        "sender": "System",
+        "msg": "Any specific brand, model, fuel type, or transmission preferences for your compact car?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -202,6 +312,16 @@
       "intent": "buying_car",
       "text": "Looking for a City car, budget around 10000."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need a small car for urban driving."
+      },
+      {
+        "sender": "System",
+        "msg": "Are you looking for a specific type of car like a City car, and what's your budget?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -220,6 +340,16 @@
       "intent": "buying_car",
       "text": "Do you have any Sport cars with Petrol engine?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm interested in high-performance vehicles."
+      },
+      {
+        "sender": "System",
+        "msg": "Are you looking for Sport cars, and do you have any fuel type preferences?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -238,6 +368,16 @@
       "intent": "buying_car",
       "text": "I'm interested in a BMW X1, from 2020."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for an SUV."
+      },
+      {
+        "sender": "System",
+        "msg": "Any specific brand, model, or year you have in mind for your SUV?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -256,6 +396,16 @@
       "intent": "buying_car",
       "text": "I need a Family car, an Audi, maybe an A3, from 2023."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for a car suitable for a family."
+      },
+      {
+        "sender": "System",
+        "msg": "Are you looking for a Family car, and do you have any specific brand, model, or year in mind?"
+      }
+    ],
     "expected_output": {
       "intent": "buying_car",
       "slots": {
@@ -274,6 +424,16 @@
       "intent": "get_car_info",
       "text": "Tell me about car ID 98765."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "We have several cars available. For example, car ID 98765 is a Ford Focus, 2020."
+      },
+      {
+        "sender": "User",
+        "msg": "I'd like to know more about one of the cars."
+      }
+    ],
     "expected_output": {
       "intent": "get_car_info",
       "slots": {
@@ -287,6 +447,20 @@
       "intent": "get_car_info",
       "text": "What's the condition of car 54321?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "We have a Honda Civic with ID 54321, year 2021."
+      },
+      {
+        "sender": "User",
+        "msg": "Can you give me details about this specific car?"
+      },
+      {
+        "sender": "System",
+        "msg": "What information would you like about car ID 54321?"
+      }
+    ],
     "expected_output": {
       "intent": "get_car_info",
       "slots": {
@@ -300,6 +474,20 @@
       "intent": "get_car_info",
       "text": "How many seats does car 10293 have?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "We have a Volkswagen Golf with ID 10293, year 2019."
+      },
+      {
+        "sender": "User",
+        "msg": "Tell me more about the Golf."
+      },
+      {
+        "sender": "System",
+        "msg": "What specific information are you looking for regarding car ID 10293?"
+      }
+    ],
     "expected_output": {
       "intent": "get_car_info",
       "slots": {
@@ -313,6 +501,16 @@
       "intent": "get_car_info",
       "text": "Is car 45678 Petrol or Diesel?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I have a Mercedes C-Class with ID 45678, year 2022."
+      },
+      {
+        "sender": "User",
+        "msg": "I need some details about that Mercedes."
+      }
+    ],
     "expected_output": {
       "intent": "get_car_info",
       "slots": {
@@ -326,6 +524,16 @@
       "intent": "get_car_info",
       "text": "What type of transmission is in car 78901?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "There is a Nissan Leaf with ID 78901, year 2023."
+      },
+      {
+        "sender": "User",
+        "msg": "Can you give me more technical details on the Leaf?"
+      }
+    ],
     "expected_output": {
       "intent": "get_car_info",
       "slots": {
@@ -349,7 +557,10 @@
     }
   },
   {
-    "history": [{"sender": "System", "msg": "Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"}],
+    "history": [
+      {"sender": "System", "msg": "Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"},
+      {"sender": "User", "msg": "Tell me about the Toyota Corolla."}
+    ],
     "input": {
       "intent": "get_car_info",
       "text": "Tell me about the condition of the Toyota Corolla."
@@ -363,7 +574,10 @@
     }
   },
   {
-    "history": [{"sender": "System", "msg": "Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"}],
+    "history": [
+      {"sender": "System", "msg": "Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"},
+      {"sender": "User", "msg": "I'm interested in the Panda."}
+    ],
     "input": {
       "intent": "get_car_info",
       "text": "How many seats in the Panda?"
@@ -377,7 +591,10 @@
     }
   },
   {
-    "history": [{"sender": "System", "msg": "Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"}],
+    "history": [
+      {"sender": "System", "msg": "Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"},
+      {"sender": "User", "msg": "What information can you give me about car 44556?"}
+    ],
     "input": {
       "intent": "get_car_info",
       "text": "What about the fuel type of car 44556?"
@@ -391,7 +608,10 @@
     }
   },
   {
-    "history": [{"sender": "System", "msg": "Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"}],
+    "history": [
+      {"sender": "System", "msg": "Those are the cars available with your preferences:\n- Car ID: 11223, Brand: Fiat, Model: Panda, Year: 2020\n- Car ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"},
+      {"sender": "User", "msg": "I'm looking at the Corolla."}
+    ],
     "input": {
       "intent": "get_car_info",
       "text": "Is the Corolla automatic?"
@@ -409,6 +629,16 @@
       "intent": "get_car_info",
       "text": "What information do you have about car ID 23456?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "We have a Peugeot 308 with ID 23456, year 2020."
+      },
+      {
+        "sender": "User",
+        "msg": "Tell me more about this car."
+      }
+    ],
     "expected_output": {
       "intent": "get_car_info",
       "slots": {
@@ -422,6 +652,20 @@
       "intent": "get_car_info",
       "text": "Can I get details on the location of car 34567?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I have a Honda Civic with ID 34567, year 2021, available."
+      },
+      {
+        "sender": "User",
+        "msg": "I'm interested in car 34567."
+      },
+      {
+        "sender": "System",
+        "msg": "What would you like to know about it?"
+      }
+    ],
     "expected_output": {
       "intent": "get_car_info",
       "slots": {
@@ -446,7 +690,8 @@
   },
   {
     "history": [
-      {"sender": "System", "msg": "We have a BMW X5 with ID 99887 and an Audi A3 with ID 66778."}
+      {"sender": "System", "msg": "We have a BMW X5 with ID 99887 and an Audi A3 with ID 66778."},
+      {"sender": "User", "msg": "Tell me about the Audi."}
     ],
     "input": {
       "intent": "get_car_info",
@@ -465,6 +710,20 @@
       "intent": "get_car_info",
       "text": "Tell me about car 87654's transmission."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I have a Volkswagen Golf with ID 87654, year 2020."
+      },
+      {
+        "sender": "User",
+        "msg": "I want more details on the Golf, ID 87654."
+      },
+      {
+        "sender": "System",
+        "msg": "What information are you seeking about car 87654?"
+      }
+    ],
     "expected_output": {
       "intent": "get_car_info",
       "slots": {
@@ -478,6 +737,16 @@
       "intent": "give_feedback",
       "text": "I give it a 4. It was pretty good."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to give some feedback."
+      },
+      {
+        "sender": "System",
+        "msg": "Please tell me about your experience."
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
@@ -491,6 +760,16 @@
       "intent": "give_feedback",
       "text": "The service was terrible, a 1 from me."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm not happy with your service."
+      },
+      {
+        "sender": "System",
+        "msg": "I'm sorry to hear that. Can you tell me what went wrong?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
@@ -504,6 +783,16 @@
       "intent": "give_feedback",
       "text": "I think you guys are doing a great job, a solid 5."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I just wanted to compliment your service."
+      },
+      {
+        "sender": "System",
+        "msg": "Thank you! We appreciate your feedback. How would you rate your experience?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
@@ -517,6 +806,16 @@
       "intent": "give_feedback",
       "text": "Could be better, I'd say a 2."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have some feedback about the service."
+      },
+      {
+        "sender": "System",
+        "msg": "Please share your thoughts on how we can improve."
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
@@ -530,6 +829,16 @@
       "intent": "give_feedback",
       "text": "My experience was just okay, maybe a 3."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to leave a review."
+      },
+      {
+        "sender": "System",
+        "msg": "What are your thoughts on your recent experience with us?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
@@ -543,10 +852,20 @@
       "intent": "give_feedback",
       "text": "The response time was excellent. Highly recommend."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have some positive feedback."
+      },
+      {
+        "sender": "System",
+        "msg": "Great! Please tell us more about what you liked."
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
-        "rating": null,
+        "rating": "null",
         "comments": "The response time was excellent. Highly recommend."
       }
     }
@@ -556,10 +875,20 @@
       "intent": "give_feedback",
       "text": "I have some issues with the navigation system."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need to report a problem."
+      },
+      {
+        "sender": "System",
+        "msg": "What kind of issue are you encountering?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
-        "rating": null,
+        "rating": "null",
         "comments": "I have some issues with the navigation system."
       }
     }
@@ -569,10 +898,20 @@
       "intent": "give_feedback",
       "text": "Everything was perfect, nothing to complain about."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm very satisfied with your service."
+      },
+      {
+        "sender": "System",
+        "msg": "That's wonderful to hear! Is there anything specific you'd like to highlight?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
-        "rating": null,
+        "rating": "null",
         "comments": "Everything was perfect, nothing to complain about."
       }
     }
@@ -582,10 +921,20 @@
       "intent": "give_feedback",
       "text": "I received excellent support from your team."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to express my gratitude."
+      },
+      {
+        "sender": "System",
+        "msg": "We're glad to hear that! What specifically made your experience excellent?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
-        "rating": null,
+        "rating": "null",
         "comments": "I received excellent support from your team."
       }
     }
@@ -595,10 +944,20 @@
       "intent": "give_feedback",
       "text": "The app crashed multiple times, fix it."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm having technical issues."
+      },
+      {
+        "sender": "System",
+        "msg": "I'm sorry to hear that. Can you describe the problem in more detail?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
-        "rating": null,
+        "rating": "null",
         "comments": "The app crashed multiple times, fix it."
       }
     }
@@ -608,10 +967,20 @@
       "intent": "give_feedback",
       "text": "My rating is 6, the service was okay."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to give you a rating."
+      },
+      {
+        "sender": "System",
+        "msg": "Please provide your rating and any comments you have."
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
-        "rating": null,
+        "rating": "null",
         "comments": "The service was okay."
       }
     }
@@ -621,10 +990,20 @@
       "intent": "give_feedback",
       "text": "I'd give it a zero if I could."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm very unhappy with the service."
+      },
+      {
+        "sender": "System",
+        "msg": "I'm sorry to hear that. Can you explain why you feel that way?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
-        "rating": null,
+        "rating": "null",
         "comments": "I'd give it a zero if I could."
       }
     }
@@ -634,10 +1013,20 @@
       "intent": "give_feedback",
       "text": "Above average, a 4.5 from me."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to rate my experience."
+      },
+      {
+        "sender": "System",
+        "msg": "What would you rate us?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
-        "rating": null,
+        "rating": "null",
         "comments": "Above average, a 4.5 from me."
       }
     }
@@ -647,6 +1036,16 @@
       "intent": "give_feedback",
       "text": "Could use some improvements on speed. Overall 3."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have some constructive feedback."
+      },
+      {
+        "sender": "System",
+        "msg": "We welcome all suggestions for improvement. What specific areas do you think need work?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
@@ -660,10 +1059,20 @@
       "intent": "give_feedback",
       "text": "Everything was flawless, top marks."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to express my complete satisfaction."
+      },
+      {
+        "sender": "System",
+        "msg": "That's wonderful to hear! Is there anything specific that stood out to you?"
+      }
+    ],
     "expected_output": {
       "intent": "give_feedback",
       "slots": {
-        "rating": null,
+        "rating": "null",
         "comments": "Everything was flawless, top marks."
       }
     }
@@ -673,6 +1082,16 @@
       "intent": "negotiate_price",
       "text": "Can I get car ID 98765 for 18000?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "Car ID 98765, a Ford Focus, is currently priced at 20000."
+      },
+      {
+        "sender": "User",
+        "msg": "I'd like to discuss the price of car 98765."
+      }
+    ],
     "expected_output": {
       "intent": "negotiate_price",
       "slots": {
@@ -686,6 +1105,16 @@
       "intent": "negotiate_price",
       "text": "I want to offer 25000 for car 54321."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Honda Civic, car ID 54321, is listed at 28000."
+      },
+      {
+        "sender": "User",
+        "msg": "I'm interested in car 54321, but I want to negotiate."
+      }
+    ],
     "expected_output": {
       "intent": "negotiate_price",
       "slots": {
@@ -699,6 +1128,16 @@
       "intent": "negotiate_price",
       "text": "Car 10293, can I get it for 10000?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Volkswagen Golf, car ID 10293, is priced at 12000."
+      },
+      {
+        "sender": "User",
+        "msg": "I'd like to make an offer on the Golf."
+      }
+    ],
     "expected_output": {
       "intent": "negotiate_price",
       "slots": {
@@ -712,6 +1151,16 @@
       "intent": "negotiate_price",
       "text": "The price for car 45678 is too high. What's the best offer you can give for it?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Mercedes C-Class, car ID 45678, is priced at 45000."
+      },
+      {
+        "sender": "User",
+        "msg": "I find the price of car 45678 to be too high."
+      }
+    ],
     "expected_output": {
       "intent": "negotiate_price",
       "slots": {
@@ -725,6 +1174,16 @@
       "intent": "negotiate_price",
       "text": "I'd like to negotiate the price on car 78901. I'm thinking 35000."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Nissan Leaf, car ID 78901, is listed at 38000."
+      },
+      {
+        "sender": "User",
+        "msg": "I want to discuss the price for car 78901."
+      }
+    ],
     "expected_output": {
       "intent": "negotiate_price",
       "slots": {
@@ -748,7 +1207,10 @@
     }
   },
   {
-    "history": [{"sender": "System", "msg": "We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556."}],
+    "history": [
+      {"sender": "System", "msg": "We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556."},
+      {"sender": "User", "msg": "I like the Corolla, but the price is a concern."}
+    ],
     "input": {
       "intent": "negotiate_price",
       "text": "The Corolla is a bit expensive. Can we do 19000?"
@@ -762,7 +1224,10 @@
     }
   },
   {
-    "history": [{"sender": "System", "msg": "We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556."}],
+    "history": [
+      {"sender": "System", "msg": "We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556."},
+      {"sender": "User", "msg": "I'm interested in the Fiat Panda, but I'd like to pay less."}
+    ],
     "input": {
       "intent": "negotiate_price",
       "text": "I'm looking to get the Fiat for less."
@@ -776,7 +1241,10 @@
     }
   },
   {
-    "history": [{"sender": "System", "msg": "We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556."}],
+    "history": [
+      {"sender": "System", "msg": "We have a Fiat Panda with ID 11223 and a Toyota Corolla with ID 44556."},
+      {"sender": "User", "msg": "I want to negotiate the price for car 44556."}
+    ],
     "input": {
       "intent": "negotiate_price",
       "text": "What's the lowest you'll take for car 44556?"
@@ -794,6 +1262,16 @@
       "intent": "negotiate_price",
       "text": "I'd like to make an offer for car 23456."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Peugeot 308, car ID 23456, is available for 22000."
+      },
+      {
+        "sender": "User",
+        "msg": "I'm interested in car 23456, but I want to negotiate the price."
+      }
+    ],
     "expected_output": {
       "intent": "negotiate_price",
       "slots": {
@@ -807,6 +1285,16 @@
       "intent": "negotiate_price",
       "text": "My offer for car 34567 is 8000."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Honda Civic, car ID 34567, is priced at 10000."
+      },
+      {
+        "sender": "User",
+        "msg": "I'm ready to make an offer on car 34567."
+      }
+    ],
     "expected_output": {
       "intent": "negotiate_price",
       "slots": {
@@ -830,7 +1318,10 @@
     }
   },
   {
-    "history": [{"sender": "System", "msg": "Available: BMW X5 (ID: 99887), Audi A3 (ID: 66778)."}],
+    "history": [
+      {"sender": "System", "msg": "Available: BMW X5 (ID: 99887), Audi A3 (ID: 66778)."},
+      {"sender": "User", "msg": "The Audi's price is a bit high for me."}
+    ],
     "input": {
       "intent": "negotiate_price",
       "text": "The Audi's price is a bit steep. Can it be reduced?"
@@ -846,8 +1337,18 @@
   {
     "input": {
       "intent": "negotiate_price",
-      "text": "I want to propose 17500 for car 87654."
+      "text": "I want to propose 17500 for the Volkswagen Golf."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Volkswagen Golf, car ID 87654, is priced at 19000."
+      },
+      {
+        "sender": "User",
+        "msg": "I'd like to make an offer on car 87654."
+      }
+    ],
     "expected_output": {
       "intent": "negotiate_price",
       "slots": {
@@ -859,8 +1360,18 @@
   {
     "input": {
       "intent": "negotiate_price",
-      "text": "Is there any flexibility on the price of car 11220?"
+      "text": "Is there any flexibility on the price of the Mercedes A-Class?"
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Mercedes A-Class, car ID 11220, is listed at 35000."
+      },
+      {
+        "sender": "User",
+        "msg": "I'm interested in car 11220, but I want to negotiate the price."
+      }
+    ],
     "expected_output": {
       "intent": "negotiate_price",
       "slots": {
@@ -874,6 +1385,16 @@
       "intent": "order_car",
       "text": "I'll take car ID 98765 for 18500."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "Car ID 98765 is a Ford Focus, priced at 19000. Is that acceptable?"
+      },
+      {
+        "sender": "User",
+        "msg": "I'm ready to proceed with the purchase of car 98765."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -888,8 +1409,18 @@
   {
     "input": {
       "intent": "order_car",
-      "text": "Order car 54321 for 26000. My name is Alice Smith, ID 1234."
+      "text": "Order the Honda Civic for 26000. My name is Alice Smith, ID 1234."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Honda Civic, car ID 54321, is available for 26000. Are you ready to finalize?"
+      },
+      {
+        "sender": "User",
+        "msg": "Yes, I am. I want to buy car 54321."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -906,6 +1437,16 @@
       "intent": "order_car",
       "text": "I want to buy car 10293."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Volkswagen Golf, car ID 10293, is priced at 11000. Are you sure you want to purchase it?"
+      },
+      {
+        "sender": "User",
+        "msg": "Yes, I've decided."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -939,6 +1480,16 @@
       "intent": "order_car",
       "text": "I'll go ahead and order car 78901. I'm John Doe."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Nissan Leaf, car ID 78901, is available for 35000. Are you ready to purchase?"
+      },
+      {
+        "sender": "User",
+        "msg": "Yes, I'm ready to buy it."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -954,7 +1505,7 @@
     "history": [{"sender": "System", "msg": "The Fiat Panda (ID: 11223) is available for 12000 euros. Are you ready to order?"}],
     "input": {
       "intent": "order_car",
-      "text": "Confirm the order for 11223 please."
+      "text": "Confirm the order for the Fiat Panda please."
     },
     "expected_output": {
       "intent": "order_car",
@@ -987,8 +1538,18 @@
   {
     "input": {
       "intent": "order_car",
-      "text": "Order car 23456 for me, Sarah Brown, ID 9012."
+      "text": "Order the Peugeot 308 for me, Sarah Brown, ID 9012."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Peugeot 308, car ID 23456, is available for 21000. Would you like to proceed with the purchase?"
+      },
+      {
+        "sender": "User",
+        "msg": "Yes, I want to order car 23456."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -1005,6 +1566,16 @@
       "intent": "order_car",
       "text": "I want to purchase car 34567, paying 8500."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Honda Civic, car ID 34567, is available for 9000. Are you ready to confirm?"
+      },
+      {
+        "sender": "User",
+        "msg": "Yes, I'm buying car 34567."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -1053,8 +1624,18 @@
   {
     "input": {
       "intent": "order_car",
-      "text": "Finalize order for car 87654. My ID is 3456."
+      "text": "Finalize order for the Volkswagen Golf. My ID is 3456."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Volkswagen Golf, car ID 87654, is available for 17500. Are you ready to purchase?"
+      },
+      {
+        "sender": "User",
+        "msg": "Yes, I want to finalize the order."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -1069,8 +1650,18 @@
   {
     "input": {
       "intent": "order_car",
-      "text": "I want to get car 11220 for 32000. I'm Michael Green."
+      "text": "I want to get the Mercedes A-Class for 32000. I'm Michael Green."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Mercedes A-Class, car ID 11220, is available for 33000. Are you ready to proceed?"
+      },
+      {
+        "sender": "User",
+        "msg": "Yes, I want to buy car 11220."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -1087,6 +1678,16 @@
       "intent": "order_car",
       "text": "Place an order for car 55667. My name is Olivia Davis."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The Audi Q3, car ID 55667, is available for 29000. Are you ready to confirm?"
+      },
+      {
+        "sender": "User",
+        "msg": "Yes, I'm ready to buy car 55667."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -1101,8 +1702,18 @@
   {
     "input": {
       "intent": "order_car",
-      "text": "Confirm purchase of car 77889 for 21000 euros."
+      "text": "Confirm purchase of the BMW for 21000 euros."
     },
+    "history": [
+      {
+        "sender": "System",
+        "msg": "The BMW 3 Series, car ID 77889, is priced at 22000. Are you ready to finalize the purchase?"
+      },
+      {
+        "sender": "User",
+        "msg": "Yes, I want to confirm the purchase of car 77889."
+      }
+    ],
     "expected_output": {
       "intent": "order_car",
       "slots": {
@@ -1119,6 +1730,16 @@
       "intent": "out_of_domain",
       "text": "Tell me a joke."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm feeling bored."
+      },
+      {
+        "sender": "System",
+        "msg": "I can help you find a car, or answer questions about our services. What can I do for you?"
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1129,6 +1750,16 @@
       "intent": "out_of_domain",
       "text": "What's the capital of France?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have a general knowledge question."
+      },
+      {
+        "sender": "System",
+        "msg": "I specialize in car-related inquiries. How can I assist you with cars today?"
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1139,6 +1770,16 @@
       "intent": "out_of_domain",
       "text": "How do I bake a cake?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need some cooking advice."
+      },
+      {
+        "sender": "System",
+        "msg": "My expertise is in cars. Is there anything I can help you with regarding vehicles?"
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1149,6 +1790,16 @@
       "intent": "out_of_domain",
       "text": "Play some music."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to relax."
+      },
+      {
+        "sender": "System",
+        "msg": "I'm a car assistant and don't have control over music. Can I help you with anything else related to cars?"
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1159,6 +1810,16 @@
       "intent": "out_of_domain",
       "text": "Set a reminder for 3 PM."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need to remember something later."
+      },
+      {
+        "sender": "System",
+        "msg": "I'm not equipped to set reminders. Is there a car-related task I can help you with?"
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1169,6 +1830,16 @@
       "intent": "out_of_domain",
       "text": "Who won the last football match?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm curious about recent sports results."
+      },
+      {
+        "sender": "System",
+        "msg": "My focus is on cars. I can't provide information about sports."
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1179,6 +1850,16 @@
       "intent": "out_of_domain",
       "text": "Can you give me legal advice?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have a legal question."
+      },
+      {
+        "sender": "System",
+        "msg": "I am not a legal professional and cannot provide legal advice. I can assist with car-related services."
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1189,6 +1870,16 @@
       "intent": "out_of_domain",
       "text": "Translate 'hello' to Spanish."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need help with a language translation."
+      },
+      {
+        "sender": "System",
+        "msg": "I can only help with car-related inquiries. Is there anything car-related I can translate for you?"
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1199,6 +1890,16 @@
       "intent": "out_of_domain",
       "text": "What's the meaning of life?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have a philosophical question."
+      },
+      {
+        "sender": "System",
+        "msg": "I can only discuss car-related topics. Can I help you find a car or answer questions about our services?"
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1209,6 +1910,16 @@
       "intent": "out_of_domain",
       "text": "Tell me about quantum physics."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm interested in science topics."
+      },
+      {
+        "sender": "System",
+        "msg": "My knowledge base is limited to cars and related services. I cannot provide information on quantum physics."
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1219,6 +1930,16 @@
       "intent": "out_of_domain",
       "text": "How do I fix my computer?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have a technical problem."
+      },
+      {
+        "sender": "System",
+        "msg": "I can only assist with car-related issues. For computer problems, you might need IT support."
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1229,6 +1950,16 @@
       "intent": "out_of_domain",
       "text": "Can you recommend a good restaurant nearby?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for a place to eat."
+      },
+      {
+        "sender": "System",
+        "msg": "I don't have information on local restaurants. My purpose is to help you with cars."
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1239,6 +1970,16 @@
       "intent": "out_of_domain",
       "text": "What are the latest news headlines?"
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to catch up on current events."
+      },
+      {
+        "sender": "System",
+        "msg": "I don't have access to real-time news updates. I can help you with car-related information."
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1249,6 +1990,16 @@
       "intent": "out_of_domain",
       "text": "Book a flight for me to Tokyo."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need to travel."
+      },
+      {
+        "sender": "System",
+        "msg": "I'm a car assistant and cannot book flights. Is there anything related to cars I can help you with?"
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}
@@ -1259,6 +2010,16 @@
       "intent": "out_of_domain",
       "text": "Give me some stock market tips."
     },
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need financial advice."
+      },
+      {
+        "sender": "System",
+        "msg": "I cannot provide financial advice. My domain is car-related services."
+      }
+    ],
     "expected_output": {
       "intent": "out_of_domain",
       "slots": {}

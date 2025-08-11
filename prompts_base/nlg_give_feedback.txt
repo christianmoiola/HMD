@@ -14,10 +14,3 @@ DM response: {action: confirmation, parameter: give_feedback}
 NLU response: {intent: name_intent, slots: ('rating': slot_value, 'comments': slot_value)}
 
 You have to provide a message that confirms the feedback submission with the user.
-
-Example:
-input:
-DM response: {action: confirmation, parameter: give_feedback}
-NLU response: {intent: name_intent, slots: ('rating': 5, 'comments': 'Great service!')}
-output:
-Thank you for your feedback! We appreciate your rating of 5 and your comments: "Great service!". Is there anything else I can assist you with?

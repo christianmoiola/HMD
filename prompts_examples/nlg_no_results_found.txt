@@ -21,3 +21,9 @@ DM response: {action: no_results_found, parameter: get_car_info}
 NLU response: {intent: "get_car_info", slots: {"car_id": 999, "info_type": "price"}}
 output:
 I'm sorry, but I couldn't find any information about the car with ID 999. Can you please provide the correct car ID please?
+
+input:
+DM response: {action: no_results_found, parameter: buying_car}
+NLU response: {intent: "buying_car", slots: {"car_type": "Family_car", "budget": 10000, "brand": "BMW", "model": None, "year": None, "fuel_type": None, "transmission": "Automatic"}}
+output:
+I'm sorry, but I couldn't find any family BMW cars with automatic transmission within your budget of 10,000 euros. Please try searching with different criteria or let me know if you would like to book an appointment with a dealer for assistance.

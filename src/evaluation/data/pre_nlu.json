@@ -1,0 +1,1197 @@
+[
+  {
+    "input": "I'm looking for a cheap hybrid",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Hi, I'm looking for a car."
+      },
+      {
+        "sender": "System",
+        "msg": "What kind of car are you interested in?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I'm looking for a cheap hybrid"
+      }
+    ]
+  },
+  {
+    "input": "What cars do you have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to buy a car."
+      },
+      {
+        "sender": "System",
+        "msg": "I can help you with that. Are you looking for any specific brand or price range?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "What cars do you have?"
+      }
+    ]
+  },
+  {
+    "input": "I want to buy a car.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm not sure what I'm looking for yet."
+      },
+      {
+        "sender": "System",
+        "msg": "No problem. We have a wide selection of cars. Just let me know what you are interested in."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I want to buy a car."
+      }
+    ]
+  },
+  {
+    "input": "I'm interested in a Ford Mustang from 2020",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Show me a sports car."
+      },
+      {
+        "sender": "System",
+        "msg": "We have a few options. Is there a specific model or year you are looking for?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I'm interested in a Ford Mustang from 2020"
+      }
+    ]
+  },
+  {
+    "input": "Show me SUVs under $30,000",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need a car for my family."
+      },
+      {
+        "sender": "System",
+        "msg": "An SUV might be a good choice. Do you have a budget in mind?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Show me SUVs under $30,000"
+      }
+    ]
+  },
+  {
+    "input": "What's the mileage on the Audi A3 from before?",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "Here are some cars we have available: ID: 11223, Audi A3, 2021; ID: 44556, BMW X5, 2022."
+      },
+      {
+        "sender": "User",
+        "msg": "Can you give me more details about the Audi A3?"
+      },
+      {
+        "sender": "System",
+        "msg": "What specific details would you like to know about the Audi A3, ID: 11223?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What's the mileage on the Audi A3?"
+      }
+    ]
+  },
+  {
+    "input": "How many seats does the BMW X5 have?",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "We have these cars for you: ID: 11223, Audi A3, 2021; ID: 44556, BMW X5, 2022."
+      },
+      {
+        "sender": "User",
+        "msg": "I am interested in the BMW X5."
+      },
+      {
+        "sender": "System",
+        "msg": "The BMW X5 has 5 seats and it is a great choice."
+      },
+      {
+        "sender": "User",
+        "msg": "What's the horsepower?"
+      },
+      {
+        "sender": "System",
+        "msg": "The BMW X5 has 335 horsepower."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "How many seats does the BMW X5 have?"
+      }
+    ]
+  },
+  {
+    "input": "Can you give me details about car ID 11223? I want to know the fuel type and the transmission type?",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "Here are some cars we have available: ID: 11223, Audi A3, 2021; ID: 44556, BMW X5, 2022."
+      },
+      {
+        "sender": "User",
+        "msg": "I want to know more about the Audi A3."
+      },
+      {
+        "sender": "System",
+        "msg": "What information do you need about the Audi A3?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Can you give me details about car ID 11223? I want to know the fuel type?"
+      },
+      {
+        "intent": "get_car_info",
+        "text": "Can you give me details about car ID 11223? I want to know the transmission type?"
+      }
+    ]
+  },
+  {
+    "input": "What's the fuel type of the Fiat Panda?",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "Those are the cars available with your preferences: ID: 11223, Brand: Fiat, Model: Panda, Year: 2020; ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"
+      },
+      {
+        "sender": "User",
+        "msg": "Tell me more about the Fiat Panda."
+      },
+      {
+        "sender": "System",
+        "msg": "The Fiat Panda has an engine of 1.2L and it has a fuel consumption of 5.5L/100km."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What's the fuel type of the Fiat Panda?"
+      }
+    ]
+  },
+  {
+    "input": "Can I get the Corolla for $20,000?",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "Those are the cars available with your preferences: ID: 11223, Brand: Fiat, Model: Panda, Year: 2020; ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"
+      },
+      {
+        "sender": "User",
+        "msg": "I like the Toyota Corolla, but the price is too high."
+      },
+      {
+        "sender": "System",
+        "msg": "The current price for the Toyota Corolla with ID 44556 is $25,000."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Can I get the Corolla for $20,000?"
+      }
+    ]
+  },
+  {
+    "input": "I'll take car 44556.",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "Those are the cars available with your preferences: ID: 11223, Brand: Fiat, Model: Panda, Year: 2020; ID: 44556, Brand: Toyota, Model: Corolla, Year: 2022"
+      },
+      {
+        "sender": "User",
+        "msg": "I've decided to buy a car."
+      },
+      {
+        "sender": "System",
+        "msg": "Which car would you like to purchase?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll take car 44556."
+      }
+    ]
+  },
+  {
+    "input": "Let's go with that BMW.",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I found a few options: ID: 11223, Audi A3, 2021, $25,000; ID: 44556, BMW X5, 2022, $50,000."
+      },
+      {
+        "sender": "User",
+        "msg": "I am interested in the BMW X5."
+      },
+      {
+        "sender": "System",
+        "msg": "The BMW X5 is a great choice. The price is $50,000. Do you want to proceed with the purchase?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Let's go with that BMW."
+      }
+    ]
+  },
+  {
+    "input": "I want to buy the Audi A3, my name is John and my surname is Doe, my id is 123456789",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I found a few options: ID: 11223, Audi A3, 2021, $25,000; ID: 44556, BMW X5, 2022, $50,000."
+      },
+      {
+        "sender": "User",
+        "msg": "I've decided on the Audi A3."
+      },
+      {
+        "sender": "System",
+        "msg": "Great choice! To complete the purchase, please provide your personal information."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I want to buy the Audi A3, my name is John and my surname is Doe, my id is 123456789"
+      }
+    ]
+  },
+  {
+    "input": "What's the weather like?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm not sure what I'm looking for yet."
+      },
+      {
+        "sender": "System",
+        "msg": "We have a wide selection of cars. Just let me know what you are interested in."
+      },
+      {
+        "sender": "User",
+        "msg": "Okay, thanks for the help."
+      },
+      {
+        "sender": "System",
+        "msg": "Is there anything else I can help you with today?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "What's the weather like?"
+      }
+    ]
+  },
+  {
+    "input": "I need help with my account.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm having trouble with something."
+      },
+      {
+        "sender": "System",
+        "msg": "I am here to help with car-related services. Can you specify your request?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "I need help with my account."
+      }
+    ]
+  },
+  {
+    "input": "I think the service is great.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I just wanted to say something about your service."
+      },
+      {
+        "sender": "System",
+        "msg": "We appreciate all feedback! Please tell us more about your experience."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I think the service is great."
+      }
+    ]
+  },
+  {
+    "input": "I'd like to give feedback on my experience.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm done with my car search."
+      },
+      {
+        "sender": "System",
+        "msg": "Thank you for using our service. Is there anything else I can help you with?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I'd like to give feedback on my experience."
+      }
+    ]
+  },
+  {
+    "input": "Can I book a service appointment for next week?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need to get my car serviced."
+      },
+      {
+        "sender": "System",
+        "msg": "I can help you with that. What kind of service do you need?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Can I book a service appointment for next week?"
+      }
+    ]
+  },
+  {
+    "input": "I need to schedule a test drive for tomorrow.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I am interested in a car I saw."
+      },
+      {
+        "sender": "System",
+        "msg": "That's great! Would you like to schedule a test drive?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I need to schedule a test drive for tomorrow."
+      }
+    ]
+  },
+  {
+    "input": "I want to find a car under $15,000.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have a limited budget."
+      },
+      {
+        "sender": "System",
+        "msg": "I understand. What is your maximum price range?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I want to find a car under $15,000."
+      }
+    ]
+  },
+  {
+    "input": "Do you have any electric cars?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for an environmentally friendly car."
+      },
+      {
+        "sender": "System",
+        "msg": "Are you interested in a hybrid or fully electric vehicle?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Do you have any electric cars?"
+      }
+    ]
+  },
+  {
+    "input": "What's the color of car ID 12345?",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I found a few cars for you. ID: 12345, Ford Focus, 2019; ID: 67890, Honda Civic, 2020."
+      },
+      {
+        "sender": "User",
+        "msg": "I'm looking at the Ford Focus."
+      },
+      {
+        "sender": "System",
+        "msg": "The Ford Focus with ID 12345 is a great car. What information do you need about it?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What's the color of car ID 12345?"
+      }
+    ]
+  },
+  {
+    "input": "Can I get car 67890 for $10,000?",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I found a few cars for you. ID: 12345, Ford Focus, 2019, price: $15,000; ID: 67890, Honda Civic, 2020, price: $12,000."
+      },
+      {
+        "sender": "User",
+        "msg": "The price of the Honda Civic is a bit high."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like to try to negotiate the price?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Can I get car 67890 for $10,000?"
+      }
+    ]
+  },
+  {
+    "input": "I'll take the Ford Focus.",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I found a few cars for you. ID: 12345, Ford Focus, 2019, price: $15,000; ID: 67890, Honda Civic, 2020, price: $12,000."
+      },
+      {
+        "sender": "User",
+        "msg": "I'm ready to buy."
+      },
+      {
+        "sender": "System",
+        "msg": "Which car would you like to purchase?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll take the Ford Focus."
+      }
+    ]
+  },
+  {
+    "input": "Tell me more about the Ford Focus and the Honda Civic.",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I found a few cars for you. ID: 12345, Ford Focus, 2019; ID: 67890, Honda Civic, 2020."
+      },
+      {
+        "sender": "User",
+        "msg": "I want to know more about the cars you showed me."
+      },
+      {
+        "sender": "System",
+        "msg": "Which car are you interested in?"
+      },
+      {
+        "sender": "User",
+        "msg": "Both of them."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Tell me more about the Ford Focus?"
+      },
+      {
+        "intent": "get_car_info",
+        "text": "Tell me more about the Honda Civic?"
+      }
+    ]
+  },
+  {
+    "input": "I need to know the price and the mileage of the Honda Civic.",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I found a few cars for you. ID: 12345, Ford Focus, 2019; ID: 67890, Honda Civic, 2020."
+      },
+      {
+        "sender": "User",
+        "msg": "I'm interested in the Honda Civic."
+      },
+      {
+        "sender": "System",
+        "msg": "What information do you need?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "I need to know the price of the Honda Civic."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "I need to know the mileage of the Honda Civic."
+      }
+    ]
+  },
+  {
+    "input": "I need to book a test drive.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I've found a car I like."
+      },
+      {
+        "sender": "System",
+        "msg": "That's great! Would you like to schedule a test drive or proceed with the purchase?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I need to book a test drive."
+      }
+    ]
+  },
+  {
+    "input": "The service was not good, I'm not happy.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have some comments about my experience with your service."
+      },
+      {
+        "sender": "System",
+        "msg": "We take all feedback seriously. What can you tell me about your experience?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The service was not good, I'm not happy."
+      }
+    ]
+  },
+  {
+    "input": "Can I buy the car for a new price of 20000?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "The price of the car is too high for me."
+      },
+      {
+        "sender": "System",
+        "msg": "The car with ID 12345 is available for $25,000. Would you like to try to negotiate the price?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Can I buy the car with ID 12345 for a new price of 20000?"
+      }
+    ]
+  },
+  {
+    "input": "My name is Peter and my surname is Parker, I want to take the car with ID 12345.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to proceed with the purchase."
+      },
+      {
+        "sender": "System",
+        "msg": "Which car would you like to purchase?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "My name is Peter and my surname is Parker, I want to take the car with ID 12345."
+      }
+    ]
+  },
+  {
+    "input": "Can you check my bank account?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need to know my financial situation."
+      },
+      {
+        "sender": "System",
+        "msg": "I am here to help you with car-related services. I cannot access your personal financial information."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "Can you check my bank account?"
+      }
+    ]
+  },
+  {
+    "input": "I am looking for a red Ferrari.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have a specific car in mind."
+      },
+      {
+        "sender": "System",
+        "msg": "What kind of car are you looking for?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I am looking for a red Ferrari."
+      }
+    ]
+  },
+  {
+    "input": "I need to know the number of doors and the fuel consumption of the Ferrari.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm interested in the Ferrari 488."
+      },
+      {
+        "sender": "System",
+        "msg": "What information do you need about the Ferrari 488, with ID 11111?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "I need to know the number of doors of the Ferrari."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "I need to know the fuel consumption of the Ferrari."
+      }
+    ]
+  },
+  {
+    "input": "I want to buy the Porsche 911.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I've made my decision."
+      },
+      {
+        "sender": "System",
+        "msg": "Which car do you want to buy?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I want to buy the Porsche 911."
+      }
+    ]
+  },
+  {
+    "input": "I want to know the engine type and the horsepower of the Porsche.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking at the Porsche 911."
+      },
+      {
+        "sender": "System",
+        "msg": "What specific details do you need about the Porsche 911, with ID 22222?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "I want to know the engine type of the Porsche."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "I want to know the horsepower of the Porsche."
+      }
+    ]
+  },
+  {
+    "input": "Can I pay 100000 for the Ferrari?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "The price of the Ferrari is too high."
+      },
+      {
+        "sender": "System",
+        "msg": "The Ferrari is currently priced at $150,000. Would you like to negotiate?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Can I pay 100000 for the Ferrari?"
+      }
+    ]
+  },
+  {
+    "input": "I want a car with an automatic transmission.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have a preference for the car's features."
+      },
+      {
+        "sender": "System",
+        "msg": "What kind of features are you looking for?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I want a car with an automatic transmission."
+      }
+    ]
+  },
+  {
+    "input": "I need to book a test drive for the Ferrari 488.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like the Ferrari 488."
+      },
+      {
+        "sender": "System",
+        "msg": "That's a great choice. Would you like to schedule a test drive to see if it's the right fit for you?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I need to book a test drive for the Ferrari 488."
+      }
+    ]
+  },
+  {
+    "input": "The system is not working well.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have an issue with the service."
+      },
+      {
+        "sender": "System",
+        "msg": "We are sorry to hear that. Can you please elaborate on the issue?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The system is not working well."
+      }
+    ]
+  },
+  {
+    "input": "I want to know the price of the car with ID 11111.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need to know more about one of the cars."
+      },
+      {
+        "sender": "System",
+        "msg": "Which car are you referring to?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "I want to know the price of the car with ID 11111."
+      }
+    ]
+  },
+  {
+    "input": "Can I buy the Porsche? My name is Mark and my surname is Johnson, my id is 987654321.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I am ready to finalize the purchase."
+      },
+      {
+        "sender": "System",
+        "msg": "Which car do you want to purchase? And please provide your personal information."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Can I buy the Porsche? My name is Mark and my surname is Johnson, my id is 987654321."
+      }
+    ]
+  },
+  {
+    "input": "I'm looking for a sedan with good gas mileage.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need a new car for commuting."
+      },
+      {
+        "sender": "System",
+        "msg": "Are you interested in any specific features?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I'm looking for a sedan with good gas mileage."
+      }
+    ]
+  },
+  {
+    "input": "How many cylinders does the Civic have? Also, what's its horsepower?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Tell me more about the Honda Civic."
+      },
+      {
+        "sender": "System",
+        "msg": "What specific details would you like to know about the Honda Civic?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "How many cylinders does the Civic have?"
+      },
+      {
+        "intent": "get_car_info",
+        "text": "what's its horsepower of the Civic?"
+      }
+    ]
+  },
+  {
+    "input": "I am not interested in any of these cars. Can you show me others?",
+    "history": [
+      {
+        "sender": "System",
+        "msg": "I found a few cars for you. ID: 12345, Ford Focus, 2019; ID: 67890, Honda Civic, 2020."
+      },
+      {
+        "sender": "User",
+        "msg": "These are not what I'm looking for."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I am not interested in any of these cars. Can you show me others?"
+      }
+    ]
+  },
+  {
+    "input": "I want to book an appointment for next Friday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I need to see a car."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like to schedule a test drive?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I want to book an appointment for next Friday."
+      }
+    ]
+  },
+  {
+    "input": "I want to give some feedback about my last purchase.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have some thoughts about my experience."
+      },
+      {
+        "sender": "System",
+        "msg": "We'd love to hear your feedback. Please share your thoughts."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I want to give some feedback about my last purchase."
+      }
+    ]
+  },
+  {
+    "input": "I need to know the fuel type and the transmission type of the car I have already asked you.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to know the color of the Fiat Panda."
+      },
+      {
+        "sender": "System",
+        "msg": "The Fiat Panda is black."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "I need to know the fuel type of the Fiat Panda."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "I need to know the transmission type of the Fiat Panda."
+      }
+    ]
+  },
+  {
+    "input": "Can I negotiate the price of the car with ID 11223?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like the Fiat Panda but the price is too high for me."
+      },
+      {
+        "sender": "System",
+        "msg": "The current price for the Fiat Panda with ID 11223 is $15,000. Would you like to try to negotiate the price?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Can I negotiate the price of the car with ID 11223?"
+      }
+    ]
+  },
+  {
+    "input": "How much does the car ID 11223 cost?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm interested in the Fiat Panda."
+      },
+      {
+        "sender": "System",
+        "msg": "What specific information would you like about the Fiat Panda, with ID 11223?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "How much does the car ID 11223 cost?"
+      }
+    ]
+  },
+  {
+    "input": "Let's proceed with the purchase of the Toyota Corolla.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I've made my decision to buy one of the cars."
+      },
+      {
+        "sender": "System",
+        "msg": "Which car would you like to purchase?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Let's proceed with the purchase of the Toyota Corolla."
+      }
+    ]
+  },
+  {
+    "input": "What is the mileage and the year of the Fiat Panda?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Can you give me more details about the Fiat Panda?"
+      },
+      {
+        "sender": "System",
+        "msg": "What information do you need about the Fiat Panda, with ID 11223?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What is the mileage of the Fiat Panda?"
+      },
+      {
+        "intent": "get_car_info",
+        "text": "What is the year of the Fiat Panda?"
+      }
+    ]
+  },
+  {
+    "input": "I want to schedule an appointment to see the car with ID 44556.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to see the Toyota Corolla in person."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like to schedule an appointment?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I want to schedule an appointment to see the car with ID 44556."
+      }
+    ]
+  },
+  {
+    "input": "Can I get the price for the car?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm interested in the Toyota Corolla."
+      },
+      {
+        "sender": "System",
+        "msg": "The car you were looking for is the Toyota Corolla, with ID 44556. What information about it would you like?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Can I get the price for the car with ID 44556?"
+      }
+    ]
+  },
+  {
+    "input": "I am looking for a cheap car.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm on a tight budget."
+      },
+      {
+        "sender": "System",
+        "msg": "I can help you find a car that fits your budget. Do you have a specific price range in mind?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I am looking for a cheap car."
+      }
+    ]
+  },
+  {
+    "input": "The service was excellent.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have some feedback about my experience with your service."
+      },
+      {
+        "sender": "System",
+        "msg": "We'd love to hear it! Please share your thoughts."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The service was excellent."
+      }
+    ]
+  },
+  {
+    "input": "How much would it cost for me to buy the car ID 12345?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm considering buying the Ford Focus."
+      },
+      {
+        "sender": "System",
+        "msg": "What information do you need about the Ford Focus with ID 12345?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "How much would it cost for me to buy the car ID 12345?"
+      }
+    ]
+  },
+  {
+    "input": "Can I get car 12345 for $12000? I also want to know the fuel type and the color.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "The price of the Ford Focus is too high."
+      },
+      {
+        "sender": "System",
+        "msg": "The Ford Focus is currently priced at $15,000. Would you like to negotiate the price? And what other information would you like to know?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "negotiate_price",
+        "text": "Can I get car 12345 for $12000?"
+      },
+      {
+        "intent": "get_car_info",
+        "text": "I want to know the fuel type of car 12345."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "I want to know the color of car 12345."
+      }
+    ]
+  }
+]

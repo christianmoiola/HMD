@@ -21,12 +21,3 @@ Your output must strictly adhere to this exact JSON structure.  Failure to do so
 
 ```json
 {"intent": "out_of_domain", "slots": {}}
-
-Example:
-example 1:
-input: {"intent": "out_of_domain", "text": "What is the weather like today?"}
-output: {"intent": "out_of_domain", "slots": {}}
-
-example 2:
-input: {"intent": "out_of_domain", "text": "Can you help me with my medical appointment?"}
-output: {"intent": "out_of_domain", "slots": {}}

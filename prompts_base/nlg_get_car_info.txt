@@ -16,20 +16,3 @@ database: {car information that corresponds to the user request}
 
 You have to provide a message that contains the information about the car that matches the user's request.
 You have also to ask the user if they want to know more about the car or if they want to proceed with the purchase.
-
-Example:
-example 1:
-input:
-DM response: {action: confirmation, parameter: get_car_info}
-NLU response: {intent: get_car_info, slots: {car_id: '120', info_type: 'transmission'}}
-Audi S3 transmission: automatic
-output:
-The Audi S3 is equipped with an automatic transmission. Are you interested in more details about this car?
-
-example 2:
-input:
-DM response: {action: confirmation, parameter: get_car_info}
-NLU response: {intent: get_car_info, slots: {car_id: '121', info_type: 'seats'}}
-BMW Q5 seats: 5
-output:
-The BMW Q5 has 5 seats. Would you like to know more about its features or specifications?

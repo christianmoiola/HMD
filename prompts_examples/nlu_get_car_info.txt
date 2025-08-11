@@ -23,7 +23,7 @@ If you cannot infer a specific slot value from the user's input or the conversat
 Your output must strictly adhere to this exact JSON structure.  Failure to do so will prevent the system from parsing your response correctly. 
 
 ```json
-{"intent": "get_car_info", "slots": {"car_id": "value"}}
+{"intent": "get_car_info", "slots": {"car_id": "value", "info_type": "value"}}
 
 Example:
 example 1:

@@ -37,7 +37,8 @@ class DialogueStateTracker(ABC):
     @staticmethod
     def update(ds: dict, nlu_response: dict) -> dict:
         for key, value in nlu_response.items():
-            if value is None:
+            if value is None or value == 'null':
+                ds[key] = None
                 continue
             # If the value is a dictionary, merge recursively
             if isinstance(value, dict):
@@ -71,10 +72,7 @@ class BuyingStateTracker(DialogueStateTracker):
         }
         self.logger = setup_logger(self.__class__.__name__)
 
-class SellingStateTracker(DialogueStateTracker):
-    pass
-class RentingStateTracker(DialogueStateTracker):
-    pass
+
 class GettingInfoStateTracker(DialogueStateTracker):
     def __init__(self):
         """

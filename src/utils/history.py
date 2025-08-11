@@ -7,6 +7,13 @@ class History:
 
         self.logger = setup_logger(self.__class__.__name__)
 
+    def clear_history(self):
+        """
+        Clear the history of messages.
+        """
+        self.senders = []
+        self.msgs = []
+
     def add_to_history(self, sender: str, msg: str):
         sender = sender.lower()
         if sender not in ["user", "system"]:

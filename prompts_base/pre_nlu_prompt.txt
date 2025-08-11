@@ -16,24 +16,15 @@ Output format:[{"intent": "intent_name", "text": "message_segment"}]
 
 Intent Definitions:
 * `buying_car`: The user wants to **search for** a car to buy based on features (e.g., brand, price range, mileage).
-  E.g., “I’m looking for a cheap hybrid” or “I want to buy a car.” or "What cars do you have?"
 * `get_car_info`: The user requests **more information** about a specific car **shown previously**, typically via ID.
-  E.g., "Can you give me details about the Audi A3?" or "How many seats does BMW X5 have?"
   IMPORTANT: If is present you have to include the car ID or the name of the car in the text segment.
   IMPORTANT: this intent is used to get only one single information about a car, if the user wants to get more information about a car you have to ouptut MULTIPLE INTENTS of this type with the same car ID and the different information type. IS REALLY IMPORTANT OTHERWISE THE SYSTEM WILL NOT WORK PROPERLY.
-  E.g. if the user asks "Can you give me details about the Audi A3? I want to know the fuel type and the transmission type?" you have to output two intents of this type, one for the fuel type and one for the transmission type. output: 
-  [{"intent": "get_car_info", "text": "Can you give me details about the Audi A3? I want to know the fuel type?"}, {"intent": "get_car_info", "text": "Can you give me details about the Audi A3? I want to know the transmission type?"}]
 * `negotiate_price`: The user proposes a **new price** for a car, aiming to negotiate.
-  E.g., “Can I get it for 15k?”
   IMPORTANT: If is present you have to include the car ID or the name of the car in the text segment.
 * `order_car`: The user **decides to buy** a car already presented and agrees (implicitly or explicitly) on the price.
-  E.g., “I’ll take car 4,” “Let’s go with that BMW.”, "My name is John and my surname is Doe, my id is 123456789"
   IMPORTANT: If is present you have to include the car ID or the name of the car in the text segment.
 * `out_of_domain`: Message doesn’t match any defined intent.
-  E.g., “What’s the weather like?” or “I need help with my account.”
 * `give_feedback`: The user wants to **provide feedback** about the service or system.
-  E.g., “I think the service is great” or “I’d like to give feedback on my experience.”
 * `book_appointment`: The user wants to **schedule an appointment** for a car-related service.
-  E.g., “Can I book a service appointment for next week?” or “I need to schedule a test drive for tomorrow.”
 
 

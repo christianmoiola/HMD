@@ -26,16 +26,3 @@ Your output must strictly adhere to this exact JSON structure.  Failure to do so
 {"intent": "give_feedback", "slots": {"rating": "value", "comments": "value"}}
 
 Is important to note that if the user does not provide a rating between 1 and 5, or if the comments are not provided, you must set the corresponding slot value to `"null"`.
-
-Example:
-example 1:
-input: {"intent": "give_feedback", "text": "I would like to give a rating of 5 and say that the service was excellent."}
-output: {"intent": "give_feedback", "slots": {"rating": "5", "comments": "The service was excellent."}}
-
-example 2:
-input: {"intent": "give_feedback", "text": "I think the service could be improved."}
-output: {"intent": "give_feedback", "slots": {"rating": "null", "comments": "I think the service could be improved."}}
-
-example 3:
-input: {"intent": "give_feedback", "text": "I would like to give a rating of 7 and say that the service was good."}
-output: {"intent": "give_feedback", "slots": {"rating": "null", "comments": "The service was good."}}
