@@ -1,2123 +1,2021 @@
 [
   {
-    "input": "I'm looking for a cheap hybrid",
+    "input": "What cars do you have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want to buy a car."
+      },
+      {
+        "sender": "System",
+        "msg": "Sure, any specific type or budget?"
+      }
+    ],
     "expected_output": [
       {
         "intent": "buying_car",
-        "text": "I'm looking for a cheap hybrid"
+        "text": "What cars do you have?"
       }
     ]
   },
   {
-    "input": "I want to buy a car.",
+    "input": "I'm interested in a hybrid SUV under 25k.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for an SUV."
+      },
+      {
+        "sender": "System",
+        "msg": "Do you prefer petrol, diesel, or electric?"
+      }
+    ],
     "expected_output": [
       {
         "intent": "buying_car",
-        "text": "I want to buy a car."
+        "text": "I'm interested in a hybrid SUV under 25k."
       }
     ]
   },
   {
-    "input": "Tell me more about car 3.",
+    "input": "Show me some electric cars.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'd like to see eco-friendly options."
+      },
+      {
+        "sender": "System",
+        "msg": "We have electric and hybrid cars."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Show me some electric cars."
+      }
+    ]
+  },
+  {
+    "input": "Looking for a compact sedan below 15k.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "My budget is 15k."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like a hatchback or a sedan?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Looking for a compact sedan below 15k."
+      }
+    ]
+  },
+  {
+    "input": "Do you have any convertibles?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Do you have cars for summer trips?"
+      },
+      {
+        "sender": "System",
+        "msg": "Yes, we have convertibles."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Do you have any convertibles?"
+      }
+    ]
+  },
+  {
+    "input": "I want a diesel car with low mileage.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I travel long distances."
+      },
+      {
+        "sender": "System",
+        "msg": "Diesel cars might be a good fit."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I want a diesel car with low mileage."
+      }
+    ]
+  },
+  {
+    "input": "Show me cars from Toyota.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like Japanese brands."
+      },
+      {
+        "sender": "System",
+        "msg": "We have Toyota, Honda, and Nissan."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Show me cars from Toyota."
+      }
+    ]
+  },
+  {
+    "input": "I'm searching for a family car.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I have a family of five."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like an SUV or a minivan?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I'm searching for a family car."
+      }
+    ]
+  },
+  {
+    "input": "Looking for a luxury car around 40k.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want something classy."
+      },
+      {
+        "sender": "System",
+        "msg": "We have luxury sedans and SUVs."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Looking for a luxury car around 40k."
+      }
+    ]
+  },
+  {
+    "input": "Can you list your cheapest vehicles?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "My budget is tight."
+      },
+      {
+        "sender": "System",
+        "msg": "I can show you our cheapest options."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Can you list your cheapest vehicles?"
+      }
+    ]
+  },
+  {
+    "input": "Can you give me details about the BMW X5?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I saw the BMW X5 in your listings."
+      },
+      {
+        "sender": "System",
+        "msg": "Yes, would you like details?"
+      }
+    ],
     "expected_output": [
       {
         "intent": "get_car_info",
-        "text": "Tell me more about car 3."
+        "text": "Can you give me details about the BMW X5?"
       }
     ]
   },
   {
-    "input": "Can you give me details about the Audi A3?",
+    "input": "How many seats does car ID 102 have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Show me SUV options."
+      },
+      {
+        "sender": "System",
+        "msg": "Here's one: car ID 102, a Toyota Highlander."
+      }
+    ],
     "expected_output": [
       {
         "intent": "get_car_info",
-        "text": "Can you give me details about the Audi A3?"
+        "text": "How many seats does car ID 102 have?"
       }
     ]
   },
   {
-    "input": "Can I get car 2 for 15k?",
+    "input": "What's the fuel type of the Audi A3?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Can you show me compact cars?"
+      },
+      {
+        "sender": "System",
+        "msg": "Here is the Audi A3."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What's the fuel type of the Audi A3?"
+      }
+    ]
+  },
+  {
+    "input": "Tell me the color options for car ID 205.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "That red SUV looks good."
+      },
+      {
+        "sender": "System",
+        "msg": "That's car ID 205, a Nissan Rogue."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the color options for car ID 205."
+      }
+    ]
+  },
+  {
+    "input": "What is the mileage on the Tesla Model 3?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like the Tesla Model 3."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like more details?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What is the mileage on the Tesla Model 3?"
+      }
+    ]
+  },
+  {
+    "input": "What transmission does the Ford Fiesta have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Ford Fiesta looks interesting."
+      },
+      {
+        "sender": "System",
+        "msg": "It's a compact hatchback."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What transmission does the Ford Fiesta have?"
+      }
+    ]
+  },
+  {
+    "input": "What's the horsepower of the Mustang GT?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Show me sports cars."
+      },
+      {
+        "sender": "System",
+        "msg": "We have the Mustang GT."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What's the horsepower of the Mustang GT?"
+      }
+    ]
+  },
+  {
+    "input": "Does car ID 402 have heated seats?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Can I see more about car ID 402?"
+      },
+      {
+        "sender": "System",
+        "msg": "Sure, it's a fully loaded model."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Does car ID 402 have heated seats?"
+      }
+    ]
+  },
+  {
+    "input": "Is the Nissan Leaf fully electric?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Electric cars interest me."
+      },
+      {
+        "sender": "System",
+        "msg": "We have the Nissan Leaf."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Is the Nissan Leaf fully electric?"
+      }
+    ]
+  },
+  {
+    "input": "What year was the Honda Civic manufactured?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I want a reliable sedan."
+      },
+      {
+        "sender": "System",
+        "msg": "How about the Honda Civic?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What year was the Honda Civic manufactured?"
+      }
+    ]
+  },
+  {
+    "input": "Can I get the Tesla Model 3 for 30k?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like the Tesla Model 3."
+      },
+      {
+        "sender": "System",
+        "msg": "It's listed at 35k."
+      }
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "Can I get car 2 for 15k?"
+        "text": "Can I get the Tesla Model 3 for 30k?"
       }
     ]
   },
   {
-    "input": "I'll take car 4",
-    "expected_output": [
+    "input": "Would you accept 12k for car ID 205?",
+    "history": [
       {
-        "intent": "order_car",
-        "text": "I'll take car 4"
-      }
-    ]
-  },
-  {
-    "input": "Let's go with that BMW.",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "Let's go with that BMW."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to rent it from Monday.",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I'd like to rent it from Monday."
-      }
-    ]
-  },
-  {
-    "input": "What's the weather like?",
-    "expected_output": [
-      {
-        "intent": "out_of_domain",
-        "text": "What's the weather like?"
-      }
-    ]
-  },
-  {
-    "input": "I need help with my account.",
-    "expected_output": [
-      {
-        "intent": "out_of_domain",
-        "text": "I need help with my account."
-      }
-    ]
-  },
-  {
-    "input": "I think the service is great",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I think the service is great"
-      }
-    ]
-  },
-  {
-    "input": "I'd like to give feedback on my experience.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I'd like to give feedback on my experience."
-      }
-    ]
-  },
-  {
-    "input": "Can I book a service appointment for next week?",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "Can I book a service appointment for next week?"
-      }
-    ]
-  },
-  {
-    "input": "I need to schedule a test drive for tomorrow.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I need to schedule a test drive for tomorrow."
-      }
-    ]
-  },
-  {
-    "input": "I'm searching for a reliable SUV and then I'd like to schedule a test drive.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm searching for a reliable SUV"
+        "sender": "User",
+        "msg": "That car looks nice."
       },
       {
-        "intent": "book_appointment",
-        "text": "and then I'd like to schedule a test drive."
+        "sender": "System",
+        "msg": "That's car ID 205, price is 14k."
       }
-    ]
-  },
-  {
-    "input": "Can you show me some sedans? Also, what's the best way to give feedback?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "Can you show me some sedans?"
-      },
-      {
-        "intent": "give_feedback",
-        "text": "Also, what's the best way to give feedback?"
-      }
-    ]
-  },
-  {
-    "input": "I want to buy car 5, but can I get it for a lower price?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I want to buy car 5"
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "but can I get it for a lower price?"
-      }
-    ]
-  },
-  {
-    "input": "Tell me about car 7. I'd also like to book an appointment to see it.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Tell me about car 7."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "I'd also like to book an appointment to see it."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to rent a car for the weekend. Can you also tell me about your financing options?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I'd like to rent a car for the weekend."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can you also tell me about your financing options?"
-      }
-    ]
-  },
-  {
-    "input": "I'm interested in electric cars. By the way, I think your website could be improved.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm interested in electric cars."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "By the way, I think your website could be improved."
-      }
-    ]
-  },
-  {
-    "input": "Can I negotiate the price on car 1? And then, I'd like to order it.",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "Can I negotiate the price on car 1?"
-      },
-      {
-        "intent": "order_car",
-        "text": "And then, I'd like to order it."
+        "text": "Would you accept 12k for car ID 205?"
       }
     ]
   },
   {
-    "input": "I need details on the Ford Focus. Also, is it possible to rent it instead of buying?",
-    "expected_output": [
+    "input": "Let's do 18,500 for the Ford Focus.",
+    "history": [
       {
-        "intent": "get_car_info",
-        "text": "I need details on the Ford Focus."
+        "sender": "User",
+        "msg": "The Ford Focus is nice."
       },
       {
-        "intent": "order_renting_car",
-        "text": "Also, is it possible to rent it instead of buying?"
+        "sender": "System",
+        "msg": "It's priced at 19k."
       }
-    ]
-  },
-  {
-    "input": "I want a car with good mileage. I also have some feedback about the sales process.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I want a car with good mileage."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "I also have some feedback about the sales process."
-      }
-    ]
-  },
-  {
-    "input": "Book me a test drive for car 6, and I want to offer 20k for it.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "Book me a test drive for car 6"
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "and I want to offer 20k for it."
-      }
-    ]
-  },
-  {
-    "input": "I'm looking for a truck. How's the weather today?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a truck."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "How's the weather today?"
-      }
-    ]
-  },
-  {
-    "input": "I'll buy this car. Can you also schedule a pickup time?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll buy this car."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Can you also schedule a pickup time?"
-      }
-    ]
-  },
-  {
-    "input": "I need to rent a car for a month. Also, I think your app is very user-friendly.",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I need to rent a car for a month."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "Also, I think your app is very user-friendly."
-      }
-    ]
-  },
-  {
-    "input": "Can I find a red convertible? And what are your business hours?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "Can I find a red convertible?"
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "And what are your business hours?"
-      }
-    ]
-  },
-  {
-    "input": "I want to get car info for the Mazda CX-5. I might want to buy it.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I want to get car info for the Mazda CX-5."
-      },
-      {
-        "intent": "order_car",
-        "text": "I might want to buy it."
-      }
-    ]
-  },
-  {
-    "input": "I'm interested in a used car, and I'd like to give some feedback on the website's search functionality.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm interested in a used car"
-      },
-      {
-        "intent": "give_feedback",
-        "text": "and I'd like to give some feedback on the website's search functionality."
-      }
-    ]
-  },
-  {
-    "input": "Can I make an offer on this car? Then, I'll schedule a time to pick it up.",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "Can I make an offer on this car?"
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Then, I'll schedule a time to pick it up."
+        "text": "Let's do 18,500 for the Ford Focus."
       }
     ]
   },
   {
-    "input": "I'd like to buy car 8, but I have a question about the warranty.",
-    "expected_output": [
+    "input": "Would you take 40k for the BMW X5?",
+    "history": [
       {
-        "intent": "order_car",
-        "text": "I'd like to buy car 8"
+        "sender": "User",
+        "msg": "How much for the BMW X5?"
       },
       {
-        "intent": "out_of_domain",
-        "text": "but I have a question about the warranty."
+        "sender": "System",
+        "msg": "It's 42k."
       }
-    ]
-  },
-  {
-    "input": "I need info on car 9. And I'd like to rent it for a week.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I need info on car 9."
-      },
-      {
-        "intent": "order_renting_car",
-        "text": "And I'd like to rent it for a week."
-      }
-    ]
-  },
-  {
-    "input": "I'm looking for a family car, and I also want to tell you how good the customer service was.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a family car"
-      },
-      {
-        "intent": "give_feedback",
-        "text": "and I also want to tell you how good the customer service was."
-      }
-    ]
-  },
-  {
-    "input": "I want to rent a car. Can I also get some information on car insurance?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I want to rent a car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can I also get some information on car insurance?"
-      }
-    ]
-  },
-  {
-    "input": "I'm interested in a luxury car. I'd also like to book a service appointment for my current car.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm interested in a luxury car."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "I'd also like to book a service appointment for my current car."
-      }
-    ]
-  },
-  {
-    "input": "I'll take car 10. Can I also get details on the car's maintenance history?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll take car 10."
-      },
-      {
-        "intent": "get_car_info",
-        "text": "Can I also get details on the car's maintenance history?"
-      }
-    ]
-  },
-  {
-    "input": "Can I offer a different price for car 11? And what are your delivery options?",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "Can I offer a different price for car 11?"
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "And what are your delivery options?"
+        "text": "Would you take 40k for the BMW X5?"
       }
     ]
   },
   {
-    "input": "I need to know more about the SUV you showed me earlier. I'm thinking of buying it.",
-    "expected_output": [
+    "input": "I'll pay 25k for the Audi A4.",
+    "history": [
       {
-        "intent": "get_car_info",
-        "text": "I need to know more about the SUV you showed me earlier."
+        "sender": "User",
+        "msg": "The Audi A4 is appealing."
       },
       {
-        "intent": "order_car",
-        "text": "I'm thinking of buying it."
+        "sender": "System",
+        "msg": "It's listed for 27k."
       }
-    ]
-  },
-  {
-    "input": "I'd like to book an appointment for a tire change, and I want to look at compact cars.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I'd like to book an appointment for a tire change"
-      },
-      {
-        "intent": "buying_car",
-        "text": "and I want to look at compact cars."
-      }
-    ]
-  },
-  {
-    "input": "I want to rent a car next month. Also, I'd like to give feedback on the rental process.",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I want to rent a car next month."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "Also, I'd like to give feedback on the rental process."
-      }
-    ]
-  },
-  {
-    "input": "Can I get car 12 for 25k? And when can I pick it up?",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "Can I get car 12 for 25k?"
-      },
-      {
-        "intent": "book_appointment",
-        "text": "And when can I pick it up?"
+        "text": "I'll pay 25k for the Audi A4."
       }
     ]
   },
   {
-    "input": "I'm looking for a car with good safety features. Also, I need to know about your privacy policy.",
-    "expected_output": [
+    "input": "Can we settle on 10k for the Fiat 500?",
+    "history": [
       {
-        "intent": "buying_car",
-        "text": "I'm looking for a car with good safety features."
+        "sender": "User",
+        "msg": "Can you show me small cars?"
       },
       {
-        "intent": "out_of_domain",
-        "text": "Also, I need to know about your privacy policy."
+        "sender": "System",
+        "msg": "We have the Fiat 500 for 11k."
       }
-    ]
-  },
-  {
-    "input": "I'd like to buy car 13. And please tell me more about it.",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'd like to buy car 13."
-      },
-      {
-        "intent": "get_car_info",
-        "text": "And please tell me more about it."
-      }
-    ]
-  },
-  {
-    "input": "I need to schedule a test drive. And I also have some feedback about the booking system.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I need to schedule a test drive."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "And I also have some feedback about the booking system."
-      }
-    ]
-  },
-  {
-    "input": "I want to buy a specific model, and can I get a discount?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I want to buy a specific model"
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "and can I get a discount?"
-      }
-    ]
-  },
-  {
-    "input": "I'm interested in renting a car. Can you also tell me about the nearest branch?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I'm interested in renting a car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can you also tell me about the nearest branch?"
-      }
-    ]
-  },
-  {
-    "input": "Tell me about car 14. I also want to buy it.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Tell me about car 14."
-      },
-      {
-        "intent": "order_car",
-        "text": "I also want to buy it."
-      }
-    ]
-  },
-  {
-    "input": "I'm looking for a new car. I also have some suggestions for your website.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a new car."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "I also have some suggestions for your website."
-      }
-    ]
-  },
-  {
-    "input": "Can I offer 18k for this car? And I want to schedule a test drive for it.",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "Can I offer 18k for this car?"
-      },
-      {
-        "intent": "book_appointment",
-        "text": "And I want to schedule a test drive for it."
+        "text": "Can we settle on 10k for the Fiat 500?"
       }
     ]
   },
   {
-    "input": "I'd like to purchase car 15. What are the payment options?",
-    "expected_output": [
+    "input": "What about 15,500 for the Mazda 3?",
+    "history": [
       {
-        "intent": "order_car",
-        "text": "I'd like to purchase car 15."
+        "sender": "User",
+        "msg": "Mazda 3 looks good."
       },
       {
-        "intent": "out_of_domain",
-        "text": "What are the payment options?"
+        "sender": "System",
+        "msg": "It's priced at 16k."
       }
-    ]
-  },
-  {
-    "input": "I need to rent a car for my trip. Can you tell me about the local attractions?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I need to rent a car for my trip."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can you tell me about the local attractions?"
-      }
-    ]
-  },
-  {
-    "input": "I'm searching for a car. What is your return policy?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm searching for a car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "What is your return policy?"
-      }
-    ]
-  },
-  {
-    "input": "I'd like to know more about the Honda Civic. Can I schedule a service appointment for my current car?",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I'd like to know more about the Honda Civic."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Can I schedule a service appointment for my current car?"
-      }
-    ]
-  },
-  {
-    "input": "I'd like to give some feedback. And I'm also looking for a car.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I'd like to give some feedback."
-      },
-      {
-        "intent": "buying_car",
-        "text": "And I'm also looking for a car."
-      }
-    ]
-  },
-  {
-    "input": "I want to buy car 16. Can I get a better deal on it?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I want to buy car 16."
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "Can I get a better deal on it?"
-      }
-    ]
-  },
-  {
-    "input": "Can I book a repair for my car? Also, show me some new models.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "Can I book a repair for my car?"
-      },
-      {
-        "intent": "buying_car",
-        "text": "Also, show me some new models."
-      }
-    ]
-  },
-  {
-    "input": "I want to rent a car. What are the rental terms?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I want to rent a car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "What are the rental terms?"
-      }
-    ]
-  },
-  {
-    "input": "Can you tell me about the Subaru Outback? I'm thinking of buying it.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Can you tell me about the Subaru Outback?"
-      },
-      {
-        "intent": "order_car",
-        "text": "I'm thinking of buying it."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to search for a new car. I also have some suggestions for your mobile app.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'd like to search for a new car."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "I also have some suggestions for your mobile app."
-      }
-    ]
-  },
-  {
-    "input": "I'll take car 17. Can I get more details on its features?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll take car 17."
-      },
-      {
-        "intent": "get_car_info",
-        "text": "Can I get more details on its features?"
-      }
-    ]
-  },
-  {
-    "input": "Can I offer a lower price for car 18? And I'd like to rent it next week if not.",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "Can I offer a lower price for car 18?"
-      },
-      {
-        "intent": "order_renting_car",
-        "text": "And I'd like to rent it next week if not."
+        "text": "What about 15,500 for the Mazda 3?"
       }
     ]
   },
   {
-    "input": "I need to book a test drive for car 19. Also, how can I leave a review?",
-    "expected_output": [
+    "input": "Is 22k acceptable for the Lexus RX?",
+    "history": [
       {
-        "intent": "book_appointment",
-        "text": "I need to book a test drive for car 19."
+        "sender": "User",
+        "msg": "I like that Lexus RX."
       },
       {
-        "intent": "give_feedback",
-        "text": "Also, how can I leave a review?"
+        "sender": "System",
+        "msg": "Price is 23k."
       }
-    ]
-  },
-  {
-    "input": "I want to find a used car. Where are your dealerships located?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I want to find a used car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Where are your dealerships located?"
-      }
-    ]
-  },
-  {
-    "input": "I'm interested in car 20. Can I get a better price?",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I'm interested in car 20."
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "Can I get a better price?"
-      }
-    ]
-  },
-  {
-    "input": "I'd like to rent a car for a day. What documents do I need?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I'd like to rent a car for a day."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "What documents do I need?"
-      }
-    ]
-  },
-  {
-    "input": "I'll take car 21. Can you tell me about the return policy?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll take car 21."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can you tell me about the return policy?"
-      }
-    ]
-  },
-  {
-    "input": "I need info on the Nissan Rogue. And I'd like to book an appointment to service my car.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I need info on the Nissan Rogue."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "And I'd like to book an appointment to service my car."
-      }
-    ]
-  },
-  {
-    "input": "I'm looking for a car with a sunroof. Also, I have some feedback about the sales representative.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a car with a sunroof."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "Also, I have some feedback about the sales representative."
-      }
-    ]
-  },
-  {
-    "input": "I want to negotiate the price for car 22. Can I schedule a meeting with a sales agent?",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "I want to negotiate the price for car 22."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Can I schedule a meeting with a sales agent?"
+        "text": "Is 22k acceptable for the Lexus RX?"
       }
     ]
   },
   {
-    "input": "I want to buy car 23. What are the financing options?",
-    "expected_output": [
+    "input": "Could you lower the price of car ID 509 to 28k?",
+    "history": [
       {
-        "intent": "order_car",
-        "text": "I want to buy car 23."
+        "sender": "User",
+        "msg": "How much for car ID 509?"
       },
       {
-        "intent": "out_of_domain",
-        "text": "What are the financing options?"
+        "sender": "System",
+        "msg": "It's 30k."
       }
-    ]
-  },
-  {
-    "input": "I need to rent a car. Can you tell me about your loyalty program?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I need to rent a car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can you tell me about your loyalty program?"
-      }
-    ]
-  },
-  {
-    "input": "I'm searching for an automatic car. I also have some feedback regarding the delivery process.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm searching for an automatic car."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "I also have some feedback regarding the delivery process."
-      }
-    ]
-  },
-  {
-    "input": "Tell me more about car 24. I'm considering renting it.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Tell me more about car 24."
-      },
-      {
-        "intent": "order_renting_car",
-        "text": "I'm considering renting it."
-      }
-    ]
-  },
-  {
-    "input": "I need to book a car service. And I want to find a sports car.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I need to book a car service."
-      },
-      {
-        "intent": "buying_car",
-        "text": "And I want to find a sports car."
-      }
-    ]
-  },
-  {
-    "input": "I'm interested in buying car 25. Can I get a better price on it?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'm interested in buying car 25."
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "Can I get a better price on it?"
-      }
-    ]
-  },
-  {
-    "input": "I want to book an appointment for a tire rotation. Can you also tell me about your new car arrivals?",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I want to book an appointment for a tire rotation."
-      },
-      {
-        "intent": "buying_car",
-        "text": "Can you also tell me about your new car arrivals?"
-      }
-    ]
-  },
-  {
-    "input": "Can I give feedback on the recent service? And show me available sedans.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "Can I give feedback on the recent service?"
-      },
-      {
-        "intent": "buying_car",
-        "text": "And show me available sedans."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to know more about the BMW X5. Also, can I offer 30k for it?",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I'd like to know more about the BMW X5."
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "Also, can I offer 30k for it?"
-      }
-    ]
-  },
-  {
-    "input": "I'm looking for a specific car model. Can you also book a test drive for me?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a specific car model."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Can you also book a test drive for me?"
-      }
-    ]
-  },
-  {
-    "input": "I want to rent a car for a week. And I'd like to know if there's any discount.",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I want to rent a car for a week."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "And I'd like to know if there's any discount."
-      }
-    ]
-  },
-  {
-    "input": "I'll take the car. Can I also get information on how to register it?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll take the car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can I also get information on how to register it?"
-      }
-    ]
-  },
-  {
-    "input": "Can I get details on the Toyota Camry? And what's your dealership's address?",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Can I get details on the Toyota Camry?"
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "And what's your dealership's address?"
-      }
-    ]
-  },
-  {
-    "input": "I'd like to buy a car. Can I pay in installments?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'd like to buy a car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can I pay in installments?"
-      }
-    ]
-  },
-  {
-    "input": "I want to offer 10k for car 26. And I'd like to give feedback on your customer service.",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "I want to offer 10k for car 26."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "And I'd like to give feedback on your customer service."
+        "text": "Could you lower the price of car ID 509 to 28k?"
       }
     ]
   },
   {
-    "input": "I need to rent car 27. How much is it per day?",
-    "expected_output": [
+    "input": "I can offer 17k for the Honda Accord.",
+    "history": [
       {
-        "intent": "order_renting_car",
-        "text": "I need to rent car 27."
+        "sender": "User",
+        "msg": "Honda Accord seems fine."
       },
       {
-        "intent": "out_of_domain",
-        "text": "How much is it per day?"
+        "sender": "System",
+        "msg": "It's priced at 18k."
       }
-    ]
-  },
-  {
-    "input": "I'll purchase car 28. Can you also book a maintenance appointment for 6 months from now?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll purchase car 28."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Can you also book a maintenance appointment for 6 months from now?"
-      }
-    ]
-  },
-  {
-    "input": "I'm looking for a compact car. And I need help with my account password.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a compact car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "And I need help with my account password."
-      }
-    ]
-  },
-  {
-    "input": "I want to know more about the Porsche 911. Also, can you tell me if it's available for a test drive?",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I want to know more about the Porsche 911."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Also, can you tell me if it's available for a test drive?"
-      }
-    ]
-  },
-  {
-    "input": "I'd like to schedule a test drive. I also have some feedback about the car models available.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I'd like to schedule a test drive."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "I also have some feedback about the car models available."
-      }
-    ]
-  },
-  {
-    "input": "I want to buy car 29. Can I get more info on its fuel efficiency?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I want to buy car 29."
-      },
-      {
-        "intent": "get_car_info",
-        "text": "Can I get more info on its fuel efficiency?"
-      }
-    ]
-  },
-  {
-    "input": "Can I offer a different price for car 30? And I'd like to rent it if my offer isn't accepted.",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "Can I offer a different price for car 30?"
-      },
-      {
-        "intent": "order_renting_car",
-        "text": "And I'd like to rent it if my offer isn't accepted."
+        "text": "I can offer 17k for the Honda Accord."
       }
     ]
   },
   {
-    "input": "I'd like to rent a car for a long term. What are the requirements?",
-    "expected_output": [
+    "input": "I'll take the Toyota Corolla.",
+    "history": [
       {
-        "intent": "order_renting_car",
-        "text": "I'd like to rent a car for a long term."
+        "sender": "User",
+        "msg": "The Toyota Corolla seems perfect."
       },
       {
-        "intent": "out_of_domain",
-        "text": "What are the requirements?"
+        "sender": "System",
+        "msg": "Shall I prepare the purchase?"
       }
-    ]
-  },
-  {
-    "input": "I'm looking for a car with a good sound system. Can you tell me about the financing options?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a car with a good sound system."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can you tell me about the financing options?"
-      }
-    ]
-  },
-  {
-    "input": "Tell me about car 31. And I'd like to book a service appointment for my car.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Tell me about car 31."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "And I'd like to book a service appointment for my car."
-      }
-    ]
-  },
-  {
-    "input": "I want to give feedback on the website's performance. And I need to schedule a test drive.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I want to give feedback on the website's performance."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "And I need to schedule a test drive."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to buy car 32. Can I get a quote for car insurance?",
+    ],
     "expected_output": [
       {
         "intent": "order_car",
-        "text": "I'd like to buy car 32."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can I get a quote for car insurance?"
+        "text": "I'll take the Toyota Corolla."
       }
     ]
   },
   {
-    "input": "I want to negotiate the price of car 33. I also have feedback on your sales team.",
+    "input": "I confirm the purchase of car ID 300.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "That sedan fits my needs."
+      },
+      {
+        "sender": "System",
+        "msg": "It's car ID 300, available now."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I confirm the purchase of car ID 300."
+      }
+    ]
+  },
+  {
+    "input": "Let's go ahead with that BMW X5.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like the BMW X5."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like to proceed?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Let's go ahead with that BMW X5."
+      }
+    ]
+  },
+  {
+    "input": "Please reserve the Audi Q7 for me.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "The Audi Q7 has great features."
+      },
+      {
+        "sender": "System",
+        "msg": "It's available."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Please reserve the Audi Q7 for me."
+      }
+    ]
+  },
+  {
+    "input": "I'll buy the Tesla Model Y.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like Tesla's lineup."
+      },
+      {
+        "sender": "System",
+        "msg": "We have the Model Y available."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll buy the Tesla Model Y."
+      }
+    ]
+  },
+  {
+    "input": "That Nissan Altima is mine.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "That Nissan Altima seems right."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like to buy it?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "That Nissan Altima is mine."
+      }
+    ]
+  },
+  {
+    "input": "I'm ready to purchase the Kia Sportage.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Kia Sportage fits my style."
+      },
+      {
+        "sender": "System",
+        "msg": "We can finalize the purchase."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'm ready to purchase the Kia Sportage."
+      }
+    ]
+  },
+  {
+    "input": "I'll proceed with the Hyundai Tucson.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Hyundai Tucson looks perfect."
+      },
+      {
+        "sender": "System",
+        "msg": "Price is confirmed."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll proceed with the Hyundai Tucson."
+      }
+    ]
+  },
+  {
+    "input": "Sign me up for the Mercedes C-Class.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Mercedes C-Class is beautiful."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like to proceed?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "Sign me up for the Mercedes C-Class."
+      }
+    ]
+  },
+  {
+    "input": "The Volkswagen Passat, I'll take it.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Volkswagen Passat meets my needs."
+      },
+      {
+        "sender": "System",
+        "msg": "We can reserve it."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "The Volkswagen Passat, I'll take it."
+      }
+    ]
+  },
+  {
+    "input": "I think your service is excellent.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Thanks for your help."
+      },
+      {
+        "sender": "System",
+        "msg": "Glad to assist."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I think your service is excellent."
+      }
+    ]
+  },
+  {
+    "input": "I'd like to give feedback about the chat support.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Can I share my thoughts?"
+      },
+      {
+        "sender": "System",
+        "msg": "Of course."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I'd like to give feedback about the chat support."
+      }
+    ]
+  },
+  {
+    "input": "The interface is hard to use.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I found something tricky."
+      },
+      {
+        "sender": "System",
+        "msg": "What is it?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The interface is hard to use."
+      }
+    ]
+  },
+  {
+    "input": "I appreciate how fast you respond.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Just wanted to say..."
+      },
+      {
+        "sender": "System",
+        "msg": "Go ahead."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I appreciate how fast you respond."
+      }
+    ]
+  },
+  {
+    "input": "The images of the cars are too small.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "About your website..."
+      },
+      {
+        "sender": "System",
+        "msg": "Yes?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The images of the cars are too small."
+      }
+    ]
+  },
+  {
+    "input": "The search filters are very helpful.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like your filters."
+      },
+      {
+        "sender": "System",
+        "msg": "Thanks!"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The search filters are very helpful."
+      }
+    ]
+  },
+  {
+    "input": "Your website loads too slowly.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "One thing bothers me."
+      },
+      {
+        "sender": "System",
+        "msg": "Tell me."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "Your website loads too slowly."
+      }
+    ]
+  },
+  {
+    "input": "I had a great experience using your platform.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I enjoyed browsing."
+      },
+      {
+        "sender": "System",
+        "msg": "Happy to hear that."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I had a great experience using your platform."
+      }
+    ]
+  },
+  {
+    "input": "The payment process is confusing.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Payment was tricky."
+      },
+      {
+        "sender": "System",
+        "msg": "How so?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The payment process is confusing."
+      }
+    ]
+  },
+  {
+    "input": "I love the variety of cars available.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Variety is great."
+      },
+      {
+        "sender": "System",
+        "msg": "Glad you think so."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I love the variety of cars available."
+      }
+    ]
+  },
+  {
+    "input": "Can I book a test drive for the Tesla Model Y next week?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like the Tesla Model Y."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like to test it?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Can I book a test drive for the Tesla Model Y next week?"
+      }
+    ]
+  },
+  {
+    "input": "Schedule a service for my car next Monday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "My car needs maintenance."
+      },
+      {
+        "sender": "System",
+        "msg": "What day works best?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Schedule a service for my car next Monday."
+      }
+    ]
+  },
+  {
+    "input": "I'd like to book a test drive for car ID 401.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "That hatchback looks great."
+      },
+      {
+        "sender": "System",
+        "msg": "It's car ID 401."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I'd like to book a test drive for car ID 401."
+      }
+    ]
+  },
+  {
+    "input": "Book me a test drive for the Ford Mustang tomorrow.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "The Ford Mustang looks amazing."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like a test drive?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Book me a test drive for the Ford Mustang tomorrow."
+      }
+    ]
+  },
+  {
+    "input": "I need to schedule a service check for Friday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "It needs a checkup."
+      },
+      {
+        "sender": "System",
+        "msg": "When would you like to schedule it?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I need to schedule a service check for Friday."
+      }
+    ]
+  },
+  {
+    "input": "Reserve a slot for my oil change on Saturday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Oil change required."
+      },
+      {
+        "sender": "System",
+        "msg": "I can book that."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Reserve a slot for my oil change on Saturday."
+      }
+    ]
+  },
+  {
+    "input": "Book an appointment to test the BMW 3 Series.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like the BMW 3 Series."
+      },
+      {
+        "sender": "System",
+        "msg": "Would you like to try it?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Book an appointment to test the BMW 3 Series."
+      }
+    ]
+  },
+  {
+    "input": "I want to book a tire replacement next Tuesday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "My tires are worn."
+      },
+      {
+        "sender": "System",
+        "msg": "We can replace them."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I want to book a tire replacement next Tuesday."
+      }
+    ]
+  },
+  {
+    "input": "Schedule a brake inspection for my car.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Brakes feel soft."
+      },
+      {
+        "sender": "System",
+        "msg": "We should inspect them."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Schedule a brake inspection for my car."
+      }
+    ]
+  },
+  {
+    "input": "Can you book a service for my Honda Civic next month?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Need maintenance for my Civic."
+      },
+      {
+        "sender": "System",
+        "msg": "When is good for you?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Can you book a service for my Honda Civic next month?"
+      }
+    ]
+  },
+  {
+    "input": "What's the weather like today?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Before we talk about cars..."
+      },
+      {
+        "sender": "System",
+        "msg": "Sure."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "What's the weather like today?"
+      }
+    ]
+  },
+  {
+    "input": "Can you recommend me a good restaurant?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Unrelated question."
+      },
+      {
+        "sender": "System",
+        "msg": "Go ahead."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "Can you recommend me a good restaurant?"
+      }
+    ]
+  },
+  {
+    "input": "Do you know when the next holiday is?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "By the way..."
+      },
+      {
+        "sender": "System",
+        "msg": "Yes?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "Do you know when the next holiday is?"
+      }
+    ]
+  },
+  {
+    "input": "What's the capital of France?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Different topic."
+      },
+      {
+        "sender": "System",
+        "msg": "Okay."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "What's the capital of France?"
+      }
+    ]
+  },
+  {
+    "input": "How old is Elon Musk?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Speaking of news..."
+      },
+      {
+        "sender": "System",
+        "msg": "Yes?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "How old is Elon Musk?"
+      }
+    ]
+  },
+  {
+    "input": "Tell me a joke.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Tell me something funny."
+      },
+      {
+        "sender": "System",
+        "msg": "Alright."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "Tell me a joke."
+      }
+    ]
+  },
+  {
+    "input": "What time is it in New York?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I wonder..."
+      },
+      {
+        "sender": "System",
+        "msg": "What is it?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "What time is it in New York?"
+      }
+    ]
+  },
+  {
+    "input": "How many days are in a leap year?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Random fact request."
+      },
+      {
+        "sender": "System",
+        "msg": "Go ahead."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "How many days are in a leap year?"
+      }
+    ]
+  },
+  {
+    "input": "Who won the last World Cup?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Sports question."
+      },
+      {
+        "sender": "System",
+        "msg": "Sure."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "Who won the last World Cup?"
+      }
+    ]
+  },
+  {
+    "input": "What's the tallest mountain in the world?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Geography time."
+      },
+      {
+        "sender": "System",
+        "msg": "Alright."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "out_of_domain",
+        "text": "What's the tallest mountain in the world?"
+      }
+    ]
+  },
+  {
+    "input": "Show me some electric cars. Also, Does car ID 402 have heated seats?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'd like to see eco-friendly options."
+      },
+      {
+        "sender": "System",
+        "msg": "We have electric and hybrid cars."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Show me some electric cars."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "Does car ID 402 have heated seats?"
+      }
+    ]
+  },
+  {
+    "input": "Can you book a service for my Honda Civic next month? Also, Can you list your cheapest vehicles?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Need maintenance for my Civic."
+      },
+      {
+        "sender": "System",
+        "msg": "When is good for you?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Can you book a service for my Honda Civic next month?"
+      },
+      {
+        "intent": "buying_car",
+        "text": "Can you list your cheapest vehicles?"
+      }
+    ]
+  },
+  {
+    "input": "I'll buy the Tesla Model Y. Also, What transmission does the Ford Fiesta have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like Tesla's lineup."
+      },
+      {
+        "sender": "System",
+        "msg": "We have the Model Y available."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll buy the Tesla Model Y."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "What transmission does the Ford Fiesta have?"
+      }
+    ]
+  },
+  {
+    "input": "Can you give me details about the BMW X5? Also, I'm ready to purchase the Kia Sportage.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I saw the BMW X5 in your listings."
+      },
+      {
+        "sender": "System",
+        "msg": "Yes, would you like details?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "Can you give me details about the BMW X5?"
+      },
+      {
+        "intent": "order_car",
+        "text": "I'm ready to purchase the Kia Sportage."
+      }
+    ]
+  },
+  {
+    "input": "I'm interested in a hybrid SUV under 25k. Also, I want to book a tire replacement next Tuesday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I'm looking for an SUV."
+      },
+      {
+        "sender": "System",
+        "msg": "Do you prefer petrol, diesel, or electric?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "I'm interested in a hybrid SUV under 25k."
+      },
+      {
+        "intent": "book_appointment",
+        "text": "I want to book a tire replacement next Tuesday."
+      }
+    ]
+  },
+  {
+    "input": "I'll buy the Tesla Model Y. Also, Book an appointment to test the BMW 3 Series.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like Tesla's lineup."
+      },
+      {
+        "sender": "System",
+        "msg": "We have the Model Y available."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "order_car",
+        "text": "I'll buy the Tesla Model Y."
+      },
+      {
+        "intent": "book_appointment",
+        "text": "Book an appointment to test the BMW 3 Series."
+      }
+    ]
+  },
+  {
+    "input": "I need to schedule a service check for Friday. Also, The images of the cars are too small.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "It needs a checkup."
+      },
+      {
+        "sender": "System",
+        "msg": "When would you like to schedule it?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "I need to schedule a service check for Friday."
+      },
+      {
+        "intent": "give_feedback",
+        "text": "The images of the cars are too small."
+      }
+    ]
+  },
+  {
+    "input": "Reserve a slot for my oil change on Saturday. Also, Show me cars from Toyota.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Oil change required."
+      },
+      {
+        "sender": "System",
+        "msg": "I can book that."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Reserve a slot for my oil change on Saturday."
+      },
+      {
+        "intent": "buying_car",
+        "text": "Show me cars from Toyota."
+      }
+    ]
+  },
+  {
+    "input": "What's the horsepower of the Mustang GT? Also, I'll take the Toyota Corolla.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Show me sports cars."
+      },
+      {
+        "sender": "System",
+        "msg": "We have the Mustang GT."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "get_car_info",
+        "text": "What's the horsepower of the Mustang GT?"
+      },
+      {
+        "intent": "order_car",
+        "text": "I'll take the Toyota Corolla."
+      }
+    ]
+  },
+  {
+    "input": "Is 22k acceptable for the Lexus RX? Also, The interface is hard to use.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like that Lexus RX."
+      },
+      {
+        "sender": "System",
+        "msg": "Price is 23k."
+      }
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "I want to negotiate the price of car 33."
+        "text": "Is 22k acceptable for the Lexus RX?"
       },
       {
         "intent": "give_feedback",
-        "text": "I also have feedback on your sales team."
+        "text": "The interface is hard to use."
       }
     ]
   },
   {
-    "input": "Can I rent car 34? And I need details on your rental agreement.",
-    "expected_output": [
+    "input": "I confirm the purchase of car ID 300. Also, Can you list your cheapest vehicles?",
+    "history": [
       {
-        "intent": "order_renting_car",
-        "text": "Can I rent car 34?"
+        "sender": "User",
+        "msg": "That sedan fits my needs."
       },
       {
-        "intent": "out_of_domain",
-        "text": "And I need details on your rental agreement."
+        "sender": "System",
+        "msg": "It's car ID 300, available now."
       }
-    ]
-  },
-  {
-    "input": "I'm looking for a fuel-efficient car. What's your nearest location?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a fuel-efficient car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "What's your nearest location?"
-      }
-    ]
-  },
-  {
-    "input": "Can you provide more info on car 35? I'd like to schedule a time to see it.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Can you provide more info on car 35?"
-      },
-      {
-        "intent": "book_appointment",
-        "text": "I'd like to schedule a time to see it."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to order car 36. Can I also give feedback on the buying process?",
+    ],
     "expected_output": [
       {
         "intent": "order_car",
-        "text": "I'd like to order car 36."
+        "text": "I confirm the purchase of car ID 300."
       },
       {
-        "intent": "give_feedback",
-        "text": "Can I also give feedback on the buying process?"
+        "intent": "buying_car",
+        "text": "Can you list your cheapest vehicles?"
       }
     ]
   },
   {
-    "input": "I want to negotiate the price for a car. Can you also show me more cars like it?",
+    "input": "The search filters are very helpful. Also, How many seats does car ID 102 have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like your filters."
+      },
+      {
+        "sender": "System",
+        "msg": "Thanks!"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "The search filters are very helpful."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "How many seats does car ID 102 have?"
+      }
+    ]
+  },
+  {
+    "input": "Would you take 40k for the BMW X5? Also, How many seats does car ID 102 have?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "How much for the BMW X5?"
+      },
+      {
+        "sender": "System",
+        "msg": "It's 42k."
+      }
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "I want to negotiate the price for a car."
-      },
-      {
-        "intent": "buying_car",
-        "text": "Can you also show me more cars like it?"
-      }
-    ]
-  },
-  {
-    "input": "I need to book a detailing service. And I'm looking for a compact SUV.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I need to book a detailing service."
-      },
-      {
-        "intent": "buying_car",
-        "text": "And I'm looking for a compact SUV."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to rent a specific car model. Can you tell me if it's available?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I'd like to rent a specific car model."
+        "text": "Would you take 40k for the BMW X5?"
       },
       {
         "intent": "get_car_info",
-        "text": "Can you tell me if it's available?"
+        "text": "How many seats does car ID 102 have?"
       }
     ]
   },
   {
-    "input": "I'll buy car 37. What are the next steps?",
-    "expected_output": [
+    "input": "What's the fuel type of the Audi A3? Also, I had a great experience using your platform.",
+    "history": [
       {
-        "intent": "order_car",
-        "text": "I'll buy car 37."
+        "sender": "User",
+        "msg": "Can you show me compact cars?"
       },
       {
-        "intent": "out_of_domain",
-        "text": "What are the next steps?"
+        "sender": "System",
+        "msg": "Here is the Audi A3."
       }
-    ]
-  },
-  {
-    "input": "I'm looking for a car, and I also want to book a service appointment.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a car"
-      },
-      {
-        "intent": "book_appointment",
-        "text": "and I also want to book a service appointment."
-      }
-    ]
-  },
-  {
-    "input": "Can I get more information about the Ford F-150? I'm thinking of negotiating the price.",
+    ],
     "expected_output": [
       {
         "intent": "get_car_info",
-        "text": "Can I get more information about the Ford F-150?"
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "I'm thinking of negotiating the price."
-      }
-    ]
-  },
-  {
-    "input": "I want to give feedback on the app. And I'd like to rent a car.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I want to give feedback on the app."
-      },
-      {
-        "intent": "order_renting_car",
-        "text": "And I'd like to rent a car."
-      }
-    ]
-  },
-  {
-    "input": "I need to buy car 38. Can I schedule a pick-up time?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I need to buy car 38."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Can I schedule a pick-up time?"
-      }
-    ]
-  },
-  {
-    "input": "I'm interested in an electric car. What are the charging options?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm interested in an electric car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "What are the charging options?"
-      }
-    ]
-  },
-  {
-    "input": "Tell me more about car 39. Can I get a special discount?",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Tell me more about car 39."
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "Can I get a special discount?"
-      }
-    ]
-  },
-  {
-    "input": "I'd like to book an appointment for a tire check. How long will it take?",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I'd like to book an appointment for a tire check."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "How long will it take?"
-      }
-    ]
-  },
-  {
-    "input": "I want to rent car 40. I'd like to give feedback on the reservation process.",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I want to rent car 40."
+        "text": "What's the fuel type of the Audi A3?"
       },
       {
         "intent": "give_feedback",
-        "text": "I'd like to give feedback on the reservation process."
+        "text": "I had a great experience using your platform."
       }
     ]
   },
   {
-    "input": "Can I negotiate on the price of car 41? And I'll buy it if the price is right.",
-    "expected_output": [
+    "input": "Can I book a test drive for the Tesla Model Y next week? Also, Please reserve the Audi Q7 for me.",
+    "history": [
       {
-        "intent": "negotiate_price",
-        "text": "Can I negotiate on the price of car 41?"
+        "sender": "User",
+        "msg": "I like the Tesla Model Y."
       },
       {
-        "intent": "order_car",
-        "text": "And I'll buy it if the price is right."
+        "sender": "System",
+        "msg": "Would you like to test it?"
       }
-    ]
-  },
-  {
-    "input": "I need to find a car within my budget. And I have some feedback about your customer support.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I need to find a car within my budget."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "And I have some feedback about your customer support."
-      }
-    ]
-  },
-  {
-    "input": "I'll take car 42. Can you tell me about the delivery timeframe?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll take car 42."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can you tell me about the delivery timeframe?"
-      }
-    ]
-  },
-  {
-    "input": "I want to get more info on the Volkswagen Golf. And I want to schedule a maintenance appointment.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I want to get more info on the Volkswagen Golf."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "And I want to schedule a maintenance appointment."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to book a test drive for tomorrow. And I also have some feedback regarding your online forms.",
+    ],
     "expected_output": [
       {
         "intent": "book_appointment",
-        "text": "I'd like to book a test drive for tomorrow."
+        "text": "Can I book a test drive for the Tesla Model Y next week?"
       },
-      {
-        "intent": "give_feedback",
-        "text": "And I also have some feedback regarding your online forms."
-      }
-    ]
-  },
-  {
-    "input": "Can I rent a car for a month? And what are the rental requirements?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "Can I rent a car for a month?"
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "And what are the rental requirements?"
-      }
-    ]
-  },
-  {
-    "input": "I want to buy car 43. Can you tell me about its warranty?",
-    "expected_output": [
       {
         "intent": "order_car",
-        "text": "I want to buy car 43."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can you tell me about its warranty?"
+        "text": "Please reserve the Audi Q7 for me."
       }
     ]
   },
   {
-    "input": "I need to find a car with specific features. Can you also tell me about your trade-in options?",
+    "input": "Show me cars from Toyota. Also, Can you give me details about the BMW X5?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like Japanese brands."
+      },
+      {
+        "sender": "System",
+        "msg": "We have Toyota, Honda, and Nissan."
+      }
+    ],
     "expected_output": [
       {
         "intent": "buying_car",
-        "text": "I need to find a car with specific features."
+        "text": "Show me cars from Toyota."
       },
       {
-        "intent": "out_of_domain",
-        "text": "Can you also tell me about your trade-in options?"
+        "intent": "get_car_info",
+        "text": "Can you give me details about the BMW X5?"
       }
     ]
   },
   {
-    "input": "Tell me about car 44. I'm interested in buying it if the price is right.",
+    "input": "I confirm the purchase of car ID 300. Also, I think your service is excellent.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "That sedan fits my needs."
+      },
+      {
+        "sender": "System",
+        "msg": "It's car ID 300, available now."
+      }
+    ],
     "expected_output": [
       {
-        "intent": "get_car_info",
-        "text": "Tell me about car 44."
+        "intent": "order_car",
+        "text": "I confirm the purchase of car ID 300."
+      },
+      {
+        "intent": "give_feedback",
+        "text": "I think your service is excellent."
+      }
+    ]
+  },
+  {
+    "input": "Can you list your cheapest vehicles? Also, I'm ready to purchase the Kia Sportage.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "My budget is tight."
+      },
+      {
+        "sender": "System",
+        "msg": "I can show you our cheapest options."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Can you list your cheapest vehicles?"
       },
       {
         "intent": "order_car",
-        "text": "I'm interested in buying it if the price is right."
+        "text": "I'm ready to purchase the Kia Sportage."
       }
     ]
   },
   {
-    "input": "I want to negotiate the price for car 45. And I'd like to book a test drive.",
+    "input": "Can you list your cheapest vehicles? Also, Can you book a service for my Honda Civic next month?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "My budget is tight."
+      },
+      {
+        "sender": "System",
+        "msg": "I can show you our cheapest options."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "buying_car",
+        "text": "Can you list your cheapest vehicles?"
+      },
+      {
+        "intent": "book_appointment",
+        "text": "Can you book a service for my Honda Civic next month?"
+      }
+    ]
+  },
+  {
+    "input": "Can I get the Tesla Model 3 for 30k? Also, Do you have any convertibles?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I like the Tesla Model 3."
+      },
+      {
+        "sender": "System",
+        "msg": "It's listed at 35k."
+      }
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "I want to negotiate the price for car 45."
+        "text": "Can I get the Tesla Model 3 for 30k?"
       },
+      {
+        "intent": "buying_car",
+        "text": "Do you have any convertibles?"
+      }
+    ]
+  },
+  {
+    "input": "I need to schedule a service check for Friday. Also, The interface is hard to use.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "It needs a checkup."
+      },
+      {
+        "sender": "System",
+        "msg": "When would you like to schedule it?"
+      }
+    ],
+    "expected_output": [
       {
         "intent": "book_appointment",
-        "text": "And I'd like to book a test drive."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to leave some feedback about the car selection. And I'm looking for an SUV.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I'd like to leave some feedback about the car selection."
-      },
-      {
-        "intent": "buying_car",
-        "text": "And I'm looking for an SUV."
-      }
-    ]
-  },
-  {
-    "input": "I need to rent a car for a few days. Can you tell me about the car's features?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I need to rent a car for a few days."
-      },
-      {
-        "intent": "get_car_info",
-        "text": "Can you tell me about the car's features?"
-      }
-    ]
-  },
-  {
-    "input": "I want to buy a car. Can you show me what's available?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I want to buy a car."
-      },
-      {
-        "intent": "buying_car",
-        "text": "Can you show me what's available?"
-      }
-    ]
-  },
-  {
-    "input": "I'd like to know more about car 1. Can I get details?",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I'd like to know more about car 1."
-      },
-      {
-        "intent": "get_car_info",
-        "text": "Can I get details?"
-      }
-    ]
-  },
-  {
-    "input": "Can I offer a new price for car 2? What's the lowest you can go?",
-    "expected_output": [
-      {
-        "intent": "negotiate_price",
-        "text": "Can I offer a new price for car 2?"
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "What's the lowest you can go?"
-      }
-    ]
-  },
-  {
-    "input": "I'll take car 3. Let's complete the purchase.",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll take car 3."
-      },
-      {
-        "intent": "order_car",
-        "text": "Let's complete the purchase."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to rent a car for the weekend. Can I book it now?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I'd like to rent a car for the weekend."
-      },
-      {
-        "intent": "order_renting_car",
-        "text": "Can I book it now?"
-      }
-    ]
-  },
-  {
-    "input": "I have some feedback about the system. It's really slow.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I have some feedback about the system."
+        "text": "I need to schedule a service check for Friday."
       },
       {
         "intent": "give_feedback",
-        "text": "It's really slow."
+        "text": "The interface is hard to use."
       }
     ]
   },
   {
-    "input": "Can I book a test drive? I want to schedule it for next Tuesday.",
-    "expected_output": [
+    "input": "I'm searching for a family car. Also, Tell me the color options for car ID 205.",
+    "history": [
       {
-        "intent": "book_appointment",
-        "text": "Can I book a test drive?"
+        "sender": "User",
+        "msg": "I have a family of five."
       },
       {
-        "intent": "book_appointment",
-        "text": "I want to schedule it for next Tuesday."
+        "sender": "System",
+        "msg": "Would you like an SUV or a minivan?"
       }
-    ]
-  },
-  {
-    "input": "Show me luxury cars please.",
+    ],
     "expected_output": [
       {
         "intent": "buying_car",
-        "text": "Show me luxury cars please."
+        "text": "I'm searching for a family car."
+      },
+      {
+        "intent": "get_car_info",
+        "text": "Tell me the color options for car ID 205."
       }
     ]
   },
   {
-    "input": "Details on the Mercedes C-Class.",
+    "input": "Can you give me details about the BMW X5? Also, Could you lower the price of car ID 509 to 28k?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "I saw the BMW X5 in your listings."
+      },
+      {
+        "sender": "System",
+        "msg": "Yes, would you like details?"
+      }
+    ],
     "expected_output": [
       {
         "intent": "get_car_info",
-        "text": "Details on the Mercedes C-Class."
-      }
-    ]
-  },
-  {
-    "input": "My offer is 22,000 for that car.",
-    "expected_output": [
-      {
-        "intent": "negotiate_price",
-        "text": "My offer is 22,000 for that car."
-      }
-    ]
-  },
-  {
-    "input": "Yes, I'll take the green one.",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "Yes, I'll take the green one."
-      }
-    ]
-  },
-  {
-    "input": "Rent for five days, starting tomorrow.",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "Rent for five days, starting tomorrow."
-      }
-    ]
-  },
-  {
-    "input": "Your service is excellent!",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "Your service is excellent!"
-      }
-    ]
-  },
-  {
-    "input": "Schedule a maintenance for my car.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "Schedule a maintenance for my car."
-      }
-    ]
-  },
-  {
-    "input": "What's the meaning of life?",
-    "expected_output": [
-      {
-        "intent": "out_of_domain",
-        "text": "What's the meaning of life?"
-      }
-    ]
-  },
-  {
-    "input": "I'm looking for a car with low mileage and I'd like to book a service.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a car with low mileage"
-      },
-      {
-        "intent": "book_appointment",
-        "text": "and I'd like to book a service."
-      }
-    ]
-  },
-  {
-    "input": "Can you give me information on car 6? I'm interested in buying it.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Can you give me information on car 6?"
-      },
-      {
-        "intent": "order_car",
-        "text": "I'm interested in buying it."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to offer 12k for car 7. Also, I have feedback on your pricing.",
-    "expected_output": [
-      {
-        "intent": "negotiate_price",
-        "text": "I'd like to offer 12k for car 7."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "Also, I have feedback on your pricing."
-      }
-    ]
-  },
-  {
-    "input": "I'll take car 8. Can you tell me about the current promotions?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll take car 8."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Can you tell me about the current promotions?"
-      }
-    ]
-  },
-  {
-    "input": "I want to rent car 9. Can I book a test drive for it first?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I want to rent car 9."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Can I book a test drive for it first?"
-      }
-    ]
-  },
-  {
-    "input": "I need a car with good fuel economy, and I want to offer a different price for car 10.",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I need a car with good fuel economy"
+        "text": "Can you give me details about the BMW X5?"
       },
       {
         "intent": "negotiate_price",
-        "text": "and I want to offer a different price for car 10."
+        "text": "Could you lower the price of car ID 509 to 28k?"
       }
     ]
   },
   {
-    "input": "Tell me about car 11. I'm considering renting it.",
+    "input": "Reserve a slot for my oil change on Saturday. Also, I'd like to give feedback about the chat support.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Oil change required."
+      },
+      {
+        "sender": "System",
+        "msg": "I can book that."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Reserve a slot for my oil change on Saturday."
+      },
+      {
+        "intent": "give_feedback",
+        "text": "I'd like to give feedback about the chat support."
+      }
+    ]
+  },
+  {
+    "input": "Tell me the color options for car ID 205. Also, I want to book a tire replacement next Tuesday.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "That red SUV looks good."
+      },
+      {
+        "sender": "System",
+        "msg": "That's car ID 205, a Nissan Rogue."
+      }
+    ],
     "expected_output": [
       {
         "intent": "get_car_info",
-        "text": "Tell me about car 11."
-      },
-      {
-        "intent": "order_renting_car",
-        "text": "I'm considering renting it."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to give some feedback on the test drive process. And I want to schedule another one.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I'd like to give some feedback on the test drive process."
+        "text": "Tell me the color options for car ID 205."
       },
       {
         "intent": "book_appointment",
-        "text": "And I want to schedule another one."
+        "text": "I want to book a tire replacement next Tuesday."
       }
     ]
   },
   {
-    "input": "I'm looking for an SUV, and I'd like to purchase car 12.",
-    "expected_output": [
+    "input": "Would you accept 12k for car ID 205? Also, What is the mileage on the Tesla Model 3?",
+    "history": [
       {
-        "intent": "buying_car",
-        "text": "I'm looking for an SUV"
+        "sender": "User",
+        "msg": "That car looks nice."
       },
       {
-        "intent": "order_car",
-        "text": "and I'd like to purchase car 12."
+        "sender": "System",
+        "msg": "That's car ID 205, price is 14k."
       }
-    ]
-  },
-  {
-    "input": "I want to negotiate the price of car 13. Can you tell me more about it?",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "I want to negotiate the price of car 13."
+        "text": "Would you accept 12k for car ID 205?"
       },
       {
         "intent": "get_car_info",
-        "text": "Can you tell me more about it?"
+        "text": "What is the mileage on the Tesla Model 3?"
       }
     ]
   },
   {
-    "input": "I'll take car 14. Can you also book a car wash for next week?",
+    "input": "I'll take the Toyota Corolla. Also, Can you list your cheapest vehicles?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "The Toyota Corolla seems perfect."
+      },
+      {
+        "sender": "System",
+        "msg": "Shall I prepare the purchase?"
+      }
+    ],
     "expected_output": [
       {
         "intent": "order_car",
-        "text": "I'll take car 14."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Can you also book a car wash for next week?"
-      }
-    ]
-  },
-  {
-    "input": "I need to rent a car for a business trip. Also, what are your opening hours?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I need to rent a car for a business trip."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "Also, what are your opening hours?"
-      }
-    ]
-  },
-  {
-    "input": "I want to give feedback on your app. And I'm looking for a sedan.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I want to give feedback on your app."
+        "text": "I'll take the Toyota Corolla."
       },
       {
         "intent": "buying_car",
-        "text": "And I'm looking for a sedan."
+        "text": "Can you list your cheapest vehicles?"
       }
     ]
   },
   {
-    "input": "Can I book a service appointment for my current vehicle? And I'd like to know about new electric models.",
-    "expected_output": [
+    "input": "Could you lower the price of car ID 509 to 28k? Also, Let's go ahead with that BMW X5.",
+    "history": [
       {
-        "intent": "book_appointment",
-        "text": "Can I book a service appointment for my current vehicle?"
+        "sender": "User",
+        "msg": "How much for car ID 509?"
       },
       {
-        "intent": "buying_car",
-        "text": "And I'd like to know about new electric models."
+        "sender": "System",
+        "msg": "It's 30k."
       }
-    ]
-  },
-  {
-    "input": "I need details on car 15. Can I rent it instead of buying?",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "I need details on car 15."
-      },
-      {
-        "intent": "order_renting_car",
-        "text": "Can I rent it instead of buying?"
-      }
-    ]
-  },
-  {
-    "input": "I'm interested in buying car 16. Can I get a better price?",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'm interested in buying car 16."
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "Can I get a better price?"
-      }
-    ]
-  },
-  {
-    "input": "I'd like to rent car 17. Can I give feedback on the process?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I'd like to rent car 17."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "Can I give feedback on the process?"
-      }
-    ]
-  },
-  {
-    "input": "I want to book a test drive for car 18. And what are your available colors for this model?",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I want to book a test drive for car 18."
-      },
-      {
-        "intent": "get_car_info",
-        "text": "And what are your available colors for this model?"
-      }
-    ]
-  },
-  {
-    "input": "I'm looking for a car to buy. How many dealerships do you have?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm looking for a car to buy."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "How many dealerships do you have?"
-      }
-    ]
-  },
-  {
-    "input": "Can I get info on car 19? I might want to offer a lower price for it.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Can I get info on car 19?"
-      },
-      {
-        "intent": "negotiate_price",
-        "text": "I might want to offer a lower price for it."
-      }
-    ]
-  },
-  {
-    "input": "I'll take car 20. And I have some feedback on your delivery service.",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll take car 20."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "And I have some feedback on your delivery service."
-      }
-    ]
-  },
-  {
-    "input": "I need to rent a car for next week. Can I also book an appointment for a car check-up?",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I need to rent a car for next week."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "Can I also book an appointment for a car check-up?"
-      }
-    ]
-  },
-  {
-    "input": "I'm searching for a hybrid car. What are the current interest rates for car loans?",
-    "expected_output": [
-      {
-        "intent": "buying_car",
-        "text": "I'm searching for a hybrid car."
-      },
-      {
-        "intent": "out_of_domain",
-        "text": "What are the current interest rates for car loans?"
-      }
-    ]
-  },
-  {
-    "input": "Tell me about the Tesla Model 3. I'm interested in buying it.",
-    "expected_output": [
-      {
-        "intent": "get_car_info",
-        "text": "Tell me about the Tesla Model 3."
-      },
-      {
-        "intent": "order_car",
-        "text": "I'm interested in buying it."
-      }
-    ]
-  },
-  {
-    "input": "I'd like to offer 28k for car 21. Can you also tell me about its features?",
+    ],
     "expected_output": [
       {
         "intent": "negotiate_price",
-        "text": "I'd like to offer 28k for car 21."
+        "text": "Could you lower the price of car ID 509 to 28k?"
+      },
+      {
+        "intent": "order_car",
+        "text": "Let's go ahead with that BMW X5."
+      }
+    ]
+  },
+  {
+    "input": "Can you book a service for my Honda Civic next month? Also, The Volkswagen Passat, I'll take it.",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Need maintenance for my Civic."
+      },
+      {
+        "sender": "System",
+        "msg": "When is good for you?"
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "book_appointment",
+        "text": "Can you book a service for my Honda Civic next month?"
+      },
+      {
+        "intent": "order_car",
+        "text": "The Volkswagen Passat, I'll take it."
+      }
+    ]
+  },
+  {
+    "input": "I think your service is excellent. Also, What's the fuel type of the Audi A3?",
+    "history": [
+      {
+        "sender": "User",
+        "msg": "Thanks for your help."
+      },
+      {
+        "sender": "System",
+        "msg": "Glad to assist."
+      }
+    ],
+    "expected_output": [
+      {
+        "intent": "give_feedback",
+        "text": "I think your service is excellent."
       },
       {
         "intent": "get_car_info",
-        "text": "Can you also tell me about its features?"
-      }
-    ]
-  },
-  {
-    "input": "I'll buy car 22. And I want to schedule a pickup time for it.",
-    "expected_output": [
-      {
-        "intent": "order_car",
-        "text": "I'll buy car 22."
-      },
-      {
-        "intent": "book_appointment",
-        "text": "And I want to schedule a pickup time for it."
-      }
-    ]
-  },
-  {
-    "input": "I need to rent a car for the holidays. And I'd like to give feedback on your reservation system.",
-    "expected_output": [
-      {
-        "intent": "order_renting_car",
-        "text": "I need to rent a car for the holidays."
-      },
-      {
-        "intent": "give_feedback",
-        "text": "And I'd like to give feedback on your reservation system."
-      }
-    ]
-  },
-  {
-    "input": "I want to book an appointment for a car inspection. And I'm also looking for a sedan.",
-    "expected_output": [
-      {
-        "intent": "book_appointment",
-        "text": "I want to book an appointment for a car inspection."
-      },
-      {
-        "intent": "buying_car",
-        "text": "And I'm also looking for a sedan."
-      }
-    ]
-  },
-  {
-    "input": "I have some feedback about my recent car purchase. And I'm also looking to buy another car.",
-    "expected_output": [
-      {
-        "intent": "give_feedback",
-        "text": "I have some feedback about my recent car purchase."
-      },
-      {
-        "intent": "buying_car",
-        "text": "And I'm also looking to buy another car."
+        "text": "What's the fuel type of the Audi A3?"
       }
     ]
   }

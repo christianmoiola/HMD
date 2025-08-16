@@ -153,8 +153,8 @@ class GiveFeedbackStateTracker(DialogueStateTracker):
         self.dialogue_state = {
             "intent": "give_feedback",
             "slots": {
-                "feedback": None,
-                "comment": None,
+                "rating": None,
+                "comments": None,
             }
         }
         self.logger = setup_logger(self.__class__.__name__)

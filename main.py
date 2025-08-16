@@ -200,10 +200,13 @@ if __name__ == "__main__":
     config["Settings"] = {
         "path": os.getcwd()
     }
-    #pipeline = Pipeline(config=config)
-    #pipeline.run()
-    evaluation = Evaluation(cfg=config)
-    evaluation.test_dm(is_history=True)
+
+    pipeline = Pipeline(config=config)
+    pipeline.run()
+
+    #evaluation = Evaluation(cfg=config)
+    #evaluation.test_nlu(is_history=False)
+    
     #TODO (Additional) Modify the book apointment in order to (book the apointment; you will receive a confirmaton email with the details of the appointment if the appointment is available)
     #TODO (Additional) add contact operator
     #TODO add the state of the selected car
@@ -225,50 +228,4 @@ if __name__ == "__main__":
     #TODO fix and add some examples to the pre nlu prompt
     #TODO add the Name of the car if the reuqest info contain the car ID
     #TODO nlg-negotiate-price: the system have to accept if the user price is higher that the system price
-    #PRE_NLU component test
-    # pre_nlu = PRE_NLU(cfg=config, model=model, tokenizer=tokenizer)
-
-    # input_pre_nlu = ["Hello, I want to buy a car.", "I'm looking for a sports car under 20000 euros.", "Can you tell me more about the BMW M3?", "I would like to negotiate the price of the Audi R8.", "I want to order the Honda Civic."]
-
-    # for elem in input_pre_nlu:
-    #     pre_nlu_response = pre_nlu.query_model(elem)
-    #     print(f"\n\nPRE_NLU Response: {pre_nlu_response}")
-
-    #NLU component test
-
-    # history = History()
-    # nlu = NLU(cfg=config, model=model, tokenizer=tokenizer, history=history)
-    # history.add_to_history(sender="System", msg=config["General"].get("initial_message"))
-    # history.add_to_history(sender="User", msg="Hello, I want to buy a car.")
-    # history.add_to_history(sender="System", msg="Sure, I can help you with that. What kind of car are you looking for?")
-    # history.add_to_history(sender="User", msg="I'm looking for a sports car under 20000 euros, preferably an Audi.")
-    # history.add_to_history(sender="System", msg="Great choice! Here are some options for sports cars under 20000 euros that we have available: 14 BMW M3, 15 Audi R8, 16 Porsche 911. Would you like to know more about any of these cars?")
-    # history.add_to_history(sender="User", msg="Can you tell me more about the BMW M3?")
-    # history.add_to_history(sender="System", msg="Sure, the BMW M3 is a high-performance sports car with a powerful engine and sleek design. It offers a thrilling driving experience and is known for its agility and handling. Would you like to buy it?")
-
-    # input_nlu_get_car_info = [{'intent': 'get_car_info', 'text': 'Can you tell me more about the Audi R8?'}, {'intent': 'get_car_info', 'text': 'Can you tell me more about the BMW M3?'}, {'intent': 'get_car_info', 'text': 'Can you tell me more about the Porsche 911?'}, {'intent': 'get_car_info', 'text': 'Can you tell me more about the car with ID 14?'}, {'intent': 'get_car_info', 'text': 'Can you tell me more about the Honda Civic?'}]
-    # input_nlu_give_feedback = [{'intent': 'give_feedback', 'text': 'I would give 6 stars to the service.'}, {'intent': 'give_feedback', 'text': 'I would give 5 to this chatbot because it is very helpful.'}, {'intent': 'give_feedback', 'text': '5 for the fact that it was very helpful.'}, {'intent': 'give_feedback', 'text': '100% satisfaction with the service.'}]
-    # input_nlu_negotiate_price = [{'intent': 'negotiate_price', 'text': 'I would like to negotiate the price of the Audi R8.'}, {'intent': 'negotiate_price', 'text': 'I like the BMW but the price is too high, can you lower it to 20000?'}, {'intent': 'negotiate_price', 'text': 'Can you do 20k for the 911?'}, {'intent': 'negotiate_price', 'text': 'I would like to negotiate the price of the Honda Civic.'}]
-    # input_nlu_buying_car = [{'intent': 'buying_car', 'text': 'I want to buy the Audi R8.'}, {'intent': 'buying_car', 'text': 'I want to buy the BMW M3.'}, {'intent': 'buying_car', 'text': 'I want to buy a sports car under 15k.'}, {'intent': 'buying_car', 'text': 'I want to buy an electric car.'}]
-    # input_nlu_order_car = [{'intent': 'order_car', 'text': 'I would like to order the Audi R8.'}, {'intent': 'order_car', 'text': 'I want to order that'}, {'intent': 'order_car', 'text': 'No, I want to order the BMW M3.'}, {'intent': 'order_car', 'text': 'I want to order the Honda Civic.'}]
-    # input_book_appoint = [{'intent': 'book_appointment', 'text': 'I would like to book an appointment for a test drive.'}, {'intent': 'book_appointment', 'text': 'Can I book an appointment for today?'}]
-   
-    # for elem in input_book_appoint:
-    #     print(f"\n\n\nUser Input: {elem['text']}")
-    #     nlu_response = nlu.query_model(elem)
-    #     print(f"NLU Response: {nlu_response}")
-
-
-    '''
-    dm = DM(cfg=config, model=model, tokenizer=tokenizer)
-    db = Database(cfg=config)
-
-    input_dm_find = [{'intent': 'buying_car', 'slots': {'brand': None, 'model': None, 'year': None, 'budget': '20000', 'car_type': 'Sport_car', 'fuel_type': None, 'transmission': None}}, {'intent': 'buying_car', 'slots': {'brand': 'Audi', 'model': None, 'year': None, 'budget': None, 'car_type': 'Sport_car', 'fuel_type': None, 'transmission': None}}, {'intent': 'get_car_info', 'slots': {'car_id': '5'}}, {'intent': 'negotiating_price', 'slots': {'car_id': '5', 'proposed_price': '13000'}}, {'intent': 'order_car', 'slots': {'car_id': '5'}}]
-    input_dm = [{'intent': request_info, 'slots': {'car_id': '50'}} for request_info in ['get_car_info', 'negotiating_price', 'order_car']]
-    for elem in input_dm:
-        response = dm.query_model(elem)
-        if response["action"] == "confirmation":
-            results = db.query_database(elem)
-            print(f"Database results for: {results}")
-    '''
     
